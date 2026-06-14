@@ -1,0 +1,30 @@
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: linear-gradient(
+  to bottom,
+  #3F0F6B 0%,
+  #7726BD 100%
+);
+  color: white;
+
+  padding: 2rem;
+}
+
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 1.2rem;
+}
