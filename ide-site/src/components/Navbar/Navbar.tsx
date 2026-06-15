@@ -1,12 +1,19 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        IDE
-      </div>
+      <Link href="/" className={styles.logo} aria-label="Ir para a página inicial">
+        <Image
+          src="/ide-branco.png"
+          alt="IDE"
+          width={60}
+          height={40}
+          priority
+        />
+      </Link>
 
       <ul className={styles.menu}>
         <li><Link href="/">Home</Link></li>
