@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './page.module.css';
+import CTAHome from '../components/CTAHome/CTAHome';
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
           className={styles.heroImage}
         />
       </section>
+
+      <CTAHome />
+
     </main>
   );
 }
