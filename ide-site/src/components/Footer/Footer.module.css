@@ -1,0 +1,80 @@
+.footer {
+    background: linear-gradient(#7726BD, #371157);
+    color: #FFFFFF;
+}
+
+.grafismo {
+    width: 100%;
+    height: 180px;
+    background-image: url('/imagens/grafismo-branco-footer.png');
+    background-repeat: repeat-x;
+    background-size: 540px 180px;
+    background-position: left top;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1920px;
+
+    margin: 0 auto;
+    padding: 3rem 4rem 3rem 4rem;
+}
+
+.logoContainer {
+    width: 17.29%;
+    max-width: 332px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 82.71%;
+
+    padding: 0 0 0 6rem;
+}
+
+.infoContainer h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.menu a {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem;
+
+    color: #FFFFFF;
+    text-decoration: none;   
+    font-weight: 500;        
+    transition: opacity 0.2s;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+
+  padding: 20px 0px;
+}
