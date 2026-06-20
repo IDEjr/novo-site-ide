@@ -13,8 +13,8 @@ export default function CTAHome() {
           Vamos conversar sobre o seu próximo grande projeto. 
           Nossos consultores estão prontos para te ajudar.
         </p>
-        
-        <Link href="/contato" className={styles.ctaButton}>
+
+        <Link href="/contato" className={styles.ctaHomeButton}>
           Fale Conosco
         </Link>
       </div>
