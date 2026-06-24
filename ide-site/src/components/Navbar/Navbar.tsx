@@ -17,11 +17,11 @@ export default function Navbar() {
 
       <ul className={styles.menu}>
         <li><Link href="/">Home</Link></li>
-        <li><Link href="/quem-somos">Quem Somos</Link></li>
-        <li><Link href="/servicos">Serviços</Link></li>
-        <li><Link href="/blog">Blog</Link></li>
-        <li><Link href="/portfolio">Portfólio</Link></li>
-        <li><Link href="/contato">Contato</Link></li>
+        <li><Link href="/QuemSomos">Quem Somos</Link></li>
+        <li><Link href="/Servicos">Serviços</Link></li>
+        <li><Link href="/Blog">Blog</Link></li>
+        <li><Link href="/Portfolio">Portfólio</Link></li>
+        <li><Link href="/Contato">Contato</Link></li>
       </ul>
     </nav>
   );
