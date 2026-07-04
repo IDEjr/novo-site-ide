@@ -44,8 +44,7 @@ export default function NossaGente() {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <span className={styles.overline}>Nossa gente</span>
-        <h2>Uma linha do tempo visual por ano</h2>
+        <h2>Nossa Gente</h2>
         <p>O capital intelectual que sustenta cada linha de código.</p>
       </div>
 

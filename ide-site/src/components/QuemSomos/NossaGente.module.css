@@ -38,21 +38,14 @@
   margin-bottom: 1.4rem;
 }
 
-.overline {
-  display: inline-block;
-  margin-bottom: 0.6rem;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: #5dffd9;
-}
-
 .header h2 {
   margin: 0 0 0.7rem;
   font-size: clamp(1.7rem, 2.2vw, 2.35rem);
   line-height: 1.1;
-  color: #f8fdff;
+  color: #7bffb6;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 18px rgba(93, 255, 217, 0.25);
 }
 
 .header p {
