@@ -1,6 +1,10 @@
 .footer {
     background: linear-gradient(#7726BD, #371157);
     color: #FFFFFF;
+
+    font-size: 1rem;
+
+    padding: 1rem 0rem;
 }
 
 .grafismo {
@@ -14,19 +18,21 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: center;
 
     width: 100%;
     max-width: 1920px;
 
     margin: 0 auto;
-    padding: 3rem 4rem 3rem 4rem;
+    padding: 1rem 4rem;
+
+    gap: 9rem;
 }
 
 .logoContainer {
-    width: 17.29%;
-    max-width: 332px;
+    width: 332px;
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -36,18 +42,17 @@
 
 .infoContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
 
-    width: 82.71%;
-
-    padding: 0 0 0 6rem;
+    padding: 0;
+    
+    gap: 9rem;
 }
 
 .infoContainer h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .menu {
@@ -63,8 +68,7 @@
     gap: 0.5rem;
 
     color: #FFFFFF;
-    text-decoration: none;   
-    font-weight: 500;        
+    text-decoration: none;         
     transition: opacity 0.2s;
 }
 
@@ -75,6 +79,4 @@
 .copyright {
   display: flex;
   justify-content: center;
-
-  padding: 20px 0px;
 }

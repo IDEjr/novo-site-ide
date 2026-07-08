@@ -78,7 +78,7 @@ export default function Footer() {
                     <h3>Endereço</h3>
 
                     <ul className={styles.menu}>
-                        <li><Link href="https://maps.app.goo.gl/qQxNcJeAiyBLgDT36">Av. Bento Gonçalves, 9500 - Agronomia, Porto Alegre - RS, 91509-900</Link></li>
+                        <li><Link href="https://maps.app.goo.gl/qQxNcJeAiyBLgDT36">Av. Bento Gonçalves, 9500 - Agronomia,<br></br>Porto Alegre - RS, 91509-900</Link></li>
                     </ul> 
                 </div>
             </div>
