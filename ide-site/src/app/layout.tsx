@@ -10,7 +10,7 @@ const delta_gothic_one = Dela_Gothic_One({
 })
 
 const bai_jamjuree = Bai_Jamjuree({
-  weight: ['400', '500', '700'],
+  weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-principal',
 })
