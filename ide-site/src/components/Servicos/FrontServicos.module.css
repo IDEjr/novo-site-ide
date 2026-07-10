@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+
+    max-width: 1200px;
+}
+
+.content h1 {
+    background: linear-gradient(180deg, #FFFFFF 0%, #45AC34 100%);
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  font-size: 1.4rem;
+  margin: 0;
+}

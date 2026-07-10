@@ -28,9 +28,9 @@ export default function Footer() {
 
                     <ul className={styles.menu}>
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/quem-somos">Sobre nós</Link></li>
-                        <li><Link href="/servicos">Serviços</Link></li>
-                        <li><Link href="/portfolio">Portfólio</Link></li>
+                        <li><Link href="/QuemSomos">Sobre nós</Link></li>
+                        <li><Link href="/Servicos">Serviços</Link></li>
+                        <li><Link href="/Portfolio">Portfólio</Link></li>
                     </ul>
                 </nav>
 

@@ -1,0 +1,12 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 5rem 2rem 1rem 8rem;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  margin: 0 0 2rem;
+  line-height: 1.3;
+}
