@@ -7,16 +7,8 @@
   align-items: center;
   justify-content: flex-start;
 
-  background: linear-gradient(
-    to bottom,
-    #3F0F6B 0%,
-    #7726BD 100%
-  );
-  color: white;
-
   padding: 3rem 2rem 1rem 2rem;
 }
-
 
 .hero h1 {
   font-size: 4rem;

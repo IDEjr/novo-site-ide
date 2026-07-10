@@ -30,7 +30,9 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${delta_gothic_one.variable} ${bai_jamjuree.variable} ${open_sans.variable}`}>
         <Navbar />
-        {children}
+          <main className="main-content">
+            {children}
+          </main>  
         <Footer />
       </body>
     </html>

@@ -13,6 +13,15 @@ body {
   line-height: 1.2;
 }
 
+.main-content {
+  background: linear-gradient(
+    to bottom,
+    #3F0F6B 0%,
+    #7726BD 100%
+  );
+  color: white;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
