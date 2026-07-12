@@ -20,7 +20,7 @@ export default function Navbar() {
         <li><Link href="/quem-somos">Quem Somos</Link></li>
         <li><Link href="/servicos">Serviços</Link></li>
         <li><Link href="/blog">Blog</Link></li>
-        <li><Link href="/portfolio">Portfólio</Link></li>
+        <li><Link href="/Portfolio">Portfólio</Link></li>
         <li><Link href="/contato">Contato</Link></li>
       </ul>
     </nav>
