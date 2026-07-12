@@ -12,7 +12,7 @@ export default function FrontPortfolio() {
         <p className={styles.description}>
           Explora nosso ecossistema de soluções digitais. De plataformas
           complexas a interfaces minimalistas, cada linha de código é escrita
-          com o rigor acadêmico da UFRGS e a energia de uma Junior.
+          com o rigor acadêmico da UFRGS e a energia de uma Empresa Júnior.
         </p>
       </div>
 
