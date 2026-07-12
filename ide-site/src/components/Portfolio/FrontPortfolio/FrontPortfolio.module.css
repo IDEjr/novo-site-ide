@@ -1,43 +1,36 @@
-.section {
-  padding: 5rem 2rem;
-  background: linear-gradient(to bottom, #3F0F6B 0%, #7726BD 100%);
-  color: #fff;
-}
-
-.container {
+.content {
   width: min(1280px, calc(100% - 4rem));
   margin: 0 auto;
-}
 
-.content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 3rem;
+
+  column-gap: 4rem;
+  padding: 5rem 0;
 }
 
 .textContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
+  max-width: 760px;
 }
 
 .title {
   margin: 0;
 
-  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-size: clamp(4rem, 6vw, 5.2rem);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
 
-  color: #ffffff;
+  color: #fff;
 }
 
 .title span {
   background: linear-gradient(
     90deg,
-    #fcf8ff 0%,
-    #c56eff 45%,
+    #f8efff 0%,
+    #d87eff 45%,
     #a348ff 100%
   );
 
@@ -47,48 +40,44 @@
 }
 
 .description {
-  margin-top: 1.5rem;
-  max-width: 620px;
-  font-size: 1.35rem;
-  line-height: 1.55;
-  font-weight: 400;
-  text-align: justify;
-  color: rgba(255, 255, 255, 0.95);
+  margin-top: 1.35rem;
+
+  width: 100%;
+  max-width: 690px;
+
+  font-size: 1.32rem;
+  line-height: 1.45;
+
+  color: rgba(255,255,255,.94);
 }
 
-.imageWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image {
-  width: min(100%, 320px);
+.heroImage {
+  width: clamp(260px, 26vw, 340px);
   height: auto;
+
   object-fit: contain;
+  justify-self: end;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 5rem 1.5rem;
-  }
+@media (max-width: 900px) {
 
   .content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    text-align: center;
+    row-gap: 3rem;
   }
 
   .textContent {
-    align-items: center;
-  }
-
-  .title {
-    font-size: clamp(2.8rem, 10vw, 4rem);
+    max-width: 100%;
   }
 
   .description {
-    font-size: 1.05rem;
     max-width: 100%;
-    text-align: justify;
+    font-size: 1.1rem;
+  }
+
+  .heroImage {
+    justify-self: center;
+    width: min(320px, 80vw);
   }
 }
