@@ -1,0 +1,54 @@
+.ctaBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1rem;
+
+    background:
+        radial-gradient(120% 120% at 0% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
+        radial-gradient(120% 120% at 100% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
+        radial-gradient(120% 120% at 0% 100%, rgba(11,104,190,0.30) 0%, transparent 70%),
+        radial-gradient(120% 120% at 100% 80%, #444b79 0%, transparent 90%),
+        linear-gradient(90deg, #4f3da7, #444b79);
+    border-radius: 16px;
+    border: 2px solid #FFFFFF;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 6vw, 4rem);
+
+    max-width: 15ch;      
+    width: 100%;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 280px;
+  height: 76px;
+  padding: 0 2.4rem;
+
+  border-radius: 16px;
+
+  text-decoration: none;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  background: #65D553;
+  color: #0B5000;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.button:hover {
+  background: #5bb94a;
+
+  transform: translateY(-3px);
+}

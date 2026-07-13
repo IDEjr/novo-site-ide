@@ -6,15 +6,12 @@
     justify-content: flex-start;
 
     max-width: 1200px;
+    padding: 0px 0px 7rem 0px;
 }
 
 .content h1 {
-    background: linear-gradient(180deg, #FFFFFF 0%, #45AC34 100%);
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    
-    -webkit-text-fill-color: transparent;
+    font-size: 6rem;
+    line-height: 1.3;
 }
 
 .content p {
