@@ -2,7 +2,7 @@
   min-height: 100vh;
   width: 100%;
 
-  padding: 5rem 8rem 1rem 8rem;
+  padding: 4rem 8rem 1rem 8rem;
 }
 
 .hero h1 {
@@ -14,4 +14,11 @@
   background-clip: text;
     
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding: 4rem clamp(1rem, 4vw, 4rem) 1rem clamp(1rem, 4vw, 4rem);
+  }
 }
