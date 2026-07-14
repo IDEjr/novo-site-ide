@@ -1,0 +1,48 @@
+.parceirosSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.parceirosBox {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.parceirosBox h2 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.parceirosList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.parceiroBubble {
+  width: 192px;
+  height: 192px;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #649FD6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.parceiroBubble span {
+  color: #5f5f5f;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
