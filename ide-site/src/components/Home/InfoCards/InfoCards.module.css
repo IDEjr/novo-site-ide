@@ -126,6 +126,63 @@
   flex: 0.5;
 }
 
+.mvvRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 8.0rem;
+}
+
+.mvvCard {
+  background-color: #7726BD;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.mvvCard h3 {
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+
+.mvvIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mvvIcon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #ffffff;
+  fill: none;
+}
+
+.mvvCard p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.mvvList {
+  list-style: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.mvvList li::before {
+  content: '• ';
+}
+
 /* Tablet */
 @media (max-width: 900px) {
   .infoRow {
@@ -133,6 +190,14 @@
   }
 
   .infoRow > .infoCard:last-child {
+    grid-column: span 2;
+  }
+
+  .mvvRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mvvRow > .mvvCard:last-child {
     grid-column: span 2;
   }
 }
@@ -155,5 +220,13 @@
   .fotoCard {
     aspect-ratio: unset;
     min-height: 180px;
+  }
+
+  .mvvRow {
+    grid-template-columns: 1fr;
+  }
+
+  .mvvRow > .mvvCard:last-child {
+    grid-column: span 1;
   }
 }
