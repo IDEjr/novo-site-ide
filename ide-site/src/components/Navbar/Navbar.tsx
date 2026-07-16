@@ -1,8 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/quem-somos', label: 'Quem Somos' },
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/portfolio', label: 'Portfólio' },
+  { href: '/contato', label: 'Contato' },
+];
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo} aria-label="Ir para a página inicial">
@@ -15,13 +29,27 @@ export default function Navbar() {
         />
       </Link>
 
-      <ul className={styles.menu}>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/QuemSomos">Quem Somos</Link></li>
-        <li><Link href="/Servicos">Serviços</Link></li>
-        <li><Link href="/Blog">Blog</Link></li>
-        <li><Link href="/Portfolio">Portfólio</Link></li>
-        <li><Link href="/Contato">Contato</Link></li>
+      <button
+        type="button"
+        className={styles.hamburger}
+        aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={isOpen}
+        aria-controls="main-menu"
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <ul id="main-menu" className={`${styles.menu} ${isOpen ? styles.menuOpen : ''}`}>
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} onClick={() => setIsOpen(false)}>
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

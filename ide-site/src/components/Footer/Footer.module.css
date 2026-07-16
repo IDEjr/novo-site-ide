@@ -1,6 +1,8 @@
 .footer {
     background: linear-gradient(#7726BD, #371157);
     color: #FFFFFF;
+    font-size: 1rem;
+    padding: 1rem 0 2rem;
 }
 
 .grafismo {
@@ -14,40 +16,41 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     width: 100%;
     max-width: 1920px;
 
     margin: 0 auto;
-    padding: 3rem 4rem 3rem 4rem;
+    padding: 1.5rem 1.5rem 2rem;
+    gap: 2.5rem 4rem;
 }
 
 .logoContainer {
-    width: 17.29%;
-    max-width: 332px;
+    width: min(332px, 100%);
+    flex-shrink: 0;
 }
 
 .logo img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .infoContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-
-    width: 82.71%;
-
-    padding: 0 0 0 6rem;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 2rem 4rem;
 }
 
 .infoContainer h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .menu {
@@ -55,16 +58,22 @@
     flex-direction: column;
     gap: 0.5rem;
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
 }
 
 .menu a {
     display: flex;
-    align-items: center; 
+    align-items: center;
     gap: 0.5rem;
 
     color: #FFFFFF;
-    text-decoration: none;   
-    font-weight: 500;        
+    text-decoration: none;
     transition: opacity 0.2s;
 }
 
@@ -73,8 +82,95 @@
 }
 
 .copyright {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
 
-  padding: 20px 0px;
+@media (max-width: 800px) {
+    .footer {
+        padding: 0 0 1.5rem;
+    }
+
+    .grafismo {
+        height: 120px;
+        background-size: 420px 120px;
+        opacity: 0.95;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .logoContainer {
+        width: min(260px, 80%);
+    }
+
+    .infoContainer {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .navegacao,
+    .contato,
+    .endereco {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem 0.75rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(4px);
+    }
+
+    .infoContainer h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.02em;
+    }
+
+    .menu {
+        align-items: center;
+        gap: 0.7rem;
+    }
+
+    .menu a {
+        justify-content: center;
+        line-height: 1.4;
+    }
+
+    .copyright {
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 480px) {
+    .grafismo {
+        height: 100px;
+        background-size: 320px 100px;
+    }
+
+    .navegacao,
+    .contato,
+    .endereco {
+        max-width: 100%;
+        padding: 0.85rem 0.6rem;
+    }
+
+    .infoContainer h3 {
+        font-size: 1.05rem;
+    }
+
+    .copyright {
+        font-size: 0.9rem;
+    }
 }
