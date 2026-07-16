@@ -7,11 +7,11 @@ import styles from './Navbar.module.css';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/quem-somos', label: 'Quem Somos' },
-  { href: '/servicos', label: 'Serviços' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/portfolio', label: 'Portfólio' },
-  { href: '/contato', label: 'Contato' },
+  { href: '/QuemSomos', label: 'Quem Somos' },
+  { href: '/Servicos', label: 'Serviços' },
+  { href: '/Blog', label: 'Blog' },
+  { href: '/Portfolio', label: 'Portfólio' },
+  { href: '/Contato', label: 'Contato' },
 ];
 
 export default function Navbar() {
