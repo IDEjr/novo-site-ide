@@ -50,7 +50,7 @@ export default function Timeline() {
               <div className={styles.content}>
                 <div className={styles.year}>{event.year}</div>
                 <h3>{event.title}</h3>
-                {event.description ? <p>{event.description}</p> : null}
+                {event.description && <p>{event.description}</p>}
               </div>
             </div>
           );
