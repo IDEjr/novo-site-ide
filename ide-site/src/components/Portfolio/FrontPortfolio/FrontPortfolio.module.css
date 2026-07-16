@@ -13,6 +13,7 @@
 .textContent {
   width: 100%;
   max-width: 760px;
+  text-align: left;
 }
 
 .title {
@@ -49,6 +50,8 @@
   line-height: 1.45;
 
   color: rgba(255,255,255,.94);
+
+  text-align: justify;
 }
 
 .heroImage {
