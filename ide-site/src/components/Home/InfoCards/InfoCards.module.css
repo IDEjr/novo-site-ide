@@ -8,9 +8,11 @@
 .infoCardsBox {
   width: 100%;
   max-width: 1100px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   gap: 2rem;
 }
 
@@ -27,29 +29,39 @@
 
 .cardsWrapper {
   width: 100%;
+
   display: flex;
   flex-direction: column;
+
   gap: 1.5rem;
 }
 
-/* info cards primeira linha */
+/* Primeira linha */
+
 .infoRow {
   width: 100%;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 1.5rem;
 }
 
 .infoCard {
-  background-color: #7726BD;
+  background-color: #7726bd;
+
   border-radius: 16px;
+
   padding: 1.5rem;
+
+  min-height: 140px;
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
   justify-content: center;
+
   gap: 0.5rem;
-  min-height: 140px;
 }
 
 .infoCard h3 {
@@ -62,171 +74,163 @@
   text-align: left;
 }
 
-/* stat cards e foto */
+/* Estatísticas */
+
 .statRow {
   width: 100%;
-  display: flex;
-  align-items: stretch;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr 0.8fr;
+
   gap: 1.5rem;
 }
 
-.statCard {
-  flex: 1;
+.statCard,
+.fotoCard {
   aspect-ratio: 16 / 9;
-  background-color: #7726BD;
+
   border-radius: 16px;
-  padding: 1rem;
+
+  overflow: hidden;
+
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
   text-align: center;
-  overflow: hidden;
-  transition: flex 0.35s ease;
+}
+
+.statCard {
+  background-color: #7726bd;
+
+  padding: 1rem;
+
+  flex-direction: column;
 }
 
 .statCard strong {
-  color: #649FD6;
+  color: #649fd6;
+
   font-size: clamp(1.25rem, 4vw, 2rem);
-  white-space: nowrap;
 }
 
 .statCard span {
   font-size: clamp(0.75rem, 2vw, 1rem);
-  white-space: normal;
-  text-align: center;
-  line-height: 1.2;
 }
 
 .fotoCard {
-  flex: 1;
-  aspect-ratio: 16 / 9;
-  background-color: #B399D4;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: flex 0.35s ease;
+  background-color: #b399d4;
 }
 
 .fotoCard span {
-  color: #3F0F6B;
+  color: #3f0f6b;
+
   font-weight: 700;
+
   font-size: 1.1rem;
-  white-space: nowrap;
 }
 
-/* Hover do card da foto */
-.fotoCard:hover {
-  flex: 2.4;
-}
-
-.statRow:has(.fotoCard:hover) .statCard {
-  flex: 0.5;
-}
+/* Missão Visão Valores */
 
 .mvvRow {
   width: 100%;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 1.5rem;
-  margin-top: 8.0rem;
+
+  margin-top: 8rem;
 }
 
 .mvvCard {
-  background-color: #7726BD;
+  background-color: #7726bd;
+
   border-radius: 16px;
+
   padding: 2rem 1.5rem;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   text-align: center;
+
   gap: 1rem;
 }
 
 .mvvCard h3 {
   font-size: 1.3rem;
+
   letter-spacing: 0.05em;
 }
 
 .mvvIcon {
   width: 40px;
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .mvvIcon svg {
   width: 100%;
   height: 100%;
-  stroke: #ffffff;
-  fill: none;
+
+  stroke: white;
 }
 
 .mvvCard p {
   font-size: 0.95rem;
+
   font-weight: 300;
+
   line-height: 1.5;
 }
 
 .mvvList {
   list-style: none;
+
   text-align: left;
+
   font-size: 0.95rem;
+
   font-weight: 300;
+
   line-height: 1.8;
 }
 
 .mvvList li::before {
-  content: '• ';
+  content: "• ";
 }
 
-/* Tablet */
+/* Responsivo */
+
 @media (max-width: 900px) {
   .infoRow {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .infoRow > .infoCard:last-child {
-    grid-column: span 2;
+  .statRow {
+    grid-template-columns: 1fr;
   }
 
   .mvvRow {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .mvvRow > .mvvCard:last-child {
-    grid-column: span 2;
-  }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-  .infoRow {
+  .infoRow,
+  .statRow,
+  .mvvRow {
     grid-template-columns: 1fr;
-  }
-
-  .infoRow > .infoCard:last-child {
-    grid-column: span 1;
-  }
-
-  .statRow {
-    flex-direction: column;
   }
 
   .statCard,
   .fotoCard {
     aspect-ratio: unset;
+
     min-height: 180px;
-  }
-
-  .mvvRow {
-    grid-template-columns: 1fr;
-  }
-
-  .mvvRow > .mvvCard:last-child {
-    grid-column: span 1;
   }
 }
