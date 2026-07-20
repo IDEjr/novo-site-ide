@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './FrontHome.module.css';
 import Typewriter from '../../Typewriter/Typewriter';
 
 const words = [
-    "Transforma.",
-    "Inspira.",
-    "Conecta.",
-    "Inova.",
-    "Evolui."
+    "Futuro.",
+    "Referência.",
+    "Sucesso.",
+    "Inovavação.",
+    "Evolução."
 ];
 
 
@@ -34,14 +33,6 @@ export default function FrontHome() {
           </Link>
         </div>
       </div>
-
-      <Image
-        src="/imagens/detail-front.png"
-        alt="Detalhe frontal"
-        className={styles.heroImage}
-        width={800}
-        height={700}
-      />
     </section>
   );
 }

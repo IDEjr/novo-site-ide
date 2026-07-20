@@ -7,13 +7,14 @@
 }
 
 .cursor {
+  position: absolute;
+  right: -6px;
+  top: 0;
+
   width: 3px;
   height: 1em;
 
-  margin-left: 2px;
-
   background: #38a2ff;
-
   border-radius: 2px;
 
   animation: blink 1s infinite;

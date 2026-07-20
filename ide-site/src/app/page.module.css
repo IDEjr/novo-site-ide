@@ -1,4 +1,22 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  isolation: isolate;
+  pointer-events: none;
+}
+
 .hero {
+  position: relative;
+  z-index: 1;
+
   min-height: 100vh;
   width: 100%;
 
@@ -7,7 +25,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  padding: 3rem 2rem 1rem 2rem;
+  padding: 3rem 2rem 1rem;
 }
 
 .hero h1 {
