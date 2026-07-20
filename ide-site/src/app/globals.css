@@ -14,11 +14,7 @@ body {
 }
 
 .main-content {
-  background: linear-gradient(
-    to bottom,
-    #3F0F6B 0%,
-    #7726BD 100%
-  );
+  background: black;
   color: white;
 }
 
