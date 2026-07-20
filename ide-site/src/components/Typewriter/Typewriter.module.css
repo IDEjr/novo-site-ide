@@ -1,0 +1,26 @@
+.typewriter {
+  display: inline-flex;
+  align-items: center;
+
+  color: #38a2ff;
+  font-weight: 700;
+}
+
+.cursor {
+  width: 3px;
+  height: 1em;
+
+  margin-left: 2px;
+
+  background: #38a2ff;
+
+  border-radius: 2px;
+
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

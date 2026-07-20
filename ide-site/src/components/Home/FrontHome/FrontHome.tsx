@@ -1,13 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './FrontHome.module.css';
+import Typewriter from '../../Typewriter/Typewriter';
+
+const words = [
+    "Transforma.",
+    "Inspira.",
+    "Conecta.",
+    "Inova.",
+    "Evolui."
+];
+
 
 export default function FrontHome() {
   return (
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h1>
-          Transformamos Código em <span className={styles.highlight}>Impacto</span>.
+          Transformamos Código em {" "} <Typewriter words={words} />
         </h1>
 
         <p>
