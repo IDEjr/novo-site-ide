@@ -1,9 +1,21 @@
-.hero {
+.quemsomos {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
-  background: linear-gradient(
-    to bottom,
-    #3F0F6B 0%,
-    #7726BD 100%
-  );
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  isolation: isolate;
+  pointer-events: none;
+}
+
+
+.hero {
+  z-index: 1;
+  position: relative;
   padding: 3rem 0 1rem 2rem;
 }
