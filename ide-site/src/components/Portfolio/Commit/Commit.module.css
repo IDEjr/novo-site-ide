@@ -18,11 +18,11 @@
 
   background: linear-gradient(
     135deg,
-    rgba(159, 90, 255, 0.747),
-    rgb(122, 41, 160)
+    rgba(139, 50, 135, 0.938),
+    rgba(77, 41, 160, 0.925)
   );
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.322);
 }
 
 .title {

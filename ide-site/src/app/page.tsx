@@ -9,17 +9,16 @@ import FaultyTerminal from "../components/FaultyTerminal/FaultyTerminal";
 
 export default function Home() {
   return (
-<section className={styles.home}>
+    <section className={styles.home}>
+      <div className={styles.background}>
+        <FaultyTerminal
+          scale={2.7}
+          tint="#7b00ff"
+          timeScale={1.7}
+          curvature={0.28}
+        />
+      </div>
 
-  <div className={styles.background}>
-    <FaultyTerminal
-      scale={2.7}
-      tint="#7b00ff"
-      timeScale={1.7}
-      curvature={0.28}
-    />
-  </div>
-  
       <main className={styles.hero}>
         <FrontHome />
         <NossosParceiros />
