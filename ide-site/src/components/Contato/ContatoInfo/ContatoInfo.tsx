@@ -28,6 +28,7 @@ export default function ContatoInfo() {
                         href="https://maps.app.goo.gl/qQxNcJeAiyBLgDT36"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className={styles.mapLink}
                     >
                         <p>Instituto de Informática - UFRGS</p>
                         <p>Av. Bento Gonçalves, 9500 - Porto Alegre, RS</p>
@@ -83,9 +84,6 @@ export default function ContatoInfo() {
         <div className={styles.mapContainer}>
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.0385513428355!2d-51.120199899999996!3d-30.068604099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95199db911c4a8e3%3A0xb60c528806c82201!2sPr%C3%A9dio%2043424%20-%20Agronomia%2C%20Porto%20Alegre%20-%20RS%2C%2090650-001!5e1!3m2!1spt-BR!2sbr!4v1784563563400!5m2!1spt-BR!2sbr" 
-                width="600"     /*mudar para 100% e arrumar o tamanho no css*/
-                height="450"    /*mudar para 100% e arrumar o tamanho no css*/
-                style={{ border:0 }} 
                 allowFullScreen={true} 
                 loading="lazy" 
                 referrerPolicy="strict-origin-when-cross-origin">

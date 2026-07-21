@@ -1,3 +1,15 @@
 .mainContato {
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1920px;
+    gap: 4rem;
+
+    margin: 0 auto;
+    padding: 1rem 1rem;
+}
+
+.mainContato > * {
+  flex: 1;
+  width: 50%;
 }

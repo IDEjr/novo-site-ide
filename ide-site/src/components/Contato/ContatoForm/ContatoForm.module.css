@@ -1,0 +1,114 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer {
+    width: 100%;
+    border-radius: 40px;
+    border: 1px solid transparent; 
+    
+    background-image: 
+        linear-gradient(#4C157E, #4C157E),
+        linear-gradient(to bottom right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 35%, transparent 50%, rgba(255, 255, 255, 0.4) 65%, rgba(255, 255, 255, 0.6) 100%);
+    
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    padding: 1rem 3rem 6rem 3rem;
+}
+
+.formContainer h2 {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.formContainer p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroupRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputGroupRow .inputField {
+    flex: 1; 
+    min-width: 0;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.inputField input,
+.inputField textarea {
+    width: 100%; /* pq width 100%? */
+
+    background-color: #6F23B0; 
+
+    color: #FFFFFF; 
+
+    border: none;
+    border-radius: 16px; 
+
+    padding: 0.8rem; 
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 300;
+    outline: none;
+}
+
+.inputField input::placeholder,
+.inputField textarea::placeholder {
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.inputField input:focus,
+.inputField textarea:focus {
+    box-shadow: 0 0 0 2px #A855F7;
+}
+
+.submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-image: linear-gradient(to right, #FFFFFF, #7726BD);
+    border: none;
+    border-radius: 16px;
+    padding: 0.8rem;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #3F0F6B;
+
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(119, 38, 189, 0.4);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
