@@ -10,7 +10,7 @@ const links = [
   { href: '/quem-somos', label: 'Quem Somos' },
   { href: '/servicos', label: 'Serviços' },
   { href: '/blog', label: 'Blog' },
-  { href: '/portfolio', label: 'Portfólio' },
+  { href: '/Portfolio', label: 'Portfólio' },
   { href: '/contato', label: 'Contato' },
 ];
 

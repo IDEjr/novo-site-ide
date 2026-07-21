@@ -1,0 +1,10 @@
+.hero {
+  background: linear-gradient(
+    to bottom,
+    #3F0F6B 0%,
+    #7726BD 100%
+  );
+
+  padding: 5rem 0 6rem;
+}
+
