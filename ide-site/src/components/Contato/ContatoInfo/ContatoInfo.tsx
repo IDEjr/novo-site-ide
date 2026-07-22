@@ -6,7 +6,7 @@ export default function ContatoInfo() {
   return (
     <section className={styles.content}>
         
-        <h1>Vamos codar o seu futuro?</h1>
+        <h1>Vamos codar o<br />seu futuro?</h1>
 
         <div className={styles.cardsContainer}>
 
@@ -16,8 +16,8 @@ export default function ContatoInfo() {
                     <Image
                         src="/imagens/locIcon.svg"
                         alt="Ícone de localização"
-                        width={62}
-                        height={62}                            
+                        width={56}
+                        height={56}                            
                     />
                 </div>
 
@@ -42,8 +42,8 @@ export default function ContatoInfo() {
                     <Image
                         src="/imagens/shareIcon.svg"
                         alt="Ícone de compartilhamento"
-                        width={62}
-                        height={62}                            
+                        width={56}
+                        height={56}                            
                     />
                 </div>
 

@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .content h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
 
     background: linear-gradient(180deg, #FFFFFF 0%, #349EAC 100%);
     
@@ -33,20 +33,27 @@
     align-items: center;
     justify-content: center;
 
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
     border-radius: 20px;
 
     background-color: #3F0F6B;
+
+    flex-shrink: 0;
 }
 
 .cardInfos {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 5px;
+}
+
+.cardInfos a:hover {
+    opacity: 0.7;
 }
 
 .mapLink {
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 300;
     text-decoration: none;
     color: white;
@@ -63,7 +70,7 @@
   height: 305px;
   border-radius: 40px;
   overflow: hidden;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .mapContainer iframe {
