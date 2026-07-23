@@ -11,11 +11,26 @@ body {
   font-family: var(--font-principal), Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.2;
+  background: #000;
+}
+
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-content,
+nav,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 .main-content {
-  background: black;
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {

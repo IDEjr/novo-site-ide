@@ -278,6 +278,11 @@ export default function FaultyTerminal({
   const rafRef = useRef<number>(0);
   const loadAnimationStartRef = useRef<number>(0);
   const timeOffsetRef = useRef<number>(0);
+  const pauseRef = useRef(pause);
+  const timeScaleRef = useRef(timeScale);
+  const mouseReactRef = useRef(mouseReact);
+  const pageLoadAnimationRef = useRef(pageLoadAnimation);
+  const meshRef = useRef<Mesh | null>(null);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
 
@@ -355,7 +360,10 @@ export default function FaultyTerminal({
     });
     programRef.current = program;
 
-    const mesh = new Mesh(gl, { geometry, program });
+    meshRef.current = new Mesh(gl, {
+      geometry,
+      program,
+    });
 
     function resize() {
       if (!ctn || !renderer) return;
@@ -374,26 +382,27 @@ export default function FaultyTerminal({
     const update = (t: number) => {
       rafRef.current = requestAnimationFrame(update);
 
-      if (pageLoadAnimation && loadAnimationStartRef.current === 0) {
+      if (pageLoadAnimationRef.current && loadAnimationStartRef.current === 0) {
         loadAnimationStartRef.current = t;
       }
 
-      if (!pause) {
-        const elapsed = (t * 0.001 + timeOffsetRef.current) * timeScale;
+      if (!pauseRef.current) {
+        const elapsed =
+          (t * 0.001 + timeOffsetRef.current) * timeScaleRef.current;
         program.uniforms.iTime.value = elapsed;
         frozenTimeRef.current = elapsed;
       } else {
         program.uniforms.iTime.value = frozenTimeRef.current;
       }
 
-      if (pageLoadAnimation && loadAnimationStartRef.current > 0) {
+      if (pageLoadAnimationRef.current && loadAnimationStartRef.current > 0) {
         const animationDuration = 2000;
         const animationElapsed = t - loadAnimationStartRef.current;
         const progress = Math.min(animationElapsed / animationDuration, 1);
         program.uniforms.uPageLoadProgress.value = progress;
       }
 
-      if (mouseReact) {
+      if (mouseReactRef.current) {
         const dampingFactor = 0.08;
         const smoothMouse = smoothMouseRef.current;
         const mouse = mouseRef.current;
@@ -405,7 +414,11 @@ export default function FaultyTerminal({
         mouseUniform[1] = smoothMouse.y;
       }
 
-      renderer.render({ scene: mesh });
+      if (meshRef.current) {
+        renderer.render({
+          scene: meshRef.current,
+        });
+      }
     };
     rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
@@ -420,27 +433,81 @@ export default function FaultyTerminal({
       gl.getExtension("WEBGL_lose_context")?.loseContext();
       loadAnimationStartRef.current = 0;
     };
+  }, []);
+
+  useEffect(() => {
+    const program = programRef.current;
+
+    if (!program) return;
+
+    program.uniforms.uScale.value = scale;
+
+    program.uniforms.uDigitSize.value = digitSize;
+
+    program.uniforms.uScanlineIntensity.value = scanlineIntensity;
+
+    program.uniforms.uGlitchAmount.value = glitchAmount;
+
+    program.uniforms.uFlickerAmount.value = flickerAmount;
+
+    program.uniforms.uNoiseAmp.value = noiseAmp;
+
+    program.uniforms.uChromaticAberration.value = chromaticAberration;
+
+    program.uniforms.uCurvature.value = curvature;
+
+    program.uniforms.uBrightness.value = brightness;
+
+    program.uniforms.uMouseStrength.value = mouseStrength;
+
+    program.uniforms.uUseMouse.value = mouseReact ? 1 : 0;
+
+    program.uniforms.uScale.value = scale;
+
+    program.uniforms.uGridMul.value = new Float32Array(gridMul);
+
+    program.uniforms.uDither.value = ditherValue;
+
+    program.uniforms.uUsePageLoadAnimation.value = pageLoadAnimation ? 1 : 0;
+
+    program.uniforms.uPageLoadProgress.value = pageLoadAnimation ? 0 : 1;
+
+    program.uniforms.uTint.value = new Color(
+      tintVec[0],
+      tintVec[1],
+      tintVec[2],
+    );
   }, [
-    dpr,
-    pause,
-    timeScale,
     scale,
-    gridMul,
     digitSize,
     scanlineIntensity,
     glitchAmount,
     flickerAmount,
     noiseAmp,
     chromaticAberration,
-    ditherValue,
     curvature,
-    tintVec,
-    mouseReact,
-    mouseStrength,
-    pageLoadAnimation,
     brightness,
-    handleMouseMove,
+    mouseStrength,
+    mouseReact,
+    gridMul,
+    tintVec,
   ]);
+
+  useEffect(() => {
+    pauseRef.current = pause;
+  }, [pause]);
+
+  useEffect(() => {
+    timeScaleRef.current = timeScale;
+  }, [timeScale]);
+
+  useEffect(() => {
+    mouseReactRef.current = mouseReact;
+  }, [mouseReact]);
+
+  useEffect(() => {
+    pageLoadAnimationRef.current = pageLoadAnimation;
+  }, [pageLoadAnimation]);
 
   return (
     <div
