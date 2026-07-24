@@ -1,5 +1,5 @@
-import ContatoInfo from '@/src/components/Contato/ContatoInfo/ContatoInfo';
-import ContatoForm from '@/src/components/Contato/ContatoForm/ContatoForm';
+import ContatoInfo from '../../components/Contato/ContatoInfo/ContatoInfo';
+import ContatoForm from '../../components/Contato/ContatoForm/ContatoForm';
 import styles from './page.module.css';
 
 export default function Contato() {

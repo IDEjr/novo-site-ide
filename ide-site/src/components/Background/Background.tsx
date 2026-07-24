@@ -39,6 +39,15 @@ export default function Background() {
           curvature: 4,
         };
 
+        case "/Contato":
+        return {
+          tint: "#808386",
+          scale: 4,
+          timeScale: 1,
+          scanlineIntensity: 0,
+          curvature: -0.1,
+        };
+
       default:
         return {
           tint: "#7b00ff",
