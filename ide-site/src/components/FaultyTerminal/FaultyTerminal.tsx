@@ -260,11 +260,11 @@ export default function FaultyTerminal({
   dither = 0,
   curvature = 0.2,
   tint = "#ffffff",
-  mouseReact = true,
+  mouseReact = false,
   mouseStrength = 0.2,
-  dpr = 2,
+  dpr = 1,
   pageLoadAnimation = true,
-  brightness = 1,
+  brightness = 0.7,
   className,
   style,
   ...rest
@@ -379,8 +379,21 @@ export default function FaultyTerminal({
     resizeObserver.observe(ctn);
     resize();
 
+
+    const FPS = 30;
+    const interval = 1000 / FPS;
+
+    let lastFrame = 0;
+
     const update = (t: number) => {
       rafRef.current = requestAnimationFrame(update);
+
+
+      if (t - lastFrame < interval) {
+        return;
+      }
+
+      lastFrame = t;
 
       if (pageLoadAnimationRef.current && loadAnimationStartRef.current === 0) {
         loadAnimationStartRef.current = t;
