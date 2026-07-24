@@ -1,110 +1,132 @@
 .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: clamp(500px, 50vw, 650px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: clamp(500px, 50vw, 650px);
 }
 
 .formContainer {
-    width: 100%;
-    border-radius: 40px;
-    border: 1px solid transparent; 
-    
-    background-image: 
-        linear-gradient(#4C157E, #4C157E),
-        linear-gradient(to bottom right, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 35%, transparent 50%, rgba(255, 255, 255, 0.3) 65%, rgba(255, 255, 255, 0.5) 100%);
-    
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+  width: 100%;
+  border-radius: 40px;
+  border: 1px solid transparent;
 
-    padding: 1.5rem 2rem 6rem 2rem;
+  background-image:
+    linear-gradient(#4c157e, #4c157e),
+    linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.3) 35%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.3) 65%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  padding: 1.5rem 2rem 6rem 2rem;
 }
 
 .formContainer h2 {
-    font-size: 38px;
-    margin-bottom: 0.5rem;
+  font-size: 38px;
+  margin-bottom: 0.5rem;
 }
 
 .formContainer p {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .inputGroupRow {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .inputGroupRow .inputField {
-    flex: 1; 
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .inputField {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .inputField input,
 .inputField textarea {
-    width: 100%; /* pq width 100%? */
+  width: 100%;
 
-    background-color: #6F23B0; 
+  background-color: #6f23b0;
 
-    color: #FFFFFF; 
+  color: #ffffff;
 
-    border: none;
-    border-radius: 16px; 
+  border: none;
+  border-radius: 16px;
 
-    padding: 0.8rem; 
+  padding: 0.8rem;
 
-    font-family: inherit;
-    font-size: 0.95rem;
-    font-weight: 300;
-    outline: none;
-    
-    resize: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 300;
+  outline: none;
+
+  resize: none;
 }
 
 .inputField input::placeholder,
 .inputField textarea::placeholder {
-    color: #FFFFFF;
-    opacity: 0.8;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
 .inputField input:focus,
 .inputField textarea:focus {
-    box-shadow: 0 0 0 2px #A855F7;
+  box-shadow: 0 0 0 1px #a855f7;
+}
+
+.inputField .inputError {
+  box-shadow: 0 0 0 1px #ff3b3b;
+}
+
+.inputField .inputError:focus {
+  box-shadow: 0 0 0 1.2px #ff3b3b;
+}
+
+.error {
+  color: #ff3b3b;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 3px;
 }
 
 .submitBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
-    background-image: linear-gradient(to right, #FFFFFF, #7726BD);
-    border: none;
-    border-radius: 16px;
-    padding: 0.8rem;
+  background-image: linear-gradient(to right, #ffffff, #7726bd);
+  border: none;
+  border-radius: 16px;
+  padding: 0.8rem;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #3F0F6B;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #3f0f6b;
 
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .submitBtn:hover {
@@ -118,7 +140,6 @@
 }
 
 @media (max-width: 992px) {
-
   .content {
     width: 100%;
     max-width: 600px;
@@ -126,13 +147,12 @@
 }
 
 @media (max-width: 768px) {
+  .formContainer {
+    padding: 1.5rem 2rem;
+  }
 
-    .formContainer { 
-        padding: 1.5rem 2rem;
-    }
-
-    .inputGroupRow {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
+  .inputGroupRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
