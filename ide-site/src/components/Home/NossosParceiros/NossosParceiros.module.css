@@ -8,9 +8,11 @@
 .parceirosBox {
   width: 100%;
   max-width: 1100px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   gap: 2rem;
 }
 
@@ -21,10 +23,13 @@
 
 .parceirosList {
   width: 100%;
+
   display: flex;
   flex-wrap: wrap;
+
   align-items: center;
   justify-content: center;
+
   gap: 2rem;
 }
 
@@ -33,15 +38,26 @@
 
   width: 320px;
   height: 320px;
+
   border-radius: 72px;
 
   overflow: hidden;
- 
+
   flex-shrink: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(100, 54, 153, 0.712) 0%,
+    rgba(103, 47, 156, 0.849) 45%,
+    rgba(95, 39, 148, 0.726) 100%
+  );
+
+
 }
 
 .parceiroImage {
   object-fit: contain;
+  padding: 20px;
 }
 
 .parceiroBubble span {
@@ -53,4 +69,12 @@
 .parceiroLink {
   text-decoration: none;
   display: block;
+}
+
+@media (max-width: 700px) {
+  .parceiroBubble {
+    width: 260px;
+    height: 260px;
+    border-radius: 60px;
+  }
 }

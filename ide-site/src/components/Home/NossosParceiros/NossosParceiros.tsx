@@ -4,12 +4,12 @@ import styles from "./NossosParceiros.module.css";
 const parceiros = [
   {
     nome: "INF",
-    img: "/imagens/infLogo.png",
+    img: "/imagens/infTransparente.png",
     link: "https://www.inf.ufrgs.br/site/",
   },
   {
     nome: "UFRGS",
-    img: "/imagens/ufrgsLogo.png",
+    img: "/imagens/ufrgsLogo2.png",
     link: "https://www.ufrgs.br/site/",
   },
 ];
