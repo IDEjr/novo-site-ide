@@ -48,15 +48,18 @@ export default function Projetos() {
         {projetos.map((projeto) => (
           <article
             key={projeto.id}
-            className={`${styles.card} ${
-              projeto.grande ? styles.large : ""
-            }`}
+            className={`${styles.card} ${projeto.grande ? styles.large : ""}`}
           >
             <div className={styles.imageContainer}>
               <Image
                 src={projeto.imagem}
                 alt={projeto.nome}
                 fill
+                sizes={
+                  projeto.grande
+                    ? "(max-width: 900px) 520px, 66vw"
+                    : "(max-width: 900px) 520px, 33vw"
+                }
                 className={styles.image}
               />
             </div>

@@ -24,7 +24,7 @@ export default function Navbar() {
           src="/imagens/ide-branco.png"
           alt="IDE"
           width={60}
-          height={40}
+          height={45}
           priority
         />
       </Link>

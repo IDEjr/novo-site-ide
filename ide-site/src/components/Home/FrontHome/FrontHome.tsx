@@ -3,11 +3,11 @@ import styles from './FrontHome.module.css';
 import Typewriter from '../../Typewriter/Typewriter';
 
 const words = [
-    "Futuro.",
-    "Referência.",
-    "Sucesso.",
-    "Inovavação.",
-    "Evolução."
+  "Futuro.",
+  "Referência.",
+  "Sucesso.",
+  "Inovavação.",
+  "Evolução."
 ];
 
 
@@ -16,7 +16,10 @@ export default function FrontHome() {
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h1>
-          Transformamos Código em {" "} <Typewriter words={words} />
+          Transformamos Código em{" "}
+          <span className={styles.typewriter}>
+            <Typewriter words={words} />
+          </span>
         </h1>
 
         <p>
