@@ -1,9 +1,9 @@
-import styles from './NossosParceiros.module.css';
+import Image from "next/image";
+import styles from "./NossosParceiros.module.css";
 
 const parceiros = [
-  { nome: 'INF' },
-  { nome: 'UFRGS' },
-  { nome: 'CEI' },
+  { nome: "INF", img: "/imagens/inf.png" },
+  { nome: "UFRGS", img: "/imagens/ufrgs.png" },
 ];
 
 export default function NossosParceiros() {
@@ -15,7 +15,13 @@ export default function NossosParceiros() {
         <div className={styles.parceirosList}>
           {parceiros.map((parceiro) => (
             <div key={parceiro.nome} className={styles.parceiroBubble}>
-              <span>{parceiro.nome}</span>
+              <Image
+                src={parceiro.img}
+                alt={parceiro.nome}
+                fill
+                sizes="520px"
+                className={styles.parceiroImage}
+              />
             </div>
           ))}
         </div>

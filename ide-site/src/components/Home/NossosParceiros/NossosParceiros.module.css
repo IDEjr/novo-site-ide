@@ -29,16 +29,19 @@
 }
 
 .parceiroBubble {
-  width: 192px;
-  height: 192px;
-  border-radius: 60px;
-  background: linear-gradient(135deg, #FFFFFF 0%, #649FD6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
+  position: relative;
+
+  width: 320px;
+  height: 320px;
+  border-radius: 72px;
+
+  overflow: hidden;
+ 
   flex-shrink: 0;
+}
+
+.parceiroImage {
+  object-fit: contain;
 }
 
 .parceiroBubble span {
