@@ -49,3 +49,8 @@
   font-weight: 700;
   font-size: 1.1rem;
 }
+
+.parceiroLink {
+  text-decoration: none;
+  display: block;
+}

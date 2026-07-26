@@ -2,8 +2,16 @@ import Image from "next/image";
 import styles from "./NossosParceiros.module.css";
 
 const parceiros = [
-  { nome: "INF", img: "/imagens/inf.png" },
-  { nome: "UFRGS", img: "/imagens/ufrgs.png" },
+  {
+    nome: "INF",
+    img: "/imagens/infLogo.png",
+    link: "https://www.inf.ufrgs.br/site/",
+  },
+  {
+    nome: "UFRGS",
+    img: "/imagens/ufrgsLogo.png",
+    link: "https://www.ufrgs.br/site/",
+  },
 ];
 
 export default function NossosParceiros() {
@@ -14,15 +22,24 @@ export default function NossosParceiros() {
 
         <div className={styles.parceirosList}>
           {parceiros.map((parceiro) => (
-            <div key={parceiro.nome} className={styles.parceiroBubble}>
-              <Image
-                src={parceiro.img}
-                alt={parceiro.nome}
-                fill
-                sizes="520px"
-                className={styles.parceiroImage}
-              />
-            </div>
+            <a
+              key={parceiro.nome}
+              href={parceiro.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.parceiroLink}
+              aria-label={`Visitar o site da ${parceiro.nome}`}
+            >
+              <div className={styles.parceiroBubble}>
+                <Image
+                  src={parceiro.img}
+                  alt={parceiro.nome}
+                  fill
+                  sizes="520px"
+                  className={styles.parceiroImage}
+                />
+              </div>
+            </a>
           ))}
         </div>
       </div>
