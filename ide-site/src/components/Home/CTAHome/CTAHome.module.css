@@ -8,26 +8,39 @@
 .ctaHomeBox {
   width: 100%;
   max-width: 1100px;
+
   background-color: #4b2a6dd7;
-  border-radius: 16px;
+
+  border-radius: 20px;
+
   padding: 3rem;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
+
   gap: 1.5rem;
 }
 
 .ctaHomeBox h2 {
-  font-size: 2rem;
-  max-width: 450px;
+  margin: 0;
+
+  max-width: 500px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
 }
 
 .ctaHomeBox p {
-  font-size: 1.25rem;
+  margin: 0;
+
+  max-width: 560px;
+
+  font-size: 1.2rem;
   font-weight: 300;
-  max-width: 500px;
+  line-height: 1.7;
 }
 
 .highlight {
@@ -38,32 +51,139 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  
+
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   height: 80px;
-  margin-top: 1rem;
-  border-radius: 200px;
-  
+
+  margin-top: 0.5rem;
+
+  border-radius: 999px;
+
   background:
-    radial-gradient(120% 120% at 0% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
-    radial-gradient(120% 120% at 100% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
-    radial-gradient(120% 120% at 0% 100%, rgba(11,104,190,0.30) 0%, transparent 70%),
+    radial-gradient(120% 120% at 0% 0%, rgba(119,38,189,.3) 0%, transparent 50%),
+    radial-gradient(120% 120% at 100% 0%, rgba(119,38,189,.3) 0%, transparent 50%),
+    radial-gradient(120% 120% at 0% 100%, rgba(11,104,190,.30) 0%, transparent 70%),
     radial-gradient(120% 120% at 100% 80%, #444b79 0%, transparent 90%),
     linear-gradient(90deg, #4f3da7, #444b79);
-    
-  border: 2px solid #FFFFFF;
-  color: #FFFFFF;
-  
+
+  border: 2px solid #fff;
+
+  color: #fff;
+
   text-decoration: none;
+
+  font-size: 1.35rem;
   font-weight: 700;
-  font-size: 1.5rem;
-  
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease,
+    box-shadow .25s ease;
 }
 
 .ctaHomeButton:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
+  opacity: .95;
+  transform: translateY(-3px);
+
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+}
+
+/* ===========================
+   Tablets
+=========================== */
+
+@media (max-width: 900px) {
+
+  .ctaHomeSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .ctaHomeBox {
+    padding: 2.5rem 2rem;
+    gap: 1.25rem;
+  }
+
+  .ctaHomeBox h2 {
+    max-width: 520px;
+    font-size: 2.2rem;
+  }
+
+  .ctaHomeBox p {
+    font-size: 1.05rem;
+    max-width: 480px;
+  }
+
+  .ctaHomeButton {
+    max-width: 280px;
+    height: 68px;
+
+    font-size: 1.2rem;
+  }
+}
+
+/* ===========================
+   Celulares
+=========================== */
+
+@media (max-width: 600px) {
+
+  .ctaHomeSection {
+    padding: 2rem 1rem;
+  }
+
+  .ctaHomeBox {
+    padding: 2rem 1.25rem;
+
+    border-radius: 18px;
+
+    gap: 1rem;
+  }
+
+  .ctaHomeBox h2 {
+    max-width: 100%;
+
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .ctaHomeBox p {
+    max-width: 100%;
+
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .ctaHomeButton {
+    max-width: 100%;
+    width: 100%;
+
+    height: 58px;
+
+    font-size: 1.05rem;
+  }
+}
+
+/* ===========================
+   Celulares pequenos
+=========================== */
+
+@media (max-width: 380px) {
+
+  .ctaHomeBox {
+    padding: 1.75rem 1rem;
+  }
+
+  .ctaHomeBox h2 {
+    font-size: 1.6rem;
+  }
+
+  .ctaHomeBox p {
+    font-size: 0.95rem;
+  }
+
+  .ctaHomeButton {
+    height: 54px;
+    font-size: 1rem;
+  }
 }
