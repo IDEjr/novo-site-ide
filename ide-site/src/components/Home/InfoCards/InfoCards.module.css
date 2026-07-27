@@ -8,11 +8,8 @@
 .infoCardsBox {
   width: 100%;
   max-width: 1100px;
-
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-
   gap: 2rem;
 }
 
@@ -24,137 +21,117 @@
   font-size: 1.1rem;
   font-weight: 300;
   max-width: 800px;
-  text-align: left;
+
+  line-height: 1.7;
+
+  text-align: justify;
+  text-align-last: left;
 }
 
 .cardsWrapper {
-  width: 100%;
-
   display: flex;
   flex-direction: column;
-
   gap: 1.5rem;
 }
 
 /* Primeira linha */
 
 .infoRow {
-  width: 100%;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 1.5rem;
 }
 
 .infoCard {
-  background-color: #7726bd;
-
-  border-radius: 16px;
-
-  padding: 1.5rem;
-
-  min-height: 140px;
+  background: #7726bd;
+  border-radius: 20px;
+  padding: 1.75rem;
+  min-height: 150px;
 
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-
-  gap: 0.5rem;
 }
 
 .infoCard h3 {
-  font-size: 1.1rem;
+  margin-bottom: .75rem;
 }
 
 .infoCard p {
-  font-size: 0.9rem;
-  font-weight: 300;
-  text-align: left;
+  font-size: .95rem;
+  line-height: 1.6;
+
+  text-align: justify;
+  text-align-last: left;
 }
 
-/* Estatísticas */
+/* Segunda linha */
 
 .statRow {
-  width: 100%;
-
   display: grid;
-  grid-template-columns: 0.8fr 1.6fr 0.8fr;
-
+  grid-template-columns: 1fr 2.2fr 1fr;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .statCard,
 .fotoCard {
-  aspect-ratio: 16 / 9;
-
-  border-radius: 16px;
-
+  min-height: 440px;
+  border-radius: 24px;
   overflow: hidden;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
 }
 
 .statCard {
-  background-color: #7726bd;
+  background: #7726bd;
 
-  padding: 1rem;
-
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
 }
 
 .statCard strong {
   color: #649fd6;
-
-  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .statCard span {
-  font-size: clamp(0.75rem, 2vw, 1rem);
+  margin-top: .75rem;
+  font-size: 1.05rem;
+  text-align: center;
 }
 
 .fotoCard {
-  background-color: #b399d4;
+  position: relative;
+  background: #b399d4;
 }
 
-.fotoCard span {
-  color: #3f0f6b;
-
-  font-weight: 700;
-
-  font-size: 1.1rem;
+.foto {
+  object-fit: cover;
 }
 
-/* Missão Visão Valores */
+/* Terceira linha */
 
 .mvvRow {
-  width: 100%;
+  margin-top: 6rem;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
   gap: 1.5rem;
-
-  margin-top: 8rem;
 }
 
 .mvvCard {
-  background-color: #7726bd;
+  background: #7726bd;
 
-  border-radius: 16px;
+  border-radius: 20px;
 
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   text-align: center;
@@ -163,40 +140,31 @@
 }
 
 .mvvCard h3 {
-  font-size: 1.3rem;
-
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
 }
 
 .mvvIcon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 }
 
 .mvvIcon svg {
   width: 100%;
   height: 100%;
-
   stroke: white;
 }
 
 .mvvCard p {
-  font-size: 0.95rem;
-
-  font-weight: 300;
-
-  line-height: 1.5;
+  font-size: .95rem;
+  line-height: 1.6;
 }
 
 .mvvList {
   list-style: none;
+  padding: 0;
+  margin: 0;
 
   text-align: left;
-
-  font-size: 0.95rem;
-
-  font-weight: 300;
-
   line-height: 1.8;
 }
 
@@ -206,31 +174,168 @@
 
 /* Responsivo */
 
+/* ===========================
+   Tablets
+=========================== */
+
 @media (max-width: 900px) {
+  .infoCardsSection {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .infoCardsBox h2 {
+    font-size: 1.8rem;
+  }
+
+  .infoCardsBox > p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+    text-align-last: left;
+  }
+
   .infoRow {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .statRow {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "foto foto"
+      "left right";
+    gap: 1rem;
+  }
+
+  .fotoCard {
+    grid-area: foto;
+    min-height: 340px;
+  }
+
+  .statCard:first-child {
+    grid-area: left;
+    min-height: 180px;
+  }
+
+  .statCard:last-child {
+    grid-area: right;
+    min-height: 180px;
   }
 
   .mvvRow {
-    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
+/* ===========================
+   Celulares
+=========================== */
+
 @media (max-width: 600px) {
-  .infoRow,
-  .statRow,
-  .mvvRow {
-    grid-template-columns: 1fr;
+  .infoCardsSection {
+    padding: 2rem 1rem;
   }
 
-  .statCard,
-  .fotoCard {
-    aspect-ratio: unset;
+  .infoCardsBox {
+    gap: 1.5rem;
+  }
 
-    min-height: 180px;
+  .infoCardsBox h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .infoCardsBox > p {
+    text-align: left;
+    font-size: 0.95rem;
+
+    text-align: justify;
+    text-align-last: left;
+  }
+
+  .cardsWrapper {
+    gap: 1rem;
+  }
+
+  .infoRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .infoCard {
+    min-height: auto;
+    padding: 1.4rem;
+    border-radius: 18px;
+  }
+
+  .infoCard h3 {
+    font-size: 1rem;
+  }
+
+  .infoCard p {
+    font-size: 0.9rem;
+  }
+
+  .statRow {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "foto foto"
+      "left right";
+    gap: 0.9rem;
+  }
+
+  .fotoCard {
+    grid-area: foto;
+    min-height: 260px;
+    border-radius: 20px;
+  }
+
+  .statCard:first-child {
+    grid-area: left;
+  }
+
+  .statCard:last-child {
+    grid-area: right;
+  }
+
+  .statCard {
+    min-height: 140px;
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .statCard strong {
+    font-size: 2rem;
+  }
+
+  .statCard span {
+    font-size: 0.9rem;
+  }
+
+  .mvvRow {
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mvvCard {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .mvvCard h3 {
+    font-size: 1.1rem;
+  }
+
+  .mvvCard p,
+  .mvvList {
+    font-size: 0.9rem;
+  }
+
+  .mvvIcon {
+    width: 34px;
+    height: 34px;
   }
 }
