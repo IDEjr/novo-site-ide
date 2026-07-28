@@ -94,15 +94,15 @@
 }
 
 .inputField .inputError {
-  box-shadow: 0 0 0 1px #ff3b3b;
+  box-shadow: 0 0 0 1px #c81c1c;
 }
 
 .inputField .inputError:focus {
-  box-shadow: 0 0 0 1.2px #ff3b3b;
+  box-shadow: 0 0 0 1.2px #c81c1c;
 }
 
 .error {
-  color: #ff3b3b;
+  color: #c81c1c;
   font-size: 0.85rem;
   font-weight: 500;
   margin-top: 3px;
@@ -137,6 +137,50 @@
 
 .submitBtn:active {
   transform: translateY(0);
+}
+
+.successMessage {
+  margin-top: 1.5rem;
+  border: 1px solid #17542f;
+  background-color: rgb(252 250 255 / 0.6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.successTitle {
+  font-weight: 500;
+  font-size: 18px;
+  color: #17542f;
+  margin-bottom: 0.25rem;
+}
+
+.formContainer .successText {
+  font-size: 16px;
+  font-weight: 300;
+  color: #17542f;
+  margin-bottom: 0px;
+}
+
+.errorMessage {
+  margin-top: 1.5rem;
+  border: 1px solid #c81c1c;
+  background-color: rgb(252 250 255 / 0.6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.errorTitle {
+  font-weight: 500;
+  font-size: 18px;
+  color: #c81c1c;
+  margin-bottom: 0.25rem;
+}
+
+.formContainer .errorText {
+  font-size: 16px;
+  font-weight: 300;
+  color: #c81c1c;
+  margin-bottom: 0px;
 }
 
 @media (max-width: 992px) {

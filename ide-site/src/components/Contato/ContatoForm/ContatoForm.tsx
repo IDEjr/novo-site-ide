@@ -1,34 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ContatoSchema, ContatoFormData } from "@/src/schemas/contato";
+import { sendEmailAction } from '@/src/actions/enviar-email';
 import Image from "next/image";
 import styles from "./ContatoForm.module.css";
 
-const ContatoSchema = z.object({
-  nome: z.string().trim().min(1, { message: "Por favor, informe seu nome" }),
-  email: z
-    .string({ error: "Por favor, informe seu e-mail" })
-    .min(1, { message: "Por favor, informe seu e-mail" })
-    .pipe(z.email({ message: "Por favor, digite um e-mail válido" })),
-  assunto: z.string().min(1, { message: "Por favor, informe o assunto" }),
-  mensagem: z.string().min(1, { message: "Por favor, informe a mensagem" }),
-});
-
-type ContatoFormData = z.infer<typeof ContatoSchema>;
-
 export default function ContatoForm() {
+
+  const [status, setStatus] = useState<{
+    success?: boolean;
+    error?: string | null;
+  }>({});
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContatoFormData>({
     resolver: zodResolver(ContatoSchema),
   });
 
-  const onSubmit = (data: ContatoFormData) => {
-    console.log(data);
+  const onSubmit = async (data: ContatoFormData) => {
+    setStatus({});
+
+    const result = await sendEmailAction(data);
+
+    if (result.success) {
+      setStatus({ success: true });
+      reset();
+    } else {
+      setStatus({ error: 'Ocorreu um erro ao enviar o formulário.' });
+    }
   };
 
   return (
@@ -118,6 +124,25 @@ export default function ContatoForm() {
             <span>ENVIAR</span>
           </button>
         </form>
+
+        {status.success && (
+          <div className={styles.successMessage}>
+            <h3 className={styles.successTitle}>
+              Mensagem enviada com sucesso!
+            </h3>
+            <p className={styles.successText}>
+              Enviamos uma confirmação para o e-mail preenchido no formulário.
+            </p>
+          </div>
+        )}
+
+        {status.error && (
+          <div className={styles.errorMessage}>
+            <h3 className={styles.errorTitle}>Erro</h3>
+            <p className={styles.errorText}>{status.error}</p>
+          </div>
+        )}
+
       </div>
     </section>
   );
