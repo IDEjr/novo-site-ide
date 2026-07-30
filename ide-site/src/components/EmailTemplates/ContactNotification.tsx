@@ -34,7 +34,7 @@ export function ContactNotificationEmail({
           <Container className="mx-auto py-12 px-4 max-w-xl">
             <div className="bg-purple-50 border border-solid border-purple-200 rounded-md p-4 mb-6">
               <Text className="text-sm text-purple-800 m-0">
-                Nova submissão do formulário de contato do site!
+                Nova mensagem recebida pelo formulário do site!
               </Text>
             </div>
 
