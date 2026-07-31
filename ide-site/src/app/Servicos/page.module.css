@@ -1,0 +1,27 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1920px;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 4rem 8rem 1rem 8rem;
+}
+
+.hero h1 {
+  margin: 0 0 2rem;
+
+  background: linear-gradient(180deg, #FFFFFF 0%, #45AC34 100%);
+    
+  -webkit-background-clip: text;
+  background-clip: text;
+    
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1200px) {
+
+  .hero {
+    padding: 4rem clamp(1rem, 4vw, 4rem) 1rem clamp(1rem, 4vw, 4rem);
+  }
+}

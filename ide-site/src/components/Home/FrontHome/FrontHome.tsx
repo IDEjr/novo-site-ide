@@ -1,13 +1,25 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './FrontHome.module.css';
+import Typewriter from '../../Typewriter/Typewriter';
+
+const words = [
+  "Futuro.",
+  "Referência.",
+  "Sucesso.",
+  "Inovavação.",
+  "Evolução."
+];
+
 
 export default function FrontHome() {
   return (
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h1>
-          Transformamos Código em <span className={styles.highlight}>Impacto</span>.
+          Transformamos Código em{" "}
+          <span className={styles.typewriter}>
+            <Typewriter words={words} />
+          </span>
         </h1>
 
         <p>
@@ -16,22 +28,14 @@ export default function FrontHome() {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/contato" className={`${styles.button} ${styles.buttonPrimary}`}>
+          <Link href="/Contato" className={`${styles.button} ${styles.buttonPrimary}`}>
             Fale Conosco
           </Link>
-          <Link href="/portfolio" className={`${styles.button} ${styles.buttonSecondary}`}>
+          <Link href="/Portfolio" className={`${styles.button} ${styles.buttonSecondary}`}>
             Ver Portfólio
           </Link>
         </div>
       </div>
-
-      <Image
-        src="/imagens/detail-front.png"
-        alt="Detalhe frontal"
-        className={styles.heroImage}
-        width={800}
-        height={700}
-      />
     </section>
   );
 }

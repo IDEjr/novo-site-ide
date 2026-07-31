@@ -1,0 +1,124 @@
+.content {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+
+  padding: 4rem 0;
+}
+
+.textContent {
+  flex: 1;
+  max-width: 540px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.textContent h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  text-align: left;
+}
+
+.highlight {
+  color: #38a2ff;
+}
+
+.textContent p {
+  margin: 0;
+  max-width: 420px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.imageContainer {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 900px) {
+  .content {
+    gap: 2.5rem;
+  }
+
+  .heroImage {
+    max-width: 420px;
+  }
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .textContent {
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .textContent h1 {
+    text-align: left;
+  }
+
+  .textContent p {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .imageContainer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .heroImage {
+    width: min(90vw, 420px);
+    height: auto;
+  }
+}
+
+/* ---------- Celulares pequenos ---------- */
+
+@media (max-width: 480px) {
+  .content {
+    width: min(100%, calc(100% - 1.5rem));
+    gap: 2rem;
+    padding: 2.5rem 0;
+  }
+
+  .textContent h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .textContent p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .heroImage {
+    width: min(95vw, 320px);
+  }
+}

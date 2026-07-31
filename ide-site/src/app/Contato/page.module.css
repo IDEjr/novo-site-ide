@@ -1,0 +1,16 @@
+.mainContato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(1280px, calc(100% - 2rem));
+
+    margin: 0 auto;
+    padding: 1rem 0rem;
+    gap: clamp(4rem, 7vw, 7rem);
+}
+
+@media (max-width: 992px) {
+  .mainContato {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,193 @@
+.timelineSection {
+  width: 100%;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 1rem 4rem;
+}
+
+/* HEADER */
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.overline {
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #38a2ff;
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ITEM */
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.left {
+  justify-content: flex-start;
+  padding-right: 60px;
+}
+
+.right {
+  justify-content: flex-end;
+  padding-left: 60px;
+}
+
+/* CARD */
+
+.content {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 1.8rem 1.6rem;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  transition: .25s;
+}
+
+.content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.2);
+}
+
+.year {
+  margin-bottom: .6rem;
+  color: #38a2ff;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.content h3 {
+  margin: 0 0 .8rem;
+  color: white;
+}
+
+.content p {
+  margin: 0;
+  color: rgba(255,255,255,.82);
+  line-height: 1.7;
+}
+
+/* MARCADOR */
+
+.marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+  background: white;
+
+  display: grid;
+  place-items: center;
+
+  z-index: 2;
+}
+
+.marker::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #38a2ff;
+}
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+@media (max-width: 950px) {
+
+  .timeline {
+    gap: 5rem;          /* maior espaço entre os eventos */
+  }
+
+  .timeline::before {
+    left: 1.5rem;
+    transform: none;
+  }
+
+  .item {
+    justify-content: flex-start !important;
+    padding: 0 !important;
+  }
+
+  .left,
+  .right {
+    padding: 0;
+  }
+
+  .marker {
+    left: 1.5rem;
+    transform: translateY(-50%);
+  }
+
+  .content {
+    margin-left: 5rem;   /* afasta o card da linha */
+    max-width: 600px;
+  }
+}
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .timeline {
+    gap: 3.5rem;
+  }
+
+  .timeline::before {
+    left: 1.2rem;
+  }
+
+  .marker {
+    left: 1.2rem;
+  }
+
+  .content {
+    margin-left: 3rem;
+    max-width: 100%;
+  }
+}
