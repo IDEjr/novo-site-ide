@@ -14,7 +14,7 @@ export default function ContatoInfo() {
 
                 <div className={styles.iconBox}>
                     <Image
-                        src="/imagens/locIcon.svg"
+                        src="/imagens/imgContato/locIcon.svg"
                         alt="Ícone de localização"
                         width={56}
                         height={56}                            
@@ -40,7 +40,7 @@ export default function ContatoInfo() {
 
                 <div className={styles.iconBox}>
                     <Image
-                        src="/imagens/shareIcon.svg"
+                        src="/imagens/imgContato/shareIcon.svg"
                         alt="Ícone de compartilhamento"
                         width={56}
                         height={56}                            
@@ -57,7 +57,7 @@ export default function ContatoInfo() {
                             rel="noopener noreferrer"
                         >
                             <Image
-                                src="/imagens/linkedinIcon.png"
+                                src="/imagens/imgContato/linkedinIcon.svg"
                                 alt="Ícone do linkedin"
                                 width={35}
                                 height={35}                            
@@ -70,7 +70,7 @@ export default function ContatoInfo() {
                             rel="noopener noreferrer"
                         >
                             <Image
-                                src="/imagens/instaIcon.png"
+                                src="/imagens/imgContato/instaIcon.svg"
                                 alt="Ícone do instagram"
                                 width={35}
                                 height={35}                            
