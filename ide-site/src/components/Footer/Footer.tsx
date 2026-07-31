@@ -30,9 +30,9 @@ export default function Footer() {
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/quem-somos">Quem somos</Link></li>
                         <li><Link href="/servicos">Serviços</Link></li>
-                        <li><Link href="/servicos">Blog</Link></li>
+                        <li><Link href="/blog">Blog</Link></li>
                         <li><Link href="/portfolio">Portfólio</Link></li>
-                        <li><Link href="/servicos">Contato</Link></li>
+                        <li><Link href="/contato">Contato</Link></li>
                     </ul>
                 </nav>
 
