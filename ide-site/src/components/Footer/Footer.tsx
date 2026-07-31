@@ -39,36 +39,48 @@ export default function Footer() {
 
                     <ul className={styles.menu}>
                         <li>
-                            <Link href="tel:+5551999999999">
-                                <Image
-                                    src="/imagens/whatsapp.svg"
-                                    alt="Ícone do WhatsApp"
+                            <Link 
+                                href="mailto:contato@idejr.com.br"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image 
+                                    src="/imagens/email.svg"
+                                    alt="Ícone do Email"
                                     width={24}
-                                    height={24}                            
+                                    height={24}
                                 />
-                            <span>(51) 99999-9999</span>    
+                                <span>contato@idejr.com.br</span>
                             </Link>
                         </li>
                         <li>
-                            <Link href="https://www.instagram.com/ide_jr">
+                            <Link 
+                                href="https://www.instagram.com/ide_jr"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <Image 
                                     src="/imagens/instagram.svg"
                                     alt="Ícone do Instagram"
                                     width={24}
                                     height={24}
                                 />
-                            <span>ide_jr</span>
+                                <span>@ide_jr</span>
                             </Link>
                         </li>
                         <li>
-                            <Link href="mailto:contato@idejr.com.br">
-                                <Image 
-                                    src="/imagens/email.png"
-                                    alt="Ícone do Email"
+                            <Link 
+                                href="https://www.linkedin.com/company/empresa-j%C3%BAnior-ide"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src="/imagens/linkedinBranco.svg"
+                                    alt="Ícone do WhatsApp"
                                     width={24}
-                                    height={24}
+                                    height={24}                            
                                 />
-                            <span>contato@idejr.com.br</span>
+                                <span>Empresa Júnior IDE</span>    
                             </Link>
                         </li>
                     </ul>        
@@ -78,7 +90,14 @@ export default function Footer() {
                     <h3>Endereço</h3>
 
                     <ul className={styles.menu}>
-                        <li><Link href="https://maps.app.goo.gl/qQxNcJeAiyBLgDT36">Av. Bento Gonçalves, 9500 - Agronomia,<br></br>Porto Alegre - RS, 91509-900</Link></li>
+                        <li>
+                            <Link 
+                                href="https://maps.app.goo.gl/qQxNcJeAiyBLgDT36"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Av. Bento Gonçalves, 9500 - Agronomia,<br></br>Porto Alegre - RS, 91509-900
+                            </Link>
+                        </li>
                     </ul> 
                 </div>
             </div>
