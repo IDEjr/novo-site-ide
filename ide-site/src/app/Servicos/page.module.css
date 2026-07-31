@@ -1,7 +1,10 @@
 .hero {
   min-height: 100vh;
   width: 100%;
+  max-width: 1920px;
+  align-items: center;
 
+  margin: 0 auto;
   padding: 4rem 8rem 1rem 8rem;
 }
 

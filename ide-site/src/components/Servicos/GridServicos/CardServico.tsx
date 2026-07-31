@@ -14,9 +14,9 @@ export default function CardServico({ iconeSrc, titulo, descricao, tecnologias }
         <div className={styles.cardIcone}>
             <Image 
                 src={iconeSrc} 
-                alt={"Ícone representativo de ${titulo}"} 
-                width={94}
-                height={94} 
+                alt={`Ícone representativo de ${titulo}`} 
+                width={90}
+                height={90} 
                 className={styles.icone}
             />
         </div>
