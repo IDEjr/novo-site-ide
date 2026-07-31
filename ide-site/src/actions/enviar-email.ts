@@ -1,8 +1,8 @@
 "use server";
 
 import { Resend } from "resend";
-import { ContatoSchema, ContatoFormData } from "@/src/schemas/contato";
-import { env } from "@/src/env";
+import { ContatoSchema, ContatoFormData } from "@/schemas/contato";
+import { env } from "@/env";
 import { ContactConfirmationEmail } from "../components/EmailTemplates/ContactConfirmation";
 import { ContactNotificationEmail } from "../components/EmailTemplates/ContactNotification";
 

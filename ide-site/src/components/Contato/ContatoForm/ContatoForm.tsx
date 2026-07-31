@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ContatoSchema, ContatoFormData } from "@/src/schemas/contato";
-import { sendEmailAction } from '@/src/actions/enviar-email';
+import { ContatoSchema, ContatoFormData } from "@/schemas/contato";
+import { sendEmailAction } from '@/actions/enviar-email';
 import Image from "next/image";
 import styles from "./ContatoForm.module.css";
 

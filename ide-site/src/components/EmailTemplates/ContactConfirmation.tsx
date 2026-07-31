@@ -20,7 +20,7 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import { ContatoFormData } from '@/src/schemas/contato';
+import { ContatoFormData } from '@/schemas/contato';
 
 const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 

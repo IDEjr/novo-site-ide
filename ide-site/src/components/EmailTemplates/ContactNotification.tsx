@@ -16,7 +16,7 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import { ContatoFormData } from '@/src/schemas/contato';
+import { ContatoFormData } from '@/schemas/contato';
 
 export function ContactNotificationEmail({
   nome,
