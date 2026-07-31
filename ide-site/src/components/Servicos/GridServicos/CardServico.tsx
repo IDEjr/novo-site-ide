@@ -1,11 +1,16 @@
 import Image from 'next/image';
 import styles from './CardServico.module.css';
 
+type Tecnologia = {
+    nome: string;
+    imgSrc: string;
+};
+
 type CardServicoProps = {
     iconeSrc: string;
     titulo: string;
     descricao: string;
-    tecnologias: string[];
+    tecnologias: Tecnologia[];
 };
 
 export default function CardServico({ iconeSrc, titulo, descricao, tecnologias }: CardServicoProps) {
@@ -28,8 +33,15 @@ export default function CardServico({ iconeSrc, titulo, descricao, tecnologias }
 
         <div className={styles.cardTecnologias}>
             {tecnologias.map((tech) => (
-                <span key={tech} className={styles.tag}>
-                    {tech}
+                <span key={tech.nome} className={styles.tag}>
+                    <Image 
+                        src={tech.imgSrc} 
+                        alt={`Ícone da tecnologia ${tech.nome}`}
+                        width={16} 
+                        height={16} 
+                        className={styles.tagIcone}
+                    />
+                    {tech.nome}
                 </span>
             ))}
         </div>
