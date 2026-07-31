@@ -48,6 +48,16 @@ export default function Background() {
           curvature: -0.1,
         };
 
+        case "/Servicos":
+        return {
+          tint: "#521bd3",
+          scale: 1,
+          timeScale: 4,
+          scanlineIntensity: 0,
+          curvature: 4,
+        };
+
+
       default:
         return {
           tint: "#7b00ff",
