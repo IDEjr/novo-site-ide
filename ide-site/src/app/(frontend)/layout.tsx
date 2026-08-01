@@ -1,7 +1,7 @@
 import './globals.css';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import Background from "../components/Background/Background";
+import Navbar from '@/components/Navbar/Navbar';
+import Footer from '@/components/Footer/Footer';
+import Background from '@/components/Background/Background';
 import { Dela_Gothic_One, Bai_Jamjuree, Open_Sans } from 'next/font/google';
 
 const delta_gothic_one = Dela_Gothic_One({
