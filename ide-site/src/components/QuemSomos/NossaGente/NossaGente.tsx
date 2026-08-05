@@ -4,42 +4,86 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./NossaGente.module.css";
 
-const roles = ["Presidente", "Vice-presidente", "Diretor de Financeiro", 
-"Diretor de Marketing", "Diretor de Projetos", "Diretor de Relações Públicas",
-"Diretor de Recursos Humanos", "Diretor de Comercial"];
-
 const yearCollections = [
   {
     year: "2026/2",
     integrantes: [
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
+      { nome: "Pedro Müller", cargo: "Presidente", image: "/imagens/sapo-ide.png" },
+      { nome: "João Carlos Batista", cargo: "Vice-Presidente", image: "/imagens/sapo-ide.png" },
+      { nome: "Giovanni Milanez", cargo: "Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "João Pedro Alves", cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Leonardo Rocha", cargo: "Diretor de Projetos" , image: "/imagens/sapo-ide.png" },
+      { nome: "Luís Macedo", cargo: "Diretor de Relações Públicas" ,image: "/imagens/sapo-ide.png" },
+      { nome: "Kelvin Schaun", cargo: "Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Bruno Delgiovo", cargo: "Diretor de Comercial" , image: "/imagens/sapo-ide.png" },
+    ],
+  },
+  {
+    year: "2026/1",
+    integrantes: [
+      { nome: "João Carlos Batista",cargo: "Presidente", image: "/imagens/sapo-ide.png" },
+      { nome: "Giovanni Milanez", cargo: "Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "João Pedro Alves", cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Miguel Dutra", cargo: "Diretor de Projetos", image: "/imagens/sapo-ide.png" },
+      { nome: "Arthur Andrade", cargo: "Diretor de Relações Acadêmicas", image: "/imagens/sapo-ide.png" },
+      { nome: "Pedro Müller", cargo: "Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Bruno Souza", cargo: "Diretor de Comercial",image: "/imagens/sapo-ide.png" },
     ],
   },
   {
     year: "2025/2",
     integrantes: [
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
+      { nome: "João Carlos Batista", cargo: "Presidente", image: "/imagens/sapo-ide.png" },
+      { nome: "Angelo Oliveira", cargo: "Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "Rafaela Rembold", cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Ricardo Zanini", cargo: "Diretor de Projetos", image: "/imagens/sapo-ide.png" },
+      { nome: "Arthur Andrade", cargo: "Diretor de Relações Acadêmicas", image: "/imagens/sapo-ide.png" },
+      { nome: "Ana Cláudia Rodrigues", cargo: "Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Bruno Souza", cargo: "Diretor de Comercial", image: "/imagens/sapo-ide.png" },
     ],
   },
+  {
+    year: "2025/1",
+    integrantes: [
+      { nome: "Luca Pasquetti",cargo: "Presidente", image: "/imagens/sapo-ide.png" },
+      { nome: "Luiz Henrique de Ramos",cargo: "Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "André Klarmann",cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Bernardo Cobalchini", cargo: "Diretor de Projetos", image: "/imagens/sapo-ide.png" },
+      { nome: "Gabriel Welter", cargo: "Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Lucas Leal", cargo: "Diretor de Comercial", image: "/imagens/sapo-ide.png" },
+    ],
+  },
+  {
+    year: "2024/2",
+    integrantes: [
+      { nome: "Gabriel Welter",cargo: "Presidente e Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Luiz Henrique de Ramos",cargo: "Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "Luca Boni",cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Luca Pasquetti",cargo: "Diretor de Projetos", image: "/imagens/sapo-ide.png" },
+      { nome: "Lucas Leal",cargo: "Diretor de Comercial", image: "/imagens/sapo-ide.png" },
+    ],
+  },
+  {
+    year: "2024/1",
+    integrantes: [
+      { nome: "Pedro Henrique Colle",cargo: "Presidente e Diretor do Financeiro", image: "/imagens/sapo-ide.png" },
+      { nome: "Gleydson Sousa",cargo: "Diretor de Marketing", image: "/imagens/sapo-ide.png" },
+      { nome: "Leonardo Gonzatti", cargo: "Diretor de Projetos", image: "/imagens/sapo-ide.png" },
+      { nome: "Bruno Hofstetter",cargo: "Diretor de Recursos Humanos",  image: "/imagens/sapo-ide.png" },
+      { nome: "Vítor Hugo", cargo: "Diretor de Comercial", image: "/imagens/sapo-ide.png" },
+    ],
+  },
+
+
 ];
 
-const buildItems = (integrantes: { nome: string; image: string }[]) =>
-  roles.map((role, index) => ({
-    integrante: integrantes[index]?.nome ?? "Fulano",
-    title: role,
-    image: integrantes[index]?.image ?? "/imagens/sapo-ide.png",
-  }));
-
 export default function NossaGente() {
-  const [selectedYear, setSelectedYear] = useState("2025/2");
+  const [selectedYear, setSelectedYear] = useState("2026/2");
+
   const activeCollection =
-    yearCollections.find((collection) => collection.year === selectedYear) ??
-    yearCollections[0];
-  const activeItems = buildItems(activeCollection.integrantes);
+    yearCollections.find(
+      (collection) => collection.year === selectedYear
+    ) ?? yearCollections[0];
 
   return (
     <section className={styles.section}>
@@ -60,7 +104,9 @@ export default function NossaGente() {
             <button
               key={collection.year}
               type="button"
-              className={`${styles.yearButton} ${isActive ? styles.active : ""}`}
+              className={`${styles.yearButton} ${
+                isActive ? styles.active : ""
+              }`}
               onClick={() => setSelectedYear(collection.year)}
             >
               {collection.year}
@@ -70,20 +116,23 @@ export default function NossaGente() {
       </div>
 
       <div className={styles.cardsWrapper}>
-        {activeItems.map((item) => (
-          <article key={item.title} className={styles.card}>
+        {activeCollection.integrantes.map((integrante) => (
+          <article
+            key={`${integrante.nome}-${integrante.cargo}`}
+            className={styles.card}
+          >
             <div className={styles.imageWrap}>
               <Image
-                src={item.image}
-                alt={item.title}
+                src={integrante.image}
+                alt={integrante.nome}
                 fill
                 sizes="(max-width: 768px) 80vw, 220px"
               />
             </div>
 
             <div className={styles.cardContent}>
-              <h3>{item.integrante}</h3>
-              <p>{item.title}</p>
+              <h3>{integrante.nome}</h3>
+              <p>{integrante.cargo}</p>
             </div>
           </article>
         ))}
