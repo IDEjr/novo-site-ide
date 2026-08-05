@@ -38,7 +38,7 @@ const yearCollections = [
       { nome: "Rafaela Rembold", cargo: "Diretor de Marketing", image: "/imagens/gestoes/25-2/rafaela-rembold.png" },
       { nome: "Ricardo Zanini", cargo: "Diretor de Projetos", image: "/imagens/gestoes/25-2/ricardo-zanini.png" },
       { nome: "Arthur Andrade", cargo: "Diretor de Relações Acadêmicas", image: "/imagens/gestoes/26-1/arthur-andrade.png" },
-      { nome: "Ana Cláudia Rodrigues", cargo: "Diretor de Recursos Humanos", image: "/imagens/sapo-ide.png" },
+      { nome: "Ana Cláudia Rodrigues", cargo: "Diretor de Recursos Humanos", image: "/imagens/gestoes/25-2/ana-claudia.png" },
       { nome: "Bruno Souza", cargo: "Diretor de Comercial", image: "/imagens/gestoes/26-1/bruno-souza.png" },
     ],
   },
