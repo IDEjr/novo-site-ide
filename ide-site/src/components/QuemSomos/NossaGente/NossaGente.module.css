@@ -118,7 +118,8 @@
 }
 
 .imageWrap img {
-  object-fit: cover;
+  object-fit: contain;
+  
 }
 
 .cardContent {
