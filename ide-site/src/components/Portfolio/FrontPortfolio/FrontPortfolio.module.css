@@ -55,7 +55,7 @@
 }
 
 .heroImage {
-  width: clamp(260px, 26vw, 340px);
+  width: clamp(320px, 26vw, 340px);
   height: auto;
 
   object-fit: contain;

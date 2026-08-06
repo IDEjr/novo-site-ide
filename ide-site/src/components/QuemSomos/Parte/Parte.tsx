@@ -27,10 +27,10 @@ export default function Parte() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/imagens/sapo-ide.png"
+            src="/imagens/sapo-anuncio.png"
             alt="Sapo IDE"
-            width={420}
-            height={420}
+            width={820}
+            height={820}
             className={styles.image}
           />
         </div>

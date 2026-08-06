@@ -17,7 +17,7 @@ export default function FrontPortfolio() {
       </div>
 
       <Image
-        src="/imagens/gato-ide.png"
+        src="/imagens/sapo-projeto.png"
         alt="Ilustração do gato da IDE"
         className={styles.heroImage}
         width={640}

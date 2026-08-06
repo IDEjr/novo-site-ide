@@ -6,7 +6,7 @@ const words = [
   "Futuro.",
   "Referência.",
   "Sucesso.",
-  "Inovavação.",
+  "Inovação.",
   "Evolução."
 ];
 
