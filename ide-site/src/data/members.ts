@@ -292,7 +292,7 @@ export const yearCollections = [
       {
         nome: "Renato Araujo Silveira",
         cargo: "Diretor de Projetos",
-        image: "/imagens/sapo-ide.png",
+        image: "/imagens/gestoes/22-2/renato-araujo.png",
       },
       {
         nome: "Lucas Mariano Leipnitz de Fraga",
