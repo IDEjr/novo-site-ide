@@ -39,6 +39,15 @@ const projetos = [
     grande: true,
     link: "https://www.faiscadesignjr.com.br/",
   },
+  {
+    id: 5,
+    nome: "Site da FIRE",
+    descricao:
+      "Site institucional da Fire Investigation, Research & Engineering, grupo de pesquisa dedicado aos estudos e aplicações da engenharia de segurança contra incêndios.",
+    imagem: "/imagens/projetos/fireLogo.png",
+    grande: true,
+    link: "https://www.ufrgs.br/fire/",
+  },
 ];
 
 export default function Projetos() {
