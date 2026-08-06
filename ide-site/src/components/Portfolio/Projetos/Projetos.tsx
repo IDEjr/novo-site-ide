@@ -64,6 +64,7 @@ export default function Projetos() {
                 src={projeto.imagem}
                 alt={projeto.nome}
                 fill
+                priority
                 sizes={
                   projeto.grande
                     ? "(max-width: 900px) 520px, 66vw"
