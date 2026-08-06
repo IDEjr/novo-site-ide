@@ -13,13 +13,13 @@ export default function CategoryFilter({
 }) {
   return (
     <nav className={styles.filter} aria-label="Filtrar por categoria">
-      <Link href="/blog" className={!activeSlug ? styles.linkActive : styles.link}>
+      <Link href="/Blog" className={!activeSlug ? styles.linkActive : styles.link}>
         Todos
       </Link>
       {categories.map((category) => (
         <Link
           key={category.id}
-          href={`/blog?categoria=${category.slug}`}
+          href={`/Blog?categoria=${category.slug}`}
           className={activeSlug === category.slug ? styles.linkActive : styles.link}
         >
           {category.title}

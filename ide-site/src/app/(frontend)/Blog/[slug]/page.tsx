@@ -61,7 +61,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <div className={styles.page}>
       <article className={styles.article}>
-        <Link href="/blog" className={styles.back}>
+        <Link href="/Blog" className={styles.back}>
           &larr; Voltar para o blog
         </Link>
 

@@ -11,7 +11,7 @@ export default function PostCard({ post }: { post: PopulatedPost }) {
   const category = post.categories?.[0]
 
   return (
-    <Link href={`/blog/${post.slug}`} className={styles.card}>
+    <Link href={`/Blog/${post.slug}`} className={styles.card}>
       <div className={styles.imageWrapper}>
         {imageUrl && (
           <Image

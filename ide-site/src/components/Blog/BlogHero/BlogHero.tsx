@@ -18,7 +18,7 @@ export default function BlogHero({ post }: { post: PopulatedPost }) {
     <div className={styles.hero}>
       <h1 className={styles.title}>Por dentro da IDE</h1>
 
-      <Link href={`/blog/${post.slug}`} className={styles.featured}>
+      <Link href={`/Blog/${post.slug}`} className={styles.featured}>
         <div className={styles.imageWrapper}>
           {imageUrl && (
             <Image

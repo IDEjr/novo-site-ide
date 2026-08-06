@@ -62,7 +62,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   })
   const posts = postsResult.docs as PopulatedPost[]
 
-  const nextPageHref = `/blog?${categoria ? `categoria=${categoria}&` : ''}page=${currentPage + 1}`
+  const nextPageHref = `/Blog?${categoria ? `categoria=${categoria}&` : ''}page=${currentPage + 1}`
 
   return (
     <div className={styles.page}>
@@ -77,7 +77,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           ))}
         </div>
       ) : (
-        <p className={styles.empty}>Nenhum post publicado ainda.</p>
+        !featuredPost && <p className={styles.empty}>Nenhum post publicado ainda.</p>
       )}
 
       {postsResult.hasNextPage && (
