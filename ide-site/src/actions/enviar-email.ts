@@ -25,6 +25,7 @@ export async function sendEmailAction(data: ContatoFormData) {
       {
         from: fromEmail,
         to: [email],
+        replyTo: contactEmail,
         subject: "Recebemos sua mensagem - IDE",
         react: ContactConfirmationEmail({ nome, email, assunto, mensagem }),
       },
