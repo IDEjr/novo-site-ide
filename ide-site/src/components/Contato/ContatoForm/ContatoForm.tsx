@@ -10,10 +10,7 @@ import styles from "./ContatoForm.module.css";
 
 export default function ContatoForm() {
 
-  const [status, setStatus] = useState<{
-    success?: boolean;
-    error?: string | null;
-  }>({});
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const {
     register,
@@ -25,15 +22,20 @@ export default function ContatoForm() {
   });
 
   const onSubmit = async (data: ContatoFormData) => {
-    setStatus({});
+    setStatus('idle');
 
     const result = await sendEmailAction(data);
 
     if (result.success) {
-      setStatus({ success: true });
-      reset();
+      setStatus('success');
+      reset({
+        nome: "",
+        email: "",
+        assunto: "",
+        mensagem: ""
+      });
     } else {
-      setStatus({ error: 'Ocorreu um erro ao enviar o formulário.' });
+      setStatus('error');
     }
   };
 
@@ -125,21 +127,49 @@ export default function ContatoForm() {
           </button>
         </form>
 
-        {status.success && (
+        {status === 'success' && (
           <div className={styles.successMessage}>
-            <h3 className={styles.successTitle}>
-              Mensagem enviada com sucesso!
-            </h3>
-            <p className={styles.successText}>
-              Enviamos uma confirmação para o e-mail preenchido no formulário.
-            </p>
+
+            <Image
+              src="/imagens/imgContato/successIcon.svg"
+              alt="Ícone de sucesso de envio do formulário."
+              width={42}
+              height={42}                            
+            />
+
+            <div className={styles.messageText}>
+              <h3 className={styles.successTitle}>
+                Mensagem enviada com sucesso!
+              </h3>
+
+              <p className={styles.successText}>
+                Enviamos uma confirmação para o e-mail preenchido no formulário.
+              </p>
+            </div>
+
           </div>
         )}
 
-        {status.error && (
+        {status === 'error' && (
           <div className={styles.errorMessage}>
-            <h3 className={styles.errorTitle}>Erro</h3>
-            <p className={styles.errorText}>{status.error}</p>
+
+            <Image
+              src="/imagens/imgContato/errorIcon.svg"
+              alt="Ícone de erro de envio do formulário."
+              width={42}
+              height={42}                            
+            />
+
+            <div className={styles.messageText}>
+              <h3 className={styles.errorTitle}>
+                Erro
+              </h3>
+
+              <p className={styles.errorText}>
+                Ocorreu um erro ao enviar o formulário.
+              </p>
+            </div>
+
           </div>
         )}
 

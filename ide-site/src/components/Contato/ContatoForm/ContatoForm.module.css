@@ -11,19 +11,15 @@
   border-radius: 40px;
   border: 1px solid transparent;
 
-  background-image:
-    linear-gradient(#4c157e, #4c157e),
-    linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.3) 35%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.3) 65%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
-
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  background: linear-gradient(
+    135deg,
+    rgba(119, 38, 189, 0.4),
+    rgba(119, 38, 189, 0.4)
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(92, 44, 157, 0.16);
 
   padding: 1.5rem 2rem 6rem 2rem;
 }
@@ -140,11 +136,22 @@
 }
 
 .successMessage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-top: 1.5rem;
+  padding: 0.8rem;
+
   border: 1px solid #17542f;
-  background-color: rgb(252 250 255 / 0.6);
-  border-radius: 0.5rem;
-  padding: 1rem;
+    background: linear-gradient(
+    135deg,
+    rgb(252 250 255 / 0.8),
+    rgb(252 250 255 / 0.8)
+  );
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(92, 44, 157, 0.16);
+  border-radius: 16px;
 }
 
 .successTitle {
@@ -162,11 +169,22 @@
 }
 
 .errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-top: 1.5rem;
+  padding: 0.8rem;
+
   border: 1px solid #c81c1c;
-  background-color: rgb(252 250 255 / 0.6);
-  border-radius: 0.5rem;
-  padding: 1rem;
+    background: linear-gradient(
+    135deg,
+    rgb(252 250 255 / 0.8),
+    rgb(252 250 255 / 0.8)
+  );
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(92, 44, 157, 0.16);
+  border-radius: 16px;
 }
 
 .errorTitle {
