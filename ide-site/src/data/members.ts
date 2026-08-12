@@ -550,4 +550,74 @@ export const yearCollections = [
       },
     ],
   },
+ {
+    year: "2017/2",
+    integrantes: [
+      {
+        nome: "Gabriel Zilmer",
+        cargo: "Presidente e Diretor de Financeiro",
+        image: "/imagens/gestoes/17/gabriel-zilmer.png",
+      },
+      {
+        nome: "Lucas Valandro da Rocha",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/18-1/lucas-valandro.png",
+      },
+    ],
+  },
+ {
+    year: "2017/1",
+    integrantes: [
+      {
+        nome: "Henrique Pchara",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/17/henrique-pchara.png",
+      },
+      {
+        nome: "Gabriel Zilmer",
+        cargo: "Diretor de Financeiro",
+        image: "/imagens/gestoes/17/gabriel-zilmer.png",
+      },
+      {
+        nome: "Lucas Souza",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/sapo-ide.png",
+      },
+      {
+        nome: "Lucas Valandro da Rocha",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/18-1/lucas-valandro.png",
+      },
+    ],
+  },
+ {
+    year: "2016",
+    integrantes: [
+      {
+        nome: "Henrique Pchara",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/17/henrique-pchara.png",
+      },
+      {
+        nome: "Gabriel Zilmer",
+        cargo: "Diretor de Financeiro",
+        image: "/imagens/gestoes/17/gabriel-zilmer.png",
+      },
+      {
+        nome: "Leonardo Dalcin",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/16/Leonardo-Vogel.jpg",
+      },
+      {
+        nome: "Camila Maffi",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/16/camila-maffi.jpg",
+      },
+      {
+        nome: "Lucas Valandro da Rocha",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/18-1/lucas-valandro.png",
+      },
+    ],
+  },
 ];
