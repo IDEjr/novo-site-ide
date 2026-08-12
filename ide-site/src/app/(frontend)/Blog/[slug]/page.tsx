@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
 import { getPayloadClient } from '@/lib/payload'
+import { blogConverters } from '@/lib/blog-richtext'
 import type { PopulatedPost } from '@/lib/blog-types'
 
 import styles from './page.module.css'
@@ -100,7 +101,10 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         )}
 
-        <RichText data={post.content} className={styles.content} />
+        {/* Nao usar `disableTextAlign`: a forma de array e ignorada pelo converter do
+            Payload e acaba desligando o alinhamento de todos os nos. O textAlign que ele
+            injeta no <figure> das imagens e inofensivo -- ver RichTextImage. */}
+        <RichText data={post.content} converters={blogConverters} className={styles.content} />
       </article>
     </div>
   )
