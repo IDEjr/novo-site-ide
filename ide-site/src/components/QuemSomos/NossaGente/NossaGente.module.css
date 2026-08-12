@@ -5,10 +5,16 @@
   border-radius: 32px;
   position: relative;
   overflow: hidden;
+
   background:
-    radial-gradient(circle at top left, rgba(71, 37, 124, 0.34), transparent 30%),
-    radial-gradient(circle at bottom right, #491f6d , transparent 32%),
+    radial-gradient(
+      circle at top left,
+      rgba(71, 37, 124, 0.34),
+      transparent 30%
+    ),
+    radial-gradient(circle at bottom right, #491f6d, transparent 32%),
     linear-gradient(135deg, #2d0a56 0%, #230b36 48%, #6b2ea0 100%);
+
   backdrop-filter: blur(16px);
   box-shadow: 0 24px 70px rgba(24, 6, 44, 0.34);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -18,7 +24,14 @@
   content: "";
   position: absolute;
   inset: -30%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 24%, transparent 54%);
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.05) 24%,
+    transparent 54%
+  );
+
   animation: pulseGlow 8s ease-in-out infinite alternate;
   pointer-events: none;
 }
@@ -28,11 +41,14 @@
     transform: translate(-6%, -4%) scale(0.95);
     opacity: 0.7;
   }
+
   100% {
     transform: translate(6%, 4%) scale(1.08);
     opacity: 1;
   }
 }
+
+/* HEADER */
 
 .header {
   margin-bottom: 1.4rem;
@@ -56,36 +72,183 @@
   font-size: 1rem;
 }
 
-.yearSelector {
+/* DROPDOWN */
+
+.selectorWrapper {
+  position: relative;
+  z-index: 10;
+
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.25rem;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin-bottom: 1.5rem;
 }
 
-.yearButton {
-  border: 1px solid rgba(93, 255, 217, 0.18);
-  border-radius: 999px;
-  padding: 0.7rem 1rem;
-  cursor: pointer;
-  font-weight: 700;
+.selectorLabel {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: relative;
+  width: 220px;
+}
+
+.dropdownButton {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid rgba(93, 255, 217, 0.25);
+  border-radius: 14px;
+
+  color: #ffffff;
+  background: rgba(9, 24, 42, 0.7);
+
+  backdrop-filter: blur(14px);
+
+  font: inherit;
   font-size: 0.95rem;
-  color: white;
-  background: rgba(9, 24, 42, 0.65);
-  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.yearButton:hover {
-  transform: translateY(-2px);
+.dropdownButton:hover,
+.dropdownButtonOpen {
   background: rgba(20, 46, 67, 0.9);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+  border-color: rgba(93, 255, 217, 0.5);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    0 0 20px rgba(93, 255, 217, 0.08);
 }
 
-.yearButton.active {
-  color: #08242b;
-  background: linear-gradient(90deg, #5dffd9, #7cff5f);
-  box-shadow: 0 12px 28px rgba(93,255,217,0.25);
+.chevron {
+  flex-shrink: 0;
+  transition: transform 180ms ease;
 }
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* MENU */
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  width: 100%;
+
+  /*
+   * Limita a altura do dropdown.
+   * Quando houver opções suficientes,
+   * o scroll vertical será ativado.
+   */
+  max-height: 240px;
+  overflow-y: auto;
+
+  padding: 0.4rem;
+
+  border: 1px solid rgba(93, 255, 217, 0.2);
+  border-radius: 16px;
+
+  background: rgba(25, 12, 43, 0.96);
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(93, 255, 217, 0.05);
+
+  animation: dropdownOpen 160ms ease-out;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(93, 255, 217, 0.45) transparent;
+}
+
+/* Chrome, Edge, Safari */
+
+.dropdownMenu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdownMenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb {
+  background: rgba(93, 255, 217, 0.4);
+  border-radius: 999px;
+}
+
+.dropdownMenu::-webkit-scrollbar-thumb:hover {
+  background: rgba(93, 255, 217, 0.7);
+}
+
+@keyframes dropdownOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownOption {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.7rem 0.8rem;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: rgba(255, 255, 255, 0.8);
+  background: transparent;
+
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.dropdownOption:hover {
+  color: #ffffff;
+  background: rgba(93, 255, 217, 0.1);
+}
+
+.dropdownOptionActive {
+  color: #7bffb6;
+  background: rgba(93, 255, 217, 0.08);
+}
+
+/* CARDS */
 
 .cardsWrapper {
   display: grid;
@@ -97,16 +260,24 @@
 .card {
   overflow: hidden;
   border-radius: 24px;
+
   background: linear-gradient(180deg, #ffffff 0%, #f4fcff 100%);
   color: #1f1531;
+
   box-shadow: 0 16px 36px rgba(14, 8, 28, 0.2);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
   border: 1px solid rgba(93, 255, 217, 0.16);
 }
 
 .card:hover {
   transform: translateY(-4px);
+
   box-shadow: 0 20px 40px rgba(14, 8, 28, 0.24);
+
   border-color: rgba(124, 255, 95, 0.4);
 }
 
@@ -114,17 +285,24 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #dffef6, #c8f6ff 60%, #e5ffc9);
+
+  background: linear-gradient(
+    135deg,
+    #dffef6,
+    #c8f6ff 60%,
+    #e5ffc9
+  );
 }
 
 .imageWrap img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cardContent {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
+
   padding: 1rem 1rem 1.1rem;
 }
 
@@ -141,10 +319,22 @@
   line-height: 1.55;
 }
 
+/* MOBILE */
+
 @media (max-width: 768px) {
   .section {
     padding: 1.3rem;
     border-radius: 24px;
+  }
+
+  .selectorWrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dropdown {
+    width: 100%;
   }
 
   .cardsWrapper {

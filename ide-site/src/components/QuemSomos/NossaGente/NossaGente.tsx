@@ -3,43 +3,20 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./NossaGente.module.css";
-
-const roles = ["Presidente", "Vice-presidente", "Diretor de Financeiro", 
-"Diretor de Marketing", "Diretor de Projetos", "Diretor de Relações Públicas",
-"Diretor de Recursos Humanos", "Diretor de Comercial"];
-
-const yearCollections = [
-  {
-    year: "2026/2",
-    integrantes: [
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-    ],
-  },
-  {
-    year: "2025/2",
-    integrantes: [
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-      { nome: "Fulano", image: "/imagens/sapo-ide.png" },
-    ],
-  },
-];
-
-const buildItems = (integrantes: { nome: string; image: string }[]) =>
-  roles.map((role, index) => ({
-    integrante: integrantes[index]?.nome ?? "Fulano",
-    title: role,
-    image: integrantes[index]?.image ?? "/imagens/sapo-ide.png",
-  }));
+import { yearCollections } from "@/data/members";
 
 export default function NossaGente() {
-  const [selectedYear, setSelectedYear] = useState("2025/2");
+  const [selectedYear, setSelectedYear] = useState("2026/2");
+  const [isOpen, setIsOpen] = useState(false);
+
   const activeCollection =
     yearCollections.find((collection) => collection.year === selectedYear) ??
     yearCollections[0];
-  const activeItems = buildItems(activeCollection.integrantes);
+
+  const handleSelect = (year: string) => {
+    setSelectedYear(year);
+    setIsOpen(false);
+  };
 
   return (
     <section className={styles.section}>
@@ -48,42 +25,101 @@ export default function NossaGente() {
         <p>O capital intelectual que sustenta cada linha de código.</p>
       </div>
 
-      <div
-        className={styles.yearSelector}
-        role="tablist"
-        aria-label="Selecionar ano"
-      >
-        {yearCollections.map((collection) => {
-          const isActive = collection.year === activeCollection.year;
+      <div className={styles.selectorWrapper}>
+        <span className={styles.selectorLabel}>Gestão</span>
 
-          return (
-            <button
-              key={collection.year}
-              type="button"
-              className={`${styles.yearButton} ${isActive ? styles.active : ""}`}
-              onClick={() => setSelectedYear(collection.year)}
+        <div className={styles.dropdown}>
+          <button
+            type="button"
+            className={`${styles.dropdownButton} ${
+              isOpen ? styles.dropdownButtonOpen : ""
+            }`}
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-haspopup="listbox"
+            aria-expanded={isOpen}
+          >
+            <span>{activeCollection.year}</span>
+
+            <svg
+              className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`}
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
             >
-              {collection.year}
-            </button>
-          );
-        })}
+              <path
+                d="M6 9L12 15L18 9"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
+          {isOpen && (
+            <div className={styles.dropdownMenu} role="listbox">
+              {yearCollections.map((collection) => {
+                const isActive = collection.year === activeCollection.year;
+
+                return (
+                  <button
+                    key={collection.year}
+                    type="button"
+                    role="option"
+                    aria-selected={isActive}
+                    className={`${styles.dropdownOption} ${
+                      isActive ? styles.dropdownOptionActive : ""
+                    }`}
+                    onClick={() => handleSelect(collection.year)}
+                  >
+                    <span>{collection.year}</span>
+
+                    {isActive && (
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M5 12L10 17L19 7"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.cardsWrapper}>
-        {activeItems.map((item) => (
-          <article key={item.title} className={styles.card}>
+        {activeCollection.integrantes.map((integrante) => (
+          <article
+            key={`${integrante.nome}-${integrante.cargo}`}
+            className={styles.card}
+          >
             <div className={styles.imageWrap}>
               <Image
-                src={item.image}
-                alt={item.title}
+                src={integrante.image}
+                alt={integrante.nome}
                 fill
+                priority
                 sizes="(max-width: 768px) 80vw, 220px"
               />
             </div>
 
             <div className={styles.cardContent}>
-              <h3>{item.integrante}</h3>
-              <p>{item.title}</p>
+              <h3>{integrante.nome}</h3>
+              <p>{integrante.cargo}</p>
             </div>
           </article>
         ))}
