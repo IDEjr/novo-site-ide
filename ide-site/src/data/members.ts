@@ -484,9 +484,69 @@ export const yearCollections = [
         image: "/imagens/gestoes/20-1/maria-flavia.png",
       },
       {
-        nome: "Joana D'Avila",
+        nome: "Joana Oliveira D'Avila",
         cargo: "Diretor de Projetos",
         image: "/imagens/gestoes/19-2/joana.png",
+      },
+    ],
+  },
+ {
+    year: "2018/2",
+    integrantes: [
+      {
+        nome: "Lucas de Paula Alves",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/18-2/lucas-alves.png",
+      },
+      {
+        nome: "Maria Flavia Borrajo Tondo",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/20-1/maria-flavia.png",
+      },
+      {
+        nome: "Gabriel Tiburski Júnior",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/18-2/gabriel-dariva.png",
+      },
+      {
+        nome: "Lucas Lauck dos Passos",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/18-2/lucas-lauck.png",
+      },
+      {
+        nome: "Joana Oliveira D'Avila",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/19-2/joana.png",
+      },
+    ],
+  },
+ {
+    year: "2018/1",
+    integrantes: [
+      {
+        nome: "Lucas de Paula Alves",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/18-2/lucas-alves.png",
+      },
+      {
+        nome: "Eduardo Fischer",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/18-1/eduardo-fischer.png",
+      },
+      {
+        nome: "Lucas Augusto Tansini",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/18-1/lucas-augusto.png",
+      },
+      {
+        nome: "Lucas Valandro da Rocha",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/18-1/lucas-valandro.png",
+      },
+      {
+        nome: "Francisco Paiva Knebel",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/18-1/francisco-knebel.png",
       },
     ],
   },
