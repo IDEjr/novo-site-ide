@@ -395,4 +395,99 @@ export const yearCollections = [
     ],
   },
 
+ {
+    year: "2020/2",
+    integrantes: [
+      {
+        nome: "Guilherme de Oliveira Tassinari",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/21-1/guilherme-oliveira.png",
+      },
+      {
+        nome: "Rafael Humann Petry",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/21-1/rafael-petry.png",
+      },
+      {
+        nome: "Rafael Marques Rache",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/20-2/rafael-rache.png",
+      },
+      {
+        nome: "Sofia Popsin Gomes",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/21-1/sofia-popsin.png",
+      },
+      {
+        nome: "Arthur Prochnow Baumgardt",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/20-2/arthur-pro.png",
+      },
+    ],
+  },
+ {
+    year: "2020/1",
+    integrantes: [
+      {
+        nome: "Maria Flavia Borrajo Tondo",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/20-1/maria-flavia.png",
+      },
+      {
+        nome: "Artur Três do Amaral",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/20-1/arthur-amaral.png",
+      },
+      {
+        nome: "Gabriel Fernandes Silva",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/20-1/gabriel-fernandes.png",
+      },
+      {
+        nome: "Guilherme Girotto Sartori",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/20-1/guilherme-girotto.png",
+      },
+    ],
+  },
+ {
+    year: "2019/2",
+    integrantes: [
+      {
+        nome: "Maria Flavia Borrajo Tondo",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/20-1/maria-flavia.png",
+      },
+      {
+        nome: "Lucas Hagemeister",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/19-2/lucas-hagemeister.png",
+      },
+      {
+        nome: "Gabriel Esteves",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/sapo-ide.png",
+      },
+      {
+        nome: "Rodrigo Machado Mena",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/19-2/rodrigo-machado.png",
+      },
+    ],
+  },
+ {
+    year: "2019/1",
+    integrantes: [
+      {
+        nome: "Maria Flavia Borrajo Tondo",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/20-1/maria-flavia.png",
+      },
+      {
+        nome: "Joana D'Avila",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/19-2/joana.png",
+      },
+    ],
+  },
 ];
