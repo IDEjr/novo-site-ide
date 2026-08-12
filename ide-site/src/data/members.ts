@@ -334,7 +334,65 @@ export const yearCollections = [
         nome: "Sofia Maciel D'avila",
         cargo: "Diretor de Recursos Humanos",
         image: "/imagens/gestoes/22-1/sofia-maciel.png",
+      },
+    ],
+  },
+
+  {
+    year: "2021/2",
+    integrantes: [
+      {
+        nome: "Henrique Peixoto Ribeiro",
+        cargo: "Presidente e Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/21-2/henrique-peixoto.png",
+      },
+      {
+        nome: "Júlia Dartora Craide",
+        cargo: "Diretor do Financeiro e de Projetos",
+        image: "/imagens/gestoes/22-1/julia-dartora.png",
+      },
+      {
+        nome: "Gabriel Arruda dos Santos",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/21-2/gabriel-santos.png",
+      },
+      {
+        nome: "Bruno Almeida da Silveira",
+        cargo: "Diretor de Comercial",
+        image: "/imagens/gestoes/22-1/bruno-almeida.png",
       }
     ],
   },
+
+ {
+    year: "2021/1",
+    integrantes: [
+      {
+        nome: "Guilherme de Oliveira Tassinari",
+        cargo: "Presidente",
+        image: "/imagens/gestoes/21-1/guilherme-oliveira.png",
+      },
+      {
+        nome: "Rafael Humann Petry",
+        cargo: "Diretor do Financeiro",
+        image: "/imagens/gestoes/21-1/rafael-petry.png",
+      },
+      {
+        nome: "Gabriel Arruda dos Santos",
+        cargo: "Diretor de Marketing",
+        image: "/imagens/gestoes/21-2/gabriel-santos.png",
+      },
+      {
+        nome: "Sofia Popsin Gomes",
+        cargo: "Diretor de Projetos",
+        image: "/imagens/gestoes/21-1/sofia-popsin.png",
+      },
+      {
+        nome: "Henrique Peixoto Ribeiro",
+        cargo: "Diretor de Recursos Humanos",
+        image: "/imagens/gestoes/21-2/henrique-peixoto.png",
+      },
+    ],
+  },
+
 ];
