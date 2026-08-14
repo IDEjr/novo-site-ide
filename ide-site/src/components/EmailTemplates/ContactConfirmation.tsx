@@ -76,7 +76,7 @@ export function ContactConfirmationEmail({
                 <Column className="pr-3">
                     <Link href="https://www.linkedin.com/company/empresa-j%C3%BAnior-ide" target="_blank">
                     <Img
-                        src={`${baseUrl}/imagens/linkedinIcon.png`}
+                        src={`${baseUrl}/imagens/imgContato/linkedinIcon.svg`}
                         width="24"
                         height="24"
                         alt="LinkedIn"
@@ -86,7 +86,7 @@ export function ContactConfirmationEmail({
                 <Column>
                     <Link href="https://www.instagram.com/ide_jr" target="_blank">
                     <Img
-                        src={`${baseUrl}/imagens/instaIcon.png`}
+                        src={`${baseUrl}/imagens/imgContato/instaIcon.svg`}
                         width="24"
                         height="24"
                         alt="Instagram"
