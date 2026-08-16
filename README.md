@@ -38,11 +38,3 @@
     ```bash
     npm run dev
     ```
-
-#### Painel Administrativo do Blog
-
-Após iniciar o projeto, acesse a URL local exibida no terminal, adicionando `/admin` ao final.
-
-Exemplo:
-
-`http://localhost:3000/admin`

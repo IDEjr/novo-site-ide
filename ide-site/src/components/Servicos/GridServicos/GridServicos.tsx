@@ -18,13 +18,13 @@ export default function GridServicos() {
 
       <CardServico 
         iconeSrc="/imagens/imgServicos/icones/mouse.svg"
-        titulo="Site com Área Administrativa (CMS)"  
-        descricao="Desenvolvemos sites que permitem que você atualize conteúdos, notícias, imagens e páginas de forma simples, sem depender de programação."
+        titulo="CMS e gestão de conteúdo"  
+        descricao="Estruturamos áreas administrativas para que você publique conteúdos, imagens e páginas de forma simples, sem depender de programação."
         tecnologias={[
           { nome: "Next.js", imgSrc: "/imagens/imgServicos/tecnologias/nextjs.svg"},
           { nome: "TypeScript", imgSrc: "/imagens/imgServicos/tecnologias/typescript.svg"}, 
-          { nome: "Payload", imgSrc: "/imagens/imgServicos/tecnologias/payload.svg"}, 
-          { nome: "PostgreSQL", imgSrc: "/imagens/imgServicos/tecnologias/postgreSQL.svg"}
+          { nome: "PostgreSQL", imgSrc: "/imagens/imgServicos/tecnologias/postgreSQL.svg"},
+          { nome: "Docker", imgSrc: "/imagens/imgServicos/tecnologias/docker.svg"}
         ]}
       />
 
