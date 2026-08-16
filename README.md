@@ -4,6 +4,8 @@
 
 <h1 align="center">Novo Site da IDE</h1>
 
+## Versão SEM O BLOG
+
 ## Como Executar o Projeto Localmente
 
 ### Passo a Passo
@@ -27,13 +29,7 @@
 
     Após copiar o arquivo `.env.example`, preencha as variáveis de ambiente necessárias em `.env.local`.
 
-4. Suba os containers do Docker:
-
-    ```bash
-    docker compose up -d
-    ```
-
-5. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 
     ```bash
     npm run dev
