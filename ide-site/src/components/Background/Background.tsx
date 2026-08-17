@@ -9,7 +9,7 @@ import styles from "./Background.module.css";
 export default function Background() {
   const pathname = usePathname();
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -28,92 +28,8 @@ export default function Background() {
   }, []);
 
   const config = useMemo(() => {
-    // =========================
-    // MOBILE
-    // =========================
-    if (isMobile) {
-      const mobileConfig = {
-        dpr: 0.5,
-
-        // Efeitos reduzidos
-        glitchAmount: 0.2,
-        flickerAmount: 0.2,
-        noiseAmp: 0.2,
-        chromaticAberration: 0,
-        dither: 0,
-
-        brightness: 0.8,
-      };
-
-      switch (pathname) {
-        case "/":
-          return {
-            ...mobileConfig,
-            tint: "#7922d6",
-            scale: 1.5,
-            timeScale: 0.5,
-            scanlineIntensity: 0,
-            curvature: 0.15,
-          };
-
-        case "/Portfolio":
-          return {
-            ...mobileConfig,
-            tint: "#277231",
-            scale: 1.2,
-            timeScale: 0.35,
-            scanlineIntensity: 0,
-            curvature: 0,
-          };
-
-        case "/QuemSomos":
-          return {
-            ...mobileConfig,
-            tint: "#2d5c88",
-            scale: 0.8,
-            timeScale: 0.3,
-            scanlineIntensity: 0,
-            curvature: 0.8,
-          };
-
-        case "/Contato":
-          return {
-            ...mobileConfig,
-            tint: "#808386",
-            scale: 2,
-            timeScale: 0.35,
-            scanlineIntensity: 0,
-            curvature: -0.05,
-          };
-
-        case "/Servicos":
-          return {
-            ...mobileConfig,
-            tint: "#521bd3",
-            scale: 0.8,
-            timeScale: 0.8,
-            scanlineIntensity: 0,
-            curvature: 0.8,
-          };
-
-        default:
-          return {
-            ...mobileConfig,
-            tint: "#7b00ff",
-            scale: 1.5,
-            timeScale: 0.5,
-            scanlineIntensity: 0,
-            curvature: 0.15,
-          };
-      }
-    }
-
-    // =========================
-    // DESKTOP
-    // =========================
-
     const desktopConfig = {
-      dpr: 1
+      dpr: 0.5,
     };
 
     switch (pathname) {
@@ -177,7 +93,16 @@ export default function Background() {
           curvature: 0.28,
         };
     }
-  }, [pathname, isMobile]);
+  }, [pathname]);
+
+  if (isMobile === null) {
+    return null;
+  }
+
+  // No mobile, não renderiza o FaultyTerminal.
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <div className={styles.background}>
