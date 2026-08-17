@@ -446,7 +446,7 @@ export default function FaultyTerminal({
       gl.getExtension("WEBGL_lose_context")?.loseContext();
       loadAnimationStartRef.current = 0;
     };
-  }, []);
+  });
 
   useEffect(() => {
     const program = programRef.current;
@@ -490,21 +490,7 @@ export default function FaultyTerminal({
       tintVec[1],
       tintVec[2],
     );
-  }, [
-    scale,
-    digitSize,
-    scanlineIntensity,
-    glitchAmount,
-    flickerAmount,
-    noiseAmp,
-    chromaticAberration,
-    curvature,
-    brightness,
-    mouseStrength,
-    mouseReact,
-    gridMul,
-    tintVec,
-  ]);
+  });
 
   useEffect(() => {
     pauseRef.current = pause;
