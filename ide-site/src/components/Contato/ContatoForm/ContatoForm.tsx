@@ -24,17 +24,22 @@ export default function ContatoForm() {
   const onSubmit = async (data: ContatoFormData) => {
     setStatus('idle');
 
-    const result = await sendEmailAction(data);
+    try {
+      const result = await sendEmailAction(data);
 
-    if (result.success) {
-      setStatus('success');
-      reset({
-        nome: "",
-        email: "",
-        assunto: "",
-        mensagem: ""
-      });
-    } else {
+      if (result.success) {
+        setStatus('success');
+        reset({
+          nome: "",
+          email: "",
+          assunto: "",
+          mensagem: ""
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch(error) {
+      console.error("Falha na requisição:", error);
       setStatus('error');
     }
   };
