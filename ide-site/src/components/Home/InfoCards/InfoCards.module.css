@@ -112,66 +112,6 @@
   object-fit: cover;
 }
 
-/* Terceira linha */
-
-.mvvRow {
-  margin-top: 6rem;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 1.5rem;
-}
-
-.mvvCard {
-  background: #7726bd;
-
-  border-radius: 20px;
-
-  padding: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-
-  gap: 1rem;
-}
-
-.mvvCard h3 {
-  letter-spacing: .05em;
-}
-
-.mvvIcon {
-  width: 42px;
-  height: 42px;
-}
-
-.mvvIcon svg {
-  width: 100%;
-  height: 100%;
-  stroke: white;
-}
-
-.mvvCard p {
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.mvvList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  text-align: left;
-  line-height: 1.8;
-}
-
-.mvvList li::before {
-  content: "• ";
-}
-
 /* Responsivo */
 
 /* ===========================
@@ -220,12 +160,6 @@
   .statCard:last-child {
     grid-area: right;
     min-height: 180px;
-  }
-
-  .mvvRow {
-    margin-top: 3rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 }
 
@@ -312,30 +246,5 @@
 
   .statCard span {
     font-size: 0.9rem;
-  }
-
-  .mvvRow {
-    margin-top: 2rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .mvvCard {
-    padding: 1.5rem;
-    border-radius: 18px;
-  }
-
-  .mvvCard h3 {
-    font-size: 1.1rem;
-  }
-
-  .mvvCard p,
-  .mvvList {
-    font-size: 0.9rem;
-  }
-
-  .mvvIcon {
-    width: 34px;
-    height: 34px;
   }
 }

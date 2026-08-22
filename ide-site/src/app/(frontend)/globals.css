@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Altura real do Navbar (logo 45px + padding 1rem topo/base) — ver Navbar.module.css */
+  --navbar-height: 77px;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
   font-family: var(--font-principal), Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.2;
@@ -17,7 +25,6 @@ body {
 .page-wrapper {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .main-content,
