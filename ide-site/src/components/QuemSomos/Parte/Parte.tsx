@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./Parte.module.css";
 
@@ -25,15 +24,6 @@ export default function Parte() {
           </div>
         </div>
 
-        <div className={styles.imageContainer}>
-          <Image
-            src="/imagens/sapo-anuncio.png"
-            alt="Sapo IDE"
-            width={820}
-            height={820}
-            className={styles.image}
-          />
-        </div>
       </div>
     </section>
   );

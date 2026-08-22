@@ -23,6 +23,7 @@ export interface FaultyTerminalProps extends React.HTMLAttributes<HTMLDivElement
   dpr?: number;
   pageLoadAnimation?: boolean;
   brightness?: number;
+  staticMode?: boolean;
 }
 
 const vertexShader = `
@@ -265,6 +266,7 @@ export default function FaultyTerminal({
   dpr = 1,
   pageLoadAnimation = true,
   brightness = 0.7,
+  staticMode = false,
   className,
   style,
   ...rest
@@ -367,12 +369,21 @@ export default function FaultyTerminal({
 
     function resize() {
       if (!ctn || !renderer) return;
+
       renderer.setSize(ctn.offsetWidth, ctn.offsetHeight);
+
       program.uniforms.iResolution.value = new Color(
         gl.canvas.width,
         gl.canvas.height,
         gl.canvas.width / gl.canvas.height,
       );
+
+      // No modo estático, redesenha o frame quando o tamanho muda.
+      if (staticMode && meshRef.current) {
+        renderer.render({
+          scene: meshRef.current,
+        });
+      }
     }
 
     const resizeObserver = new ResizeObserver(() => resize());
@@ -386,8 +397,28 @@ export default function FaultyTerminal({
     let lastFrame = 0;
 
     const update = (t: number) => {
-      rafRef.current = requestAnimationFrame(update);
+      // ==========================================
+      // MOBILE / MODO ESTÁTICO
+      // ==========================================
+      if (staticMode) {
+        program.uniforms.iTime.value = timeOffsetRef.current;
 
+        // Remove a animação de carregamento.
+        program.uniforms.uPageLoadProgress.value = 1;
+
+        if (meshRef.current) {
+          renderer.render({
+            scene: meshRef.current,
+          });
+        }
+
+        return;
+      }
+
+      // ==========================================
+      // DESKTOP / MODO ANIMADO
+      // ==========================================
+      rafRef.current = requestAnimationFrame(update);
 
       if (t - lastFrame < interval) {
         return;
@@ -395,34 +426,55 @@ export default function FaultyTerminal({
 
       lastFrame = t;
 
-      if (pageLoadAnimationRef.current && loadAnimationStartRef.current === 0) {
+      if (
+        pageLoadAnimationRef.current &&
+        loadAnimationStartRef.current === 0
+      ) {
         loadAnimationStartRef.current = t;
       }
 
       if (!pauseRef.current) {
         const elapsed =
-          (t * 0.001 + timeOffsetRef.current) * timeScaleRef.current;
+          (t * 0.001 + timeOffsetRef.current) *
+          timeScaleRef.current;
+
         program.uniforms.iTime.value = elapsed;
         frozenTimeRef.current = elapsed;
       } else {
         program.uniforms.iTime.value = frozenTimeRef.current;
       }
 
-      if (pageLoadAnimationRef.current && loadAnimationStartRef.current > 0) {
+      if (
+        pageLoadAnimationRef.current &&
+        loadAnimationStartRef.current > 0
+      ) {
         const animationDuration = 2000;
-        const animationElapsed = t - loadAnimationStartRef.current;
-        const progress = Math.min(animationElapsed / animationDuration, 1);
+        const animationElapsed =
+          t - loadAnimationStartRef.current;
+
+        const progress = Math.min(
+          animationElapsed / animationDuration,
+          1
+        );
+
         program.uniforms.uPageLoadProgress.value = progress;
       }
 
       if (mouseReactRef.current) {
         const dampingFactor = 0.08;
+
         const smoothMouse = smoothMouseRef.current;
         const mouse = mouseRef.current;
-        smoothMouse.x += (mouse.x - smoothMouse.x) * dampingFactor;
-        smoothMouse.y += (mouse.y - smoothMouse.y) * dampingFactor;
 
-        const mouseUniform = program.uniforms.uMouse.value as Float32Array;
+        smoothMouse.x +=
+          (mouse.x - smoothMouse.x) * dampingFactor;
+
+        smoothMouse.y +=
+          (mouse.y - smoothMouse.y) * dampingFactor;
+
+        const mouseUniform =
+          program.uniforms.uMouse.value as Float32Array;
+
         mouseUniform[0] = smoothMouse.x;
         mouseUniform[1] = smoothMouse.y;
       }
