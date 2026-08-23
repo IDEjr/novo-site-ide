@@ -55,22 +55,16 @@
 
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(132, 41, 202, 0.616),
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.8),
       transparent 35%
-    ),
-    radial-gradient(
-      circle at 85% 75%,
-      rgba(105, 28, 172, 0.596),
-      transparent 40%
     ),
     linear-gradient(
       135deg,
-      #3a1c68bd 0%,
-      #3f1a66d0 45%,
-      #40216bc0 100%
+      rgba(223, 212, 235, 0.95),
+      rgba(212, 212, 212, 0.85) 10%,
+      rgba(103, 0, 199, 0.788)
     );
-
   transform-origin: center;
 
   z-index: 1;
