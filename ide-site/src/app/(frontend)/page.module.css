@@ -25,18 +25,5 @@
   align-items: center;
   justify-content: flex-start;
 
-  padding: 3rem 2rem 1rem;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin: 0 0 1rem;
-  max-width: 500px;
-  line-height: 1;
-}
-
-.hero p {
-  max-width: 420px;
-  font-size: 1.2rem;
-  margin: 0;
+  padding: 1.5rem 2rem 3rem;
 }

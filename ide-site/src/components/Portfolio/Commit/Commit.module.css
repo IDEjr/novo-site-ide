@@ -1,6 +1,6 @@
 .showcase {
   width: min(1280px, calc(100% - 2rem));
-  margin: 6rem auto;
+  margin: 5rem auto 2rem;
 }
 
 .card {
@@ -9,20 +9,16 @@
 
   padding: 4.5rem 2rem;
 
-  border-radius: 24px;
+  border-radius: var(--radius-card);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  background: linear-gradient(
-    135deg,
-    rgba(139, 50, 135, 0.938),
-    rgba(77, 41, 160, 0.925)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.322);
+  background: linear-gradient(135deg, rgba(101, 53, 165, 0.9), rgba(39, 17, 70, 0.92));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
 }
 
 .title {
@@ -36,7 +32,7 @@
 }
 
 .title span {
-  color: #67db52;
+  color: var(--color-primary-light);
 }
 
 .description {
@@ -47,7 +43,7 @@
   font-size: 1.25rem;
   line-height: 1.6;
 
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-muted);
 }
 
 .button {
@@ -61,7 +57,7 @@
   height: 76px;
   padding: 0 2.4rem;
 
-  border-radius: 16px;
+  border-radius: var(--radius-control);
 
   text-decoration: none;
 
@@ -70,9 +66,9 @@
 
   color: white;
 
-  background: #5ec94b;
-  color: #111111;
-  box-shadow: 0 12px 28px rgba(103, 219, 82, 0.28);
+  background: linear-gradient(135deg, #b690ff, #7754df);
+  color: white;
+  box-shadow: 0 10px 24px rgba(122, 84, 223, 0.32);
 
   transition:
     transform .25s ease,
@@ -81,11 +77,8 @@
 }
 
 .button:hover {
-  background: #5bb94a;
-
   transform: translateY(-3px);
-
-  box-shadow: 0 16px 34px rgba(103, 219, 82, 0.4);
+  box-shadow: 0 16px 30px rgba(122, 84, 223, 0.42);
 }
 
 @media (max-width: 768px) {

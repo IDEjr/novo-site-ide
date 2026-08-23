@@ -1,16 +1,41 @@
 .mainContato {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: min(1280px, calc(100% - 2rem));
+    min-height: calc(100vh - var(--navbar-height) + 6rem);
 
     margin: 0 auto;
-    padding: 1rem 0rem;
-    gap: clamp(4rem, 7vw, 7rem);
+    padding: 4rem 0 5rem;
+    gap: 2.5rem;
+}
+
+.mainContato h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #c8b0ff 52%, #61c8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contactContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: clamp(3rem, 7vw, 7rem);
 }
 
 @media (max-width: 992px) {
-  .mainContato {
+  .contactContent {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainContato {
+    min-height: calc(100vh - var(--navbar-height) + 3rem);
   }
 }

@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
 
-  color: #38a2ff;
+  color: var(--color-accent);
   font-weight: 700;
 }
 
@@ -14,7 +14,7 @@
   width: 3px;
   height: 1em;
 
-  background: #38a2ff;
+  background: var(--color-accent);
   border-radius: 2px;
 
   animation: blink 1s infinite;

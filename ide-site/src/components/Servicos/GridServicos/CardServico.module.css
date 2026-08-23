@@ -1,38 +1,36 @@
 .cardContainer {
-    border-radius: 32px;
-    border: 1px solid transparent; 
-    
-    background-image: 
-        linear-gradient(rgba(108, 33, 172), rgba(108, 33, 172)),
-        linear-gradient(to bottom right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 35%, transparent 50%, rgba(255, 255, 255, 0.4) 65%, rgba(255, 255, 255, 0.6) 100%);
-    
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
-    padding: 24px;
+    padding: 1.75rem;
     gap: 16px;
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cardContainer:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(200, 176, 255, 0.45);
+    box-shadow: 0 26px 50px rgba(6, 2, 15, 0.38);
 }
 
 .cardContainer h3 {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    margin-bottom: 0.6rem;
+    color: var(--color-primary-light);
 }
 
 .cardContainer p {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--color-muted);
 }
 
 .cardTecnologias {
@@ -43,9 +41,9 @@
 }
 
 .tag {
-    background-color: #3F0F6B;
-
-    border-radius: 10px;
+    background-color: rgba(156, 108, 255, 0.14);
+    border: 1px solid rgba(200, 176, 255, 0.18);
+    border-radius: 999px;
 
     font-size: 14px;
     font-weight: 700;
@@ -55,5 +53,19 @@
     align-items: center;
     gap: 5px;
 
-    padding: 4px 16px;
+    padding: 0.35rem 0.75rem;
+}
+
+.cardIcone {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(97, 200, 255, 0.1);
+}
+
+.icone {
+    width: 42px;
+    height: 42px;
 }

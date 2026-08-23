@@ -72,11 +72,15 @@ export default function Background() {
 
   const config = isMobile ? mobileConfig : desktopConfig;
 
+  if (isMobile) {
+    return <div className={`${styles.background} ${styles.mobileBackground}`} />;
+  }
+
   return (
     <div className={styles.background}>
       <FaultyTerminal
         {...config}
-        staticMode={isMobile}
+        staticMode={false}
       />
     </div>
   );

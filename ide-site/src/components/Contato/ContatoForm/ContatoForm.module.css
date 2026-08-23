@@ -8,30 +8,25 @@
 
 .formContainer {
   width: 100%;
-  border-radius: 40px;
-  border: 1px solid transparent;
-
-  background: linear-gradient(
-    135deg,
-    rgba(119, 38, 189, 0.4),
-    rgba(119, 38, 189, 0.4)
-  );
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--color-border);
   overflow: hidden;
   box-shadow: 0 18px 45px rgba(92, 44, 157, 0.16);
 
-  padding: 1.5rem 2rem 6rem 2rem;
+  padding: 2.25rem;
 }
 
 .formContainer h2 {
-  font-size: 38px;
+  font-size: clamp(2rem, 3vw, 2.4rem);
   margin-bottom: 0.5rem;
 }
 
 .formContainer p {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  color: var(--color-muted);
   margin-bottom: 40px;
 }
 
@@ -61,12 +56,12 @@
 .inputField textarea {
   width: 100%;
 
-  background-color: #6f23b0;
+  background-color: rgba(19, 7, 36, 0.62);
 
   color: #ffffff;
 
-  border: none;
-  border-radius: 16px;
+  border: 1px solid rgba(235, 223, 255, 0.16);
+  border-radius: var(--radius-control);
 
   padding: 0.8rem;
 
@@ -86,7 +81,8 @@
 
 .inputField input:focus,
 .inputField textarea:focus {
-  box-shadow: 0 0 0 1px #a855f7;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(156, 108, 255, 0.16);
 }
 
 .inputField .inputError {
@@ -110,25 +106,24 @@
   justify-content: center;
   gap: 0.5rem;
 
-  background-image: linear-gradient(to right, #ffffff, #7726bd);
-  border: none;
-  border-radius: 16px;
-  padding: 0.8rem;
+  background: linear-gradient(135deg, #b690ff, #7754df);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-control);
+  padding: 0.9rem;
 
   cursor: pointer;
 
   font-family: inherit;
   font-weight: 700;
   font-size: 1.5rem;
-  color: #3f0f6b;
+  color: white;
 
   transition: all 0.3s ease;
 }
 
 .submitBtn:hover {
-  opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(119, 38, 189, 0.4);
+  box-shadow: 0 12px 24px rgba(122, 84, 223, 0.35);
 }
 
 .submitBtn:active {
@@ -210,7 +205,7 @@
 
 @media (max-width: 768px) {
   .formContainer {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
   }
 
   .inputGroupRow {

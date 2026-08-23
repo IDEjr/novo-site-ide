@@ -3,32 +3,31 @@ import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const whatsappUrl =
+    process.env.NEXT_PUBLIC_WHATSAPP_COMERCIAL_URL ??
+    "https://wa.me/?text=Olá%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto.";
+
   return (
     <footer className={styles.footer}>
 
-        <div className={styles.grafismo}></div>
-
         <div className={styles.container}>
-
             <div className={styles.logoContainer}>
                 <Link href="/" className={styles.logo} aria-label="Ir para a página inicial">
                     <Image
                         src="/imagens/ide-branco-footer.png"
                         alt="Logo IDE"
-                        width={332}
-                        height={247}
+                        width={132}
+                        height={98}
                     />
                 </Link>
             </div>
 
             <div className={styles.infoContainer}>
-                
-                <nav className={styles.navegacao}>
+                <nav className={styles.navegacao} aria-label="Navegação do rodapé">
                     <h3>Navegação</h3>
-
                     <ul className={styles.menu}>
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/QuemSomos">Sobre nós</Link></li>
+                        <li><Link href="/QuemSomos">Quem somos</Link></li>
                         <li><Link href="/Servicos">Serviços</Link></li>
                         <li><Link href="/Portfolio">Portfólio</Link></li>
                         <li><Link href="/Contato">Contato</Link></li>
@@ -45,11 +44,11 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image 
+                                <Image
                                     src="/imagens/email.svg"
-                                    alt="Ícone do Email"
-                                    width={24}
-                                    height={24}
+                                    alt=""
+                                    width={18}
+                                    height={18}
                                 />
                                 <span>contato@idejr.com.br</span>
                             </Link>
@@ -60,11 +59,11 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Image 
+                                <Image
                                     src="/imagens/instagram.svg"
-                                    alt="Ícone do Instagram"
-                                    width={24}
-                                    height={24}
+                                    alt=""
+                                    width={18}
+                                    height={18}
                                 />
                                 <span>@ide_jr</span>
                             </Link>
@@ -77,12 +76,25 @@ export default function Footer() {
                             >
                                 <Image
                                     src="/imagens/linkedinBranco.svg"
-                                    alt="Ícone do WhatsApp"
-                                    width={24}
-                                    height={24}                            
+                                    alt=""
+                                    width={18}
+                                    height={18}
                                 />
                                 <span>Empresa Júnior IDE</span>    
                             </Link>
+                        </li>
+                        <li>
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.whatsappLink}
+                            >
+                                <svg viewBox="0 0 32 32" aria-hidden="true">
+                                    <path d="M27.1 4.8A15.3 15.3 0 0 0 2.8 23.2L1 31l8-1.8A15.3 15.3 0 1 0 27.1 4.8Zm-11.2 24a12.5 12.5 0 0 1-6.4-1.8l-.5-.3-4.8 1.1 1.1-4.7-.3-.5a12.5 12.5 0 1 1 10.9 6.2Zm6.9-9.4c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.6-.2.3-.4.3-.8.1-2.1-1-3.5-1.8-4.9-4.1-.4-.7.4-.6 1.1-2 .1-.3 0-.5-.1-.7l-1.2-2.8c-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.4 3.9 1.6 4.2c.2.3 2.7 4.1 6.5 5.8 2.4 1 3.4 1.1 4.6.9.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.8-.5Z" />
+                                </svg>
+                                <span>WhatsApp comercial</span>
+                            </a>
                         </li>
                     </ul>        
                 </div>

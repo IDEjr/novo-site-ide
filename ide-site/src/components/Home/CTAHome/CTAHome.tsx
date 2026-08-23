@@ -1,23 +1,5 @@
-import Link from 'next/link';
-import styles from './CTAHome.module.css';
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
 
 export default function CTAHome() {
-  return (
-    <section className={styles.ctaHomeSection}>
-      <div className={styles.ctaHomeBox}>
-        <h2>
-          Pronto para tirar sua <span className={styles.highlight}>ide</span>ia do papel?
-        </h2>
-
-        <p>
-          Vamos conversar sobre o seu próximo grande projeto. 
-          Nossos consultores estão prontos para te ajudar.
-        </p>
-
-        <Link href="/Contato" className={styles.ctaHomeButton}>
-          Fale Conosco
-        </Link>
-      </div>
-    </section>
-  );
+  return <ContactCTA />;
 }

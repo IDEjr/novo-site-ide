@@ -5,8 +5,11 @@ import styles from './page.module.css';
 export default function Contato() {
   return (
     <main className={styles.mainContato}>
-      <ContatoInfo />
-      <ContatoForm />
+      <h1>Entre em contato conosco</h1>
+      <div className={styles.contactContent}>
+        <ContatoInfo />
+        <ContatoForm />
+      </div>
     </main>
   );
 }

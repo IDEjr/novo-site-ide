@@ -5,8 +5,8 @@
     text-align: left;
     justify-content: flex-start;
 
-    max-width: 1200px;
-    padding: 0px 0px 8.5rem 0px;
+    max-width: 900px;
+    padding: 1rem 0 5rem;
 }
 
 .content h1 {
@@ -17,4 +17,7 @@
 .content p {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   margin: 0;
+  max-width: 650px;
+  color: var(--color-muted);
+  line-height: 1.65;
 }

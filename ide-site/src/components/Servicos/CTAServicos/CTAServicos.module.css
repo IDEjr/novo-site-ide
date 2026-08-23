@@ -1,18 +1,13 @@
 .ctaBox {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    padding: 1rem;
-
-    background:
-        radial-gradient(120% 120% at 0% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
-        radial-gradient(120% 120% at 100% 0%, rgba(119,38,189,0.3) 0%, transparent 50%),
-        radial-gradient(120% 120% at 0% 100%, rgba(11,104,190,0.30) 0%, transparent 70%),
-        radial-gradient(120% 120% at 100% 80%, #444b79 0%, transparent 90%),
-        linear-gradient(90deg, #4f3da7, #444b79);
-    border-radius: 16px;
-    border: 2px solid #FFFFFF;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, rgba(101, 53, 165, 0.9), rgba(39, 17, 70, 0.92));
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
 }
 
 .content h1 {
@@ -31,15 +26,16 @@
   height: 76px;
   padding: 0 2.4rem;
 
-  border-radius: 16px;
+  border-radius: var(--radius-control);
 
   text-decoration: none;
 
   font-size: 1.2rem;
   font-weight: 700;
 
-  background: #65D553;
-  color: #0B5000;
+  background: linear-gradient(135deg, #b690ff, #7754df);
+  color: white;
+  box-shadow: 0 10px 24px rgba(122, 84, 223, 0.32);
 
   transition:
     transform .25s ease,
@@ -48,9 +44,8 @@
 }
 
 .button:hover {
-  background: #5bb94a;
-
   transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(122, 84, 223, 0.42);
 }
 
 @media (max-width: 768px) {

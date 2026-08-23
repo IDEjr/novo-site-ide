@@ -5,8 +5,19 @@
 }
 
 :root {
-  /* Altura real do Navbar (logo 45px + padding 1rem topo/base) — ver Navbar.module.css */
-  --navbar-height: 77px;
+  --navbar-height: 76px;
+  --color-bg: #10061f;
+  --color-surface: rgba(49, 23, 83, 0.72);
+  --color-surface-strong: #35145e;
+  --color-border: rgba(235, 223, 255, 0.18);
+  --color-text: #faf7ff;
+  --color-muted: rgba(250, 247, 255, 0.76);
+  --color-primary: #9c6cff;
+  --color-primary-light: #c8b0ff;
+  --color-accent: #61c8ff;
+  --shadow-card: 0 20px 50px rgba(6, 2, 15, 0.3);
+  --radius-card: 24px;
+  --radius-control: 14px;
 }
 
 html {
@@ -18,13 +29,38 @@ body {
   width: 100%;
   font-family: var(--font-principal), Arial, Helvetica, sans-serif;
   font-weight: 400;
-  line-height: 1.2;
-  background: #000;
+  line-height: 1.5;
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-width: 320px;
+  font-size: 17px;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(97, 200, 255, 0.8);
+  outline-offset: 3px;
 }
 
 .page-wrapper {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content,
@@ -38,8 +74,15 @@ footer {
   color: white;
   position: relative;
   z-index: 1;
+  flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
 }

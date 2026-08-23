@@ -17,7 +17,7 @@
 }
 
 .parceirosBox h2 {
-  font-size: 1.75rem;
+  font-size: clamp(2rem, 3vw, 2.7rem);
   text-align: center;
 }
 
@@ -36,28 +36,25 @@
 .parceiroBubble {
   position: relative;
 
-  width: 320px;
-  height: 320px;
+  width: 184px;
+  height: 184px;
 
-  border-radius: 72px;
+  border-radius: 50%;
 
   overflow: hidden;
 
   flex-shrink: 0;
 
-  background: linear-gradient(
-    135deg,
-    rgba(226, 212, 241, 0.877) 0%,
-    rgba(137, 116, 156, 0.952) 45%,
-    rgba(158, 131, 184, 0.822) 100%
-  );
-
-
+  background: rgba(247, 242, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: var(--shadow-card);
+  transform-style: preserve-3d;
+  transition: box-shadow .25s ease;
 }
 
 .parceiroImage {
   object-fit: contain;
-  padding: 20px;
+  padding: 26px;
 }
 
 .parceiroBubble span {
@@ -71,10 +68,19 @@
   display: block;
 }
 
+.parceiroLink:hover .parceiroBubble {
+  animation: coinSpin 1.15s cubic-bezier(.3, .75, .25, 1) both;
+  box-shadow: 0 26px 45px rgba(6, 2, 15, 0.38);
+}
+
+@keyframes coinSpin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(1080deg); }
+}
+
 @media (max-width: 700px) {
   .parceiroBubble {
-    width: 260px;
-    height: 260px;
-    border-radius: 60px;
+    width: 154px;
+    height: 154px;
   }
 }

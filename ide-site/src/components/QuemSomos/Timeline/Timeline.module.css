@@ -19,7 +19,7 @@
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #38a2ff;
+  color: var(--color-accent);
 }
 
 /* TIMELINE */
@@ -70,12 +70,12 @@
 
   padding: 1.8rem 1.6rem;
 
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 24px;
 
   backdrop-filter: blur(14px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-card);
 
   transition: .25s;
 }
@@ -87,7 +87,7 @@
 
 .year {
   margin-bottom: .6rem;
-  color: #38a2ff;
+  color: var(--color-accent);
   font-weight: 700;
   letter-spacing: .06em;
 }
@@ -99,7 +99,7 @@
 
 .content p {
   margin: 0;
-  color: rgba(255,255,255,.82);
+  color: var(--color-muted);
   line-height: 1.7;
 }
 
@@ -116,7 +116,8 @@
   height: 3rem;
 
   border-radius: 50%;
-  background: white;
+  background: #f7f2ff;
+  box-shadow: 0 0 0 7px rgba(156, 108, 255, 0.14);
 
   display: grid;
   place-items: center;
@@ -129,7 +130,7 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: #38a2ff;
+  background: var(--color-primary);
 }
 
 /* ========================= */

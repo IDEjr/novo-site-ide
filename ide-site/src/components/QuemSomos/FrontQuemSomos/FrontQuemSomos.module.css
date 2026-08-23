@@ -7,7 +7,7 @@
   justify-content: space-between;
   gap: 4rem;
 
-  padding: 4rem 0;
+  padding: 4rem 0 2rem;
 }
 
 .textContent {
@@ -27,7 +27,7 @@
 }
 
 .highlight {
-  color: #38a2ff;
+  color: var(--color-accent);
 }
 
 .textContent p {
@@ -35,7 +35,7 @@
   max-width: 420px;
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.7;
-  text-align: justify;
+  color: var(--color-muted);
 }
 
 .imageContainer {

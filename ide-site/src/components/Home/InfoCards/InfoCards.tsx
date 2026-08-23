@@ -8,7 +8,7 @@ const infoCards = [
       "Sistemas escaláveis e interfaces que convertem, utilizando as stacks mais modernas do mercado.",
   },
   {
-    titulo: "Cultura Junior",
+    titulo: "Cultura júnior",
     texto:
       "Preços acessíveis com qualidade sênior. Investimos 100% do nosso faturamento na capacitação dos nossos membros.",
   },
@@ -26,10 +26,9 @@ export default function InfoCards() {
         <h2>Excelência UFRGS em cada pixel</h2>
 
         <p>
-          Nascida dentro do Instituto de Informática da UFRGS, a IDE une o rigor
-          acadêmico das melhores mentes de TI do país com a agilidade de uma
-          startup moderna. Somos mais que desenvolvedores; somos estrategistas
-          digitais.
+          Nascida no Instituto de Informática da UFRGS, a IDE combina rigor
+          acadêmico e experiência prática para criar soluções digitais claras,
+          eficientes e adequadas a cada desafio.
         </p>
 
         <div className={styles.cardsWrapper}>
