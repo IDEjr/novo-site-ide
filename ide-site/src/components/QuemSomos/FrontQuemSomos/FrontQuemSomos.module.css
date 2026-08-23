@@ -1,124 +1,302 @@
 .content {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 4rem));
+
   margin: 0 auto;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+
   gap: 4rem;
 
-  padding: 4rem 0;
+  /*
+    Centraliza o conjunto inteiro verticalmente
+    dentro da área disponível da tela.
+  */
+  min-height: calc(100vh - var(--navbar-height) - 3rem);
 }
+
+/* ===========================
+   TEXTO
+=========================== */
 
 .textContent {
   flex: 1;
-  max-width: 540px;
+
+  max-width: 600px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
 }
 
 .textContent h1 {
-  margin: 0 0 1.5rem;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.1;
-  text-align: left;
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  color: white;
+
+  text-align: center;
 }
 
 .highlight {
   color: #38a2ff;
 }
 
-.textContent p {
-  margin: 0;
-  max-width: 420px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.7;
+/* ===========================
+   DESCRIÇÃO - GLASS
+=========================== */
+
+.content p {
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+
+  margin-top: 1.75rem;
+  padding: 1.8rem 1.6rem;
+
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.65;
+
   text-align: justify;
+  text-align-last: left;
+
+  background: rgba(15, 15, 20, 0.856);
+
+  border: 1px solid rgba(255, 255, 255, 0.329);
+  border-radius: 24px;
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.507),
+    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.imageContainer {
-  flex: 1;
+.content p:hover {
+  transform: translateY(-3px);
 
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+/* ===========================
+   TYPEWRITER
+=========================== */
+
+.typewriter {
+  display: inline-block;
+  min-width: 11ch;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+.actions {
   display: flex;
+  flex-wrap: wrap;
+
   justify-content: center;
-  align-items: center;
+
+  gap: 1rem;
+  margin-top: 2.5rem;
 }
+
+.button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+  height: 58px;
+
+  padding: 0 2rem;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.button:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+.buttonPrimary {
+  background: #38a2ff;
+  color: #000;
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: white;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ===========================
+   IMAGEM
+=========================== */
 
 .heroImage {
-  width: 100%;
-  max-width: 520px;
+  flex: 0 1 auto;
+
+  width: clamp(260px, 30vw, 520px);
+
   height: auto;
+
   object-fit: contain;
 }
 
-/* ---------- Tablets ---------- */
+/* ===========================
+   TABLETS / TELAS MÉDIAS
+=========================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+
   .content {
     gap: 2.5rem;
   }
 
-  .heroImage {
-    max-width: 420px;
-  }
-}
-
-/* ---------- Celulares ---------- */
-
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3rem;
-    padding: 3rem 0;
-  }
-
   .textContent {
-    max-width: 100%;
-    align-items: flex-start;
+    max-width: 550px;
   }
 
   .textContent h1 {
-    text-align: left;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
   }
 
-  .textContent p {
-    max-width: 100%;
-    text-align: justify;
+  .content p {
+    max-width: 600px;
+  }
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width: 900px) {
+
+  .content {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 3rem;
+
+    padding: 4rem 0;
   }
 
-  .imageContainer {
+  .textContent {
     width: 100%;
+    max-width: 700px;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .textContent h1 {
+    text-align: center;
+  }
+
+  .content p {
+    width: 100%;
+    max-width: 700px;
+
+    text-align: justify;
+    text-align-last: left;
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+  }
+
+  .actions {
     justify-content: center;
   }
 
   .heroImage {
-    width: min(90vw, 420px);
-    height: auto;
+    width: min(380px, 80vw);
   }
 }
 
-/* ---------- Celulares pequenos ---------- */
+/* ===========================
+   CELULARES
+=========================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
   .content {
-    width: min(100%, calc(100% - 1.5rem));
-    gap: 2rem;
-    padding: 2.5rem 0;
+    width: min(100%, calc(100% - 2rem));
+
+    padding: 4rem 0;
+
+    gap: 2.5rem;
+  }
+
+  .textContent {
+    width: 100%;
+    max-width: none;
   }
 
   .textContent h1 {
-    font-size: clamp(2rem, 9vw, 2.8rem);
+    font-size: clamp(2.2rem, 10vw, 3rem);
+
+    text-align: center;
   }
 
-  .textContent p {
+  .content p {
+    width: 100%;
+    max-width: none;
+
+    padding: 1.4rem 1.2rem;
+
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+
+  .actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .heroImage {
-    width: min(95vw, 320px);
+    width: min(90vw, 380px);
   }
 }

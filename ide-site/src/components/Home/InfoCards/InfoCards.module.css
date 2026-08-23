@@ -8,6 +8,7 @@
 .infoCardsBox {
   width: 100%;
   max-width: 1100px;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -17,16 +18,50 @@
   font-size: 2rem;
 }
 
+/* ===========================
+   TEXTO PRINCIPAL - GLASS
+=========================== */
+
 .infoCardsBox > p {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 1.8rem 1.6rem;
+
   font-size: 1.1rem;
   font-weight: 300;
-  max-width: 800px;
-
   line-height: 1.7;
 
   text-align: justify;
   text-align-last: left;
+
+  /* Vidro escuro e ofuscado */
+  background: rgba(15, 15, 20, 0.856);
+
+  border: 1px solid rgba(255, 255, 255, 0.329);
+  border-radius: 24px;
+
+  /* Blur forte */
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.507),
+    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+
+/* ===========================
+   CARDS
+=========================== */
 
 .cardsWrapper {
   display: flex;
@@ -34,7 +69,9 @@
   gap: 1.5rem;
 }
 
-/* Primeira linha */
+/* ===========================
+   PRIMEIRA LINHA
+=========================== */
 
 .infoRow {
   display: grid;
@@ -54,18 +91,20 @@
 }
 
 .infoCard h3 {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .infoCard p {
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 
   text-align: justify;
   text-align-last: left;
 }
 
-/* Segunda linha */
+/* ===========================
+   SEGUNDA LINHA
+=========================== */
 
 .statRow {
   display: grid;
@@ -80,6 +119,10 @@
   border-radius: 24px;
   overflow: hidden;
 }
+
+/* ===========================
+   STAT CARD
+=========================== */
 
 .statCard {
   background: #7726bd;
@@ -98,10 +141,14 @@
 }
 
 .statCard span {
-  margin-top: .75rem;
+  margin-top: 0.75rem;
   font-size: 1.05rem;
   text-align: center;
 }
+
+/* ===========================
+   FOTO
+=========================== */
 
 .fotoCard {
   position: relative;
@@ -112,13 +159,12 @@
   object-fit: cover;
 }
 
-/* Responsivo */
-
 /* ===========================
-   Tablets
+   TABLETS
 =========================== */
 
 @media (max-width: 900px) {
+
   .infoCardsSection {
     padding: 2.5rem 1.5rem;
   }
@@ -127,23 +173,42 @@
     font-size: 1.8rem;
   }
 
+  /* Texto principal */
+
   .infoCardsBox > p {
+    width: 100%;
+    max-width: none;
+
     font-size: 1rem;
     line-height: 1.7;
+
+    padding: 1.6rem 1.5rem;
+
     text-align: justify;
     text-align-last: left;
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
   }
+
+  /* Cards */
 
   .infoRow {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
+  /* Estatísticas */
+
   .statRow {
     grid-template-columns: repeat(2, 1fr);
+
     grid-template-areas:
       "foto foto"
       "left right";
+
     gap: 1rem;
   }
 
@@ -164,10 +229,11 @@
 }
 
 /* ===========================
-   Celulares
+   CELULARES
 =========================== */
 
 @media (max-width: 600px) {
+
   .infoCardsSection {
     padding: 2rem 1rem;
   }
@@ -181,13 +247,31 @@
     text-align: center;
   }
 
+  /* Texto principal */
+
   .infoCardsBox > p {
-    text-align: left;
+    width: 100%;
+    max-width: none;
+
     font-size: 0.95rem;
+    line-height: 1.7;
+
+    padding: 1.4rem 1.2rem;
 
     text-align: justify;
     text-align-last: left;
+
+    border-radius: 20px;
+
+    /*
+      Blur um pouco menor no celular
+      para reduzir o custo de renderização.
+    */
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
   }
+
+  /* Cards */
 
   .cardsWrapper {
     gap: 1rem;
@@ -212,11 +296,15 @@
     font-size: 0.9rem;
   }
 
+  /* Estatísticas */
+
   .statRow {
     grid-template-columns: repeat(2, 1fr);
+
     grid-template-areas:
       "foto foto"
       "left right";
+
     gap: 0.9rem;
   }
 

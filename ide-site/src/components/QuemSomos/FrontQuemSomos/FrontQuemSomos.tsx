@@ -5,7 +5,7 @@ export default function FrontQuemSomos() {
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h1>
-          Código que <span className={styles.highlight}>Transforma.</span>
+          Código que <span className={styles.highlight}>transforma.</span>
         </h1>
 
         <p>

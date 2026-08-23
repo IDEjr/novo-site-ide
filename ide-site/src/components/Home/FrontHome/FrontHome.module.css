@@ -1,5 +1,6 @@
 .content {
   width: min(1280px, calc(100% - 4rem));
+
   margin: 0 auto;
 
   display: flex;
@@ -8,10 +9,17 @@
 
   gap: 4rem;
 
-  /* 3rem compensa o padding-top de .hero em page.module.css, que empurra
-     esta seção pra baixo da navbar sem isso ser descontado em lugar nenhum. */
+  /*
+    3rem compensa o padding-top de .hero em page.module.css,
+    que empurra esta seção pra baixo da navbar sem isso ser
+    descontado em lugar nenhum.
+  */
   min-height: calc(100vh - var(--navbar-height) - 3rem);
 }
+
+/* ===========================
+   TEXTO
+=========================== */
 
 .textContent {
   display: flex;
@@ -34,30 +42,84 @@
   color: #38a2ff;
 }
 
-.content p {
-  margin-top: 1.75rem;
+/* ===========================
+   DESCRIÇÃO - GLASS
+=========================== */
 
-  max-width: 620px;
+.content p {
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+
+  margin-top: 1.75rem;
+  padding: 1.8rem 1.6rem;
 
   font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 300;
   line-height: 1.65;
 
   text-align: justify;
   text-align-last: left;
 
-  color: rgba(255,255,255,.9);
+  /*
+    Vidro escuro e bastante ofuscado,
+    seguindo o mesmo padrão do InfoCard.
+  */
+  background: rgba(15, 15, 20, 0.856);
+
+  border: 1px solid rgba(255, 255, 255, 0.329);
+  border-radius: 24px;
+
+  /*
+    Blur forte para esconder o background
+    dinâmico atrás do texto.
+  */
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.507),
+    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+.content p:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+/* ===========================
+   TYPEWRITER
+=========================== */
+
+.typewriter {
+  display: inline-block;
+  min-width: 11ch;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 
+  gap: 1rem;
   margin-top: 2.5rem;
 }
 
 .button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -72,12 +134,12 @@
   font-weight: 700;
 
   transition:
-    transform .25s ease,
-    opacity .25s ease;
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .button:hover {
-  opacity: .95;
+  opacity: 0.95;
   transform: translateY(-2px);
 }
 
@@ -89,14 +151,25 @@
 .buttonSecondary {
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,.8);
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
+
+/* ===========================
+   IMAGEM
+=========================== */
 
 .heroImage {
   width: clamp(260px, 30vw, 520px);
+
   height: auto;
+
   object-fit: contain;
 }
+
+/* ===========================
+   TABLETS / TELAS MÉDIAS
+=========================== */
 
 @media (max-width: 1100px) {
 
@@ -113,15 +186,13 @@
   }
 
   .content p {
-    max-width: 540px;
+    max-width: 600px;
   }
-
 }
 
-.typewriter {
-  display: inline-block;
-  min-width: 11ch;
-}
+/* ===========================
+   TABLETS
+=========================== */
 
 @media (max-width: 900px) {
 
@@ -132,6 +203,9 @@
   .content p {
     text-align: justify;
     text-align-last: left;
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
   }
 
   .actions {
@@ -141,13 +215,17 @@
   .heroImage {
     width: min(380px, 80vw);
   }
-
 }
+
+/* ===========================
+   CELULARES
+=========================== */
 
 @media (max-width: 600px) {
 
   .content {
     width: min(100%, calc(100% - 2rem));
+
     padding: 4rem 0;
   }
 
@@ -156,16 +234,27 @@
   }
 
   .content p {
+    width: 100%;
+    max-width: none;
+
+    padding: 1.4rem 1.2rem;
+
     font-size: 1rem;
+    line-height: 1.7;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
   }
 
   .actions {
     width: 100%;
+
     flex-direction: column;
   }
 
   .button {
     width: 100%;
   }
-
 }
