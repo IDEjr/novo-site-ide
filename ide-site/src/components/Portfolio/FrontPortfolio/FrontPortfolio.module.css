@@ -41,17 +41,17 @@
 }
 
 .title span {
-  background: linear-gradient(
-    90deg,
-    #f8efff 0%,
-    #d87eff 45%,
-    #a348ff 100%
-  );
+  background: white;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   background-clip: text;
+}
+
+.highlight {
+  color: #38a2ff;
+  -webkit-text-fill-color: #38a2ff;
 }
 
 /* ===========================

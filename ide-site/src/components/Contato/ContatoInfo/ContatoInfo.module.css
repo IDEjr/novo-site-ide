@@ -8,12 +8,11 @@
 .content h1 {
     text-align: center;
     font-size: clamp(2.5rem, 5.5vw, 4rem);
+    color: #ffffff;
+}
 
-    background: linear-gradient(180deg, #FFFFFF 0%, #349EAC 100%);
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.highlight {
+    color: #38a2ff;
 }
 
 .cardsContainer{

@@ -5,7 +5,9 @@ export default function FrontPortfolio() {
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h2 className={styles.title}>
-          <span>Nosso portfólio.</span>
+          <span>
+            Nosso <strong className={styles.highlight}>portfólio</strong>.
+          </span>
         </h2>
 
         <p className={styles.description}>

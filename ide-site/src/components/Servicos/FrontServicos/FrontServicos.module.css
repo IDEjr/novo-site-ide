@@ -22,6 +22,11 @@
 
   font-size: clamp(3rem, 7vw, 6rem);
   line-height: 1;
+  color: white;
+}
+
+.highlight {
+  color: #38a2ff;
 }
 
 /* ===========================

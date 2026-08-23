@@ -6,7 +6,9 @@ export default function ContatoInfo() {
   return (
     <section className={styles.content}>
         
-        <h1>Vamos codar o<br />seu futuro?</h1>
+        <h1>
+            Vamos codar o<br />seu <span className={styles.highlight}>futuro</span>?
+        </h1>
 
         <div className={styles.cardsContainer}>
 
