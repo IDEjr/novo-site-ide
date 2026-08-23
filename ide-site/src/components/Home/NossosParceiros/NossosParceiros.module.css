@@ -8,11 +8,9 @@
 .parceirosBox {
   width: 100%;
   max-width: 1100px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 2rem;
 }
 
@@ -23,58 +21,123 @@
 
 .parceirosList {
   width: 100%;
-
   display: flex;
   flex-wrap: wrap;
-
   align-items: center;
   justify-content: center;
-
   gap: 2rem;
 }
 
 .parceiroBubble {
   position: relative;
-
-  width: 320px;
-  height: 320px;
-
-  border-radius: 72px;
-
-  overflow: hidden;
-
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
   flex-shrink: 0;
 
-  background: linear-gradient(
-    135deg,
-    rgba(226, 212, 241, 0.877) 0%,
-    rgba(137, 116, 156, 0.952) 45%,
-    rgba(158, 131, 184, 0.822) 100%
-  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
+  perspective: 800px;
 }
+
+/* ========================================
+   MOEDA
+   ======================================== */
+
+.parceiroBubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(132, 41, 202, 0.616),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(105, 28, 172, 0.596),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #3a1c68bd 0%,
+      #3f1a66d0 45%,
+      #40216bc0 100%
+    );
+
+  transform-origin: center;
+
+  z-index: 1;
+}
+
+/* ========================================
+   ROTAÇÃO DA MOEDA
+   ======================================== */
+
+.parceiroLink:hover .parceiroBubble::before,
+.parceiroLink:hover .parceiroImage {
+  animation: girarMoeda 1.5s linear 1;
+}
+
+@keyframes girarMoeda {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* ========================================
+   IMAGEM / LOGO
+   ======================================== */
 
 .parceiroImage {
+  position: relative;
+  z-index: 2;
+
   object-fit: contain;
   padding: 20px;
+
+  transform-origin: center;
 }
 
+/* ========================================
+   TEXTO
+   ======================================== */
+
 .parceiroBubble span {
+  position: relative;
+  z-index: 2;
+
   color: #5f5f5f;
   font-weight: 700;
   font-size: 1.1rem;
 }
+
+/* ========================================
+   LINK
+   ======================================== */
 
 .parceiroLink {
   text-decoration: none;
   display: block;
 }
 
+/* ========================================
+   MOBILE
+   ======================================== */
+
 @media (max-width: 700px) {
   .parceiroBubble {
     width: 260px;
     height: 260px;
-    border-radius: 60px;
   }
 }
