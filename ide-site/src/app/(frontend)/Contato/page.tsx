@@ -5,7 +5,7 @@ import styles from './page.module.css';
 export default function Contato() {
   return (
     <main className={styles.mainContato}>
-      <h1>Entre em contato conosco</h1>
+      <h1>Entre em <span className={styles.highlight}>contato</span> conosco.</h1>
       <div className={styles.contactContent}>
         <ContatoInfo />
         <ContatoForm />

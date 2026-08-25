@@ -75,7 +75,7 @@
 
 @keyframes coinSpin {
   from { transform: rotateY(0deg); }
-  to { transform: rotateY(1080deg); }
+  to { transform: rotateY(360deg); }
 }
 
 @media (max-width: 700px) {

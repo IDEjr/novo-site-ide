@@ -5,7 +5,7 @@ const parceiros = [
   {
     nome: "INF",
     img: "/imagens/infTransparente.png",
-    link: "https://www.inf.ufrgs.br/site/",
+    link: "https://www.inf.ufrgs.br/cei/",
   },
   {
     nome: "UFRGS",

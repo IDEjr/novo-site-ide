@@ -1,23 +1,154 @@
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    justify-content: flex-start;
+  width: min(1200px, calc(100% - 2rem));
 
-    max-width: 900px;
-    padding: 1rem 0 5rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  text-align: left;
+  justify-content: flex-start;
+
+  padding: 0 0 8.5rem;
 }
+
+/* ===========================
+   TÍTULO
+=========================== */
 
 .content h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 1;
+  margin: 0;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  color: white;
 }
 
+.highlight {
+  color: #38a2ff;
+}
+
+/* ===========================
+   TEXTO - GLASS
+=========================== */
+
 .content p {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin: 0;
-  max-width: 650px;
-  color: var(--color-muted);
-  line-height: 1.65;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+
+  margin: 1.5rem 0 0;
+  padding: 1.8rem 1.6rem;
+
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.6;
+
+  text-align: justify;
+  text-align-last: left;
+
+  /* Vidro escuro e ofuscado */
+  background: rgba(15, 15, 20, 0.856);
+
+  border: 1px solid rgba(255, 255, 255, 0.329);
+  border-radius: 24px;
+
+  /* Blur forte */
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.507),
+    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.content p:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width: 900px) {
+
+  .content {
+    width: min(100%, calc(100% - 2rem));
+
+    padding-bottom: 6rem;
+  }
+
+  .content p {
+    max-width: 800px;
+
+   font-size: clamp(1.05rem, 2vw, 1.3rem);
+
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+  }
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width: 600px) {
+
+  .content {
+    width: calc(100% - 2rem);
+
+    padding-bottom: 4rem;
+  }
+
+  .content h1 {
+   font-size: clamp(2.5rem, 10vw, 3.5rem);
+   line-height: 1.05;
+  }
+
+  .content p {
+    width: 100%;
+    max-width: none;
+
+    margin-top: 1.25rem;
+    padding: 1.4rem 1.2rem;
+
+   font-size: clamp(1.05rem, 2vw, 1.3rem);
+   line-height: 1.6;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+}
+
+/* ===========================
+   CELULARES PEQUENOS
+=========================== */
+
+@media (max-width: 400px) {
+
+  .content {
+    width: calc(100% - 1.5rem);
+
+    padding-bottom: 3rem;
+  }
+
+  .content p {
+    padding: 1.25rem 1.1rem;
+
+   font-size: clamp(1.05rem, 2vw, 1.3rem);
+   line-height: 1.6;
+  }
 }

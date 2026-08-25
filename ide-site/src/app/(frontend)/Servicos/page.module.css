@@ -8,16 +8,15 @@
   padding: 5rem clamp(1rem, 4vw, 3rem) 6rem;
 }
 
-.hero h1 {
-  margin: 0 0 2rem;
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 
-  background: linear-gradient(135deg, #ffffff 0%, #c8b0ff 52%, #61c8ff 100%);
-    
-  -webkit-background-clip: text;
-  background-clip: text;
-    
-  -webkit-text-fill-color: transparent;
+  isolation: isolate;
+  pointer-events: none;
 }
+
 
 @media (max-width: 1200px) {
 
