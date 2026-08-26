@@ -10,7 +10,7 @@ export const yearCollections = [
       },
       {
         nome: "João Carlos Batista",
-        linkedin: "https://www.linkedin.com/in/editar-perfil",
+        linkedin: "https://www.linkedin.com/in/jo%C3%A3o-carlos-batista-103432431/",
         cargo: "Vice-Presidente",
         image: "/imagens/gestoes/26-2/joao-carlos-batista.png",
       },
@@ -62,7 +62,7 @@ export const yearCollections = [
     integrantes: [
       {
         nome: "João Carlos Batista",
-        linkedin: "https://www.linkedin.com/in/editar-perfil",
+        linkedin: "https://www.linkedin.com/in/jo%C3%A3o-carlos-batista-103432431/",
         cargo: "Presidente",
         image: "/imagens/gestoes/26-2/joao-carlos-batista.png",
       },
@@ -112,7 +112,7 @@ export const yearCollections = [
     integrantes: [
       {
         nome: "João Carlos Batista",
-        linkedin: "https://www.linkedin.com/in/editar-perfil",
+        linkedin: "https://www.linkedin.com/in/jo%C3%A3o-carlos-batista-103432431/",
         cargo: "Presidente",
         image: "/imagens/gestoes/26-2/joao-carlos-batista.png",
       },
