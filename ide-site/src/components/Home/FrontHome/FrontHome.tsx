@@ -29,10 +29,10 @@ export default function FrontHome() {
 
         <div className={styles.actions}>
           <Link href="/Contato" className={`${styles.button} ${styles.buttonPrimary}`}>
-            Fale Conosco
+            Fale conosco
           </Link>
           <Link href="/Portfolio" className={`${styles.button} ${styles.buttonSecondary}`}>
-            Ver Portfólio
+            Ver portfólio
           </Link>
         </div>
       </div>

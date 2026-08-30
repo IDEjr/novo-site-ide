@@ -7,7 +7,7 @@ import styles from './Navbar.module.css';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/QuemSomos', label: 'Quem Somos' },
+  { href: '/QuemSomos', label: 'Quem somos' },
   { href: '/Servicos', label: 'Serviços' },
   { href: '/Portfolio', label: 'Portfólio' },
   { href: '/Contato', label: 'Contato' },

@@ -21,7 +21,7 @@ const events = [
   },
   {
     year: "2026",
-    title: "Referência Nacional em Soluções Digitais",
+    title: "Referência nacional em soluções digitais",
     description:
       "Eleita uma das empresas juniores mais inovadoras, mantendo a excelência acadêmica e foco em resultados reais.",
   },

@@ -19,6 +19,12 @@ export default function ContatoForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContatoFormData>({
     resolver: zodResolver(ContatoSchema),
+    defaultValues: {
+      nome: "",
+      email: "",
+      assunto: "", // Opcional: assunto padrão legível para sua triagem
+      mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto.",
+    },
   });
 
   const onSubmit = async (data: ContatoFormData) => {
@@ -33,7 +39,7 @@ export default function ContatoForm() {
           nome: "",
           email: "",
           assunto: "",
-          mensagem: ""
+          mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto."
         });
       } else {
         setStatus('error');

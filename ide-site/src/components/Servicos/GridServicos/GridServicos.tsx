@@ -6,7 +6,7 @@ export default function GridServicos() {
     <section className={styles.content}>
       <CardServico 
         iconeSrc="/imagens/imgServicos/icones/site.svg"
-        titulo="Site de Apresentação Institucional"  
+        titulo="Site de apresentação institucional"  
         descricao="Criamos sites modernos e responsivos para apresentar sua empresa, fortalecer sua presença digital e transmitir credibilidade aos seus clientes."
         tecnologias={[
           { nome: "Next.js", imgSrc: "/imagens/imgServicos/tecnologias/nextjs.svg"}, 
@@ -30,7 +30,7 @@ export default function GridServicos() {
 
       <CardServico 
         iconeSrc="/imagens/imgServicos/icones/monitorCelular.svg"
-        titulo="Sistemas Web Sob Medida"  
+        titulo="Sistemas web sob medida"  
         descricao="Criamos plataformas acessíveis pelo navegador para automatizar processos, centralizar informações e atender às necessidades específicas da sua empresa."
         tecnologias={[
           { nome: "Next.js", imgSrc: "/imagens/imgServicos/tecnologias/nextjs.svg"},
@@ -42,7 +42,7 @@ export default function GridServicos() {
 
       <CardServico 
         iconeSrc="/imagens/imgServicos/icones/monitor.svg"
-        titulo="Softwares Sob Medida"  
+        titulo="Softwares sob medida"  
         descricao="Projetamos soluções de software adaptadas à realidade da sua empresa, desde ferramentas internas até sistemas completos de gestão."
         tecnologias={[
           { nome: "Python", imgSrc: "/imagens/imgServicos/tecnologias/python.svg"},

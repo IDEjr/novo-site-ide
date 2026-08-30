@@ -10,7 +10,7 @@ const infoCards = [
   {
     titulo: "Cultura júnior",
     texto:
-      "Preços acessíveis com qualidade sênior. Investimos 100% do nosso faturamento na capacitação dos nossos membros.",
+      "Preços acessíveis com entrega de alta qualidade. Investimos 100% do nosso faturamento na capacitação dos nossos membros.",
   },
   {
     titulo: "UI/UX Design",
