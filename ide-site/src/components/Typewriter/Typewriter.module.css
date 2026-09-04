@@ -1,24 +1,12 @@
 .typewriter {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   color: #38a2ff;
   font-weight: 700;
 }
 
-.cursor {
-  position: absolute;
-  right: -6px;
-  top: 0;
-
-  width: 3px;
-  height: 1em;
-
-  background: var(--color-accent);
-  border-radius: 2px;
-
-  animation: blink 1s infinite;
-}
 
 @keyframes blink {
   50% {

@@ -29,6 +29,9 @@
 .textContent h1 {
   margin: 0;
 
+  text-align: center;
+  position: relative;
+
   font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 1.05;
   font-weight: 700;
