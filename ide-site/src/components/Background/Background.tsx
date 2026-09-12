@@ -7,6 +7,7 @@ import styles from "./Background.module.css";
 
 export default function Background() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isPoorINP, setIsPoorINP] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -19,6 +20,61 @@ export default function Background() {
 
     mediaQuery.addEventListener("change", handleChange);
 
+    // Monitorar INP usando PerformanceObserver com "event" entryTypes
+    let observerSupported = false;
+    if ("PerformanceObserver" in window) {
+      try {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            // Verifica interações (click, keydown, pointerup) com duration > 320ms
+            if ("duration" in entry && entry.duration > 320) {
+              setIsPoorINP(true);
+              observer.disconnect();
+              return;
+            }
+          }
+        });
+
+        observer.observe({ entryTypes: ["event"] } as any);
+        observerSupported = true;
+
+        return () => {
+          observer.disconnect();
+          mediaQuery.removeEventListener("change", handleChange);
+        };
+      } catch {
+        // PerformanceObserver não suporta "event"
+      }
+    }
+
+    // Fallback: monitorar interações manualmente se PerformanceObserver falhar
+    if (!observerSupported) {
+      const handleInteraction = (startTime: number) => {
+        // Usar requestAnimationFrame para medir quando a próxima pintura vai acontecer
+        requestAnimationFrame((rafTime) => {
+          const duration = rafTime - startTime;
+          if (duration > 320) {
+            setIsPoorINP(true);
+          }
+        });
+      };
+
+      const handleClick = () => handleInteraction(performance.now());
+      const handleKeydown = () => handleInteraction(performance.now());
+      const handlePointerup = () => handleInteraction(performance.now());
+
+      document.addEventListener("click", handleClick, true);
+      document.addEventListener("keydown", handleKeydown, true);
+      document.addEventListener("pointerup", handlePointerup, true);
+
+      return () => {
+        document.removeEventListener("click", handleClick, true);
+        document.removeEventListener("keydown", handleKeydown, true);
+        document.removeEventListener("pointerup", handlePointerup, true);
+        mediaQuery.removeEventListener("change", handleChange);
+      };
+    }
+
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
     };
@@ -26,6 +82,10 @@ export default function Background() {
 
   if (isMobile === null) {
     return null;
+  }
+
+  if (isMobile || isPoorINP) {
+    return <div className={`${styles.background} ${styles.mobileBackground}`} />;
   }
 
   const desktopConfig = {
@@ -49,37 +109,10 @@ export default function Background() {
     pageLoadAnimation: true,
   };
 
-  const mobileConfig = {
-    dpr: 0.5,
-    tint: "#7922d6",
-    scale: 1.8,
-    timeScale: 1,
-    scanlineIntensity: 0.3,
-    curvature: 0.2,
-
-    gridMul: [2, 1] as [number, number],
-    digitSize: 1.5,
-    glitchAmount: 1,
-    flickerAmount: 1,
-    noiseAmp: 1,
-    chromaticAberration: 0,
-    dither: 0,
-    mouseReact: false,
-    mouseStrength: 0.2,
-    brightness: 0.7,
-    pageLoadAnimation: false,
-  };
-
-  const config = isMobile ? mobileConfig : desktopConfig;
-
-  if (isMobile) {
-    return <div className={`${styles.background} ${styles.mobileBackground}`} />;
-  }
-
   return (
     <div className={styles.background}>
       <FaultyTerminal
-        {...config}
+        {...desktopConfig}
         staticMode={false}
       />
     </div>
