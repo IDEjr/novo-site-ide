@@ -4,6 +4,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import sharp from 'sharp'
 import { buildConfig } from 'payload'
+import { resendAdapter } from '@payloadcms/email-resend'
 
 import { Users } from './src/collections/Users'
 import { Media } from './src/collections/Media'
@@ -29,4 +30,9 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'src/payload-types.ts'),
   },
+  email: resendAdapter({
+    defaultFromAddress: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+    defaultFromName: "IDE site - blog admin",
+    apiKey: process.env.RESEND_API_KEY_PAYLOAD || '',
+  }),
 })

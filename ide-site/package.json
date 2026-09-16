@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
     "@payloadcms/db-postgres": "^3.86.0",
+    "@payloadcms/email-resend": "^3.87.0",
     "@payloadcms/next": "^3.86.0",
     "@payloadcms/richtext-lexical": "^3.86.0",
     "@react-email/components": "^1.0.12",
@@ -23,7 +24,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.82.0",
-    "resend": "^6.18.0",
+    "resend": "^6.28.0",
     "sharp": "^0.35.3",
     "zod": "^4.4.3"
   },
