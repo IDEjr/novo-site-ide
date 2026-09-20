@@ -8,9 +8,9 @@ import styles from './Navbar.module.css';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/QuemSomos', label: 'Quem somos' },
-  { href: '/Servicos', label: 'Serviços' },
-  { href: '/Blog', label: 'Blog' },
+  { href: '/Servicos', label: 'Serviços' },  
   { href: '/Portfolio', label: 'Portfólio' },
+  { href: '/Blog', label: 'Blog' },
   { href: '/Contato', label: 'Contato' },
 ];
 
