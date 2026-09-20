@@ -18,6 +18,7 @@ export default function Footer() {
                         alt="Logo IDE"
                         width={132}
                         height={98}
+                        loading="eager"
                     />
                 </Link>
             </div>
