@@ -1,23 +1,22 @@
 .hero {
   min-height: 100vh;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1200px;
   align-items: center;
 
   margin: 0 auto;
-  padding: 4rem 8rem 5rem 8rem;
+  padding: 5rem clamp(1rem, 4vw, 3rem) 6rem;
 }
 
-.hero h1 {
-  margin: 0 0 2rem;
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 
-  background: linear-gradient(180deg, #FFFFFF 0%, #45AC34 100%);
-    
-  -webkit-background-clip: text;
-  background-clip: text;
-    
-  -webkit-text-fill-color: transparent;
+  isolation: isolate;
+  pointer-events: none;
 }
+
 
 @media (max-width: 1200px) {
 

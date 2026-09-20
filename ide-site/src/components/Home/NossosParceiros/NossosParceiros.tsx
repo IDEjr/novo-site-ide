@@ -5,7 +5,7 @@ const parceiros = [
   {
     nome: "INF",
     img: "/imagens/infTransparente.png",
-    link: "https://www.inf.ufrgs.br/site/",
+    link: "https://www.inf.ufrgs.br/cei/",
   },
   {
     nome: "UFRGS",
@@ -18,7 +18,7 @@ export default function NossosParceiros() {
   return (
     <section className={styles.parceirosSection}>
       <div className={styles.parceirosBox}>
-        <h2>Nossos Parceiros</h2>
+        <h2>Nossos parceiros</h2>
 
         <div className={styles.parceirosList}>
           {parceiros.map((parceiro) => (

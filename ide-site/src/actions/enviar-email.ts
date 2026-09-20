@@ -6,8 +6,6 @@ import { env } from "@/env";
 import { ContactConfirmationEmail } from "../components/EmailTemplates/ContactConfirmation";
 import { ContactNotificationEmail } from "../components/EmailTemplates/ContactNotification";
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export async function sendEmailAction(data: ContatoFormData) {
   const validation = ContatoSchema.safeParse(data);
 
@@ -17,10 +15,16 @@ export async function sendEmailAction(data: ContatoFormData) {
 
   const { nome, email, assunto, mensagem } = validation.data;
 
-  const fromEmail = `IDE <${env.EMAIL_FROM}>`;
-  const contactEmail = env.CONTACT_EMAIL;
-
   try {
+
+    if (!env.RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY não foi configurada nas variáveis de ambiente.");
+    }
+
+    const resend = new Resend(env.RESEND_API_KEY);
+    const fromEmail = `IDE <${env.EMAIL_FROM}>`;
+    const contactEmail = env.CONTACT_EMAIL;
+
     const { error } = await resend.batch.send([
       {
         from: fromEmail,
@@ -54,7 +58,7 @@ export async function sendEmailAction(data: ContatoFormData) {
     console.error("Erro ao enviar e-mail:", err);
     return {
       success: false,
-      error: "Falha ao enviar a mensagem. Tente novamente.",
+      error: err instanceof Error ? err.message : "Falha ao enviar a mensagem.",
     };
   }
 }

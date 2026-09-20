@@ -19,22 +19,33 @@ export default function ContatoForm() {
     formState: { errors, isSubmitting },
   } = useForm<ContatoFormData>({
     resolver: zodResolver(ContatoSchema),
+    defaultValues: {
+      nome: "",
+      email: "",
+      assunto: "", // Opcional: assunto padrão legível para sua triagem
+      mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto.",
+    },
   });
 
   const onSubmit = async (data: ContatoFormData) => {
     setStatus('idle');
 
-    const result = await sendEmailAction(data);
+    try {
+      const result = await sendEmailAction(data);
 
-    if (result.success) {
-      setStatus('success');
-      reset({
-        nome: "",
-        email: "",
-        assunto: "",
-        mensagem: ""
-      });
-    } else {
+      if (result.success) {
+        setStatus('success');
+        reset({
+          nome: "",
+          email: "",
+          assunto: "",
+          mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto."
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch(error) {
+      console.error("Falha na requisição:", error);
       setStatus('error');
     }
   };

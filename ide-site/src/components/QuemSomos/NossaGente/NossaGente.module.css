@@ -6,18 +6,11 @@
   position: relative;
   overflow: hidden;
 
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(71, 37, 124, 0.34),
-      transparent 30%
-    ),
-    radial-gradient(circle at bottom right, #491f6d, transparent 32%),
-    linear-gradient(135deg, #2d0a56 0%, #230b36 48%, #6b2ea0 100%);
+  background: linear-gradient(135deg, rgba(71, 33, 118, 0.86), rgba(29, 12, 53, 0.92));
 
   backdrop-filter: blur(16px);
-  box-shadow: 0 24px 70px rgba(24, 6, 44, 0.34);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
 }
 
 .section::before {
@@ -58,10 +51,10 @@
   margin: 0 0 0.7rem;
   font-size: clamp(1.7rem, 2.2vw, 2.35rem);
   line-height: 1.1;
-  color: #7bffb6;
+  color: var(--color-primary-light);
   font-weight: 800;
   letter-spacing: 0.02em;
-  text-shadow: 0 0 18px rgba(93, 255, 217, 0.25);
+  text-shadow: 0 0 18px rgba(156, 108, 255, 0.25);
 }
 
 .header p {
@@ -106,11 +99,11 @@
 
   padding: 0.75rem 1rem;
 
-  border: 1px solid rgba(93, 255, 217, 0.25);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
 
   color: #ffffff;
-  background: rgba(9, 24, 42, 0.7);
+  background: rgba(20, 8, 39, 0.7);
 
   backdrop-filter: blur(14px);
 
@@ -128,12 +121,12 @@
 
 .dropdownButton:hover,
 .dropdownButtonOpen {
-  background: rgba(20, 46, 67, 0.9);
-  border-color: rgba(93, 255, 217, 0.5);
+  background: rgba(55, 24, 91, 0.9);
+  border-color: rgba(200, 176, 255, 0.5);
 
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.18),
-    0 0 20px rgba(93, 255, 217, 0.08);
+    0 0 20px rgba(156, 108, 255, 0.12);
 }
 
 .chevron {
@@ -163,21 +156,21 @@
 
   padding: 0.4rem;
 
-  border: 1px solid rgba(93, 255, 217, 0.2);
+  border: 1px solid var(--color-border);
   border-radius: 16px;
 
-  background: rgba(25, 12, 43, 0.96);
+  background: rgba(29, 12, 53, 0.98);
   backdrop-filter: blur(18px);
 
   box-shadow:
     0 18px 45px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(93, 255, 217, 0.05);
+    0 0 30px rgba(156, 108, 255, 0.1);
 
   animation: dropdownOpen 160ms ease-out;
 
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: rgba(93, 255, 217, 0.45) transparent;
+  scrollbar-color: rgba(200, 176, 255, 0.45) transparent;
 }
 
 /* Chrome, Edge, Safari */
@@ -191,12 +184,12 @@
 }
 
 .dropdownMenu::-webkit-scrollbar-thumb {
-  background: rgba(93, 255, 217, 0.4);
+  background: rgba(200, 176, 255, 0.4);
   border-radius: 999px;
 }
 
 .dropdownMenu::-webkit-scrollbar-thumb:hover {
-  background: rgba(93, 255, 217, 0.7);
+  background: rgba(200, 176, 255, 0.7);
 }
 
 @keyframes dropdownOpen {
@@ -240,12 +233,12 @@
 
 .dropdownOption:hover {
   color: #ffffff;
-  background: rgba(93, 255, 217, 0.1);
+  background: rgba(156, 108, 255, 0.13);
 }
 
 .dropdownOptionActive {
-  color: #7bffb6;
-  background: rgba(93, 255, 217, 0.08);
+  color: var(--color-primary-light);
+  background: rgba(156, 108, 255, 0.16);
 }
 
 /* CARDS */
@@ -258,11 +251,12 @@
 }
 
 .card {
+  position: relative;
   overflow: hidden;
   border-radius: 24px;
 
-  background: linear-gradient(180deg, #ffffff 0%, #f4fcff 100%);
-  color: #1f1531;
+  background: rgba(255, 255, 255, 0.95);
+  color: #281441;
 
   box-shadow: 0 16px 36px rgba(14, 8, 28, 0.2);
 
@@ -270,7 +264,7 @@
     transform 180ms ease,
     box-shadow 180ms ease;
 
-  border: 1px solid rgba(93, 255, 217, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 .card:hover {
@@ -278,7 +272,7 @@
 
   box-shadow: 0 20px 40px rgba(14, 8, 28, 0.24);
 
-  border-color: rgba(124, 255, 95, 0.4);
+  border-color: rgba(200, 176, 255, 0.85);
 }
 
 .imageWrap {
@@ -286,16 +280,24 @@
   width: 100%;
   aspect-ratio: 4 / 3;
 
-  background: linear-gradient(
-    135deg,
-    #dffef6,
-    #c8f6ff 60%,
-    #e5ffc9
-  );
+  background: linear-gradient(135deg, #ecddff, #c6dfff 60%, #e7d7ff);
 }
 
 .imageWrap img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.avatarFallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--color-primary-light);
+  background: linear-gradient(135deg, #35145e, #1d0c35);
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .cardContent {
@@ -306,17 +308,49 @@
   padding: 1rem 1rem 1.1rem;
 }
 
+.memberHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .cardContent h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: #123b4c;
+  color: #35145e;
 }
 
 .cardContent p {
   margin: 0;
-  color: #6c5a8e;
+  color: #70578e;
   font-size: 0.95rem;
   line-height: 1.55;
+}
+
+.linkedinLink {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  flex-shrink: 0;
+  color: white;
+  background: #2867b2;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 8px;
+  box-shadow: 0 5px 12px rgba(17, 42, 78, 0.25);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.linkedinLink:hover {
+  background: #1e579e;
+  transform: translateY(-2px);
+}
+
+.linkedinLink svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: currentColor;
 }
 
 /* MOBILE */
