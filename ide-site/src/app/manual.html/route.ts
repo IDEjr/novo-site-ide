@@ -19,10 +19,17 @@ export async function GET(request: NextRequest) {
 
   const manual = await readFile(join(process.cwd(), 'src', 'manual-content.html'));
 
-  return new NextResponse(manual, {
+  const response = new NextResponse(manual, {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       'Cache-Control': 'private, no-store',
     },
   });
+
+  response.cookies.set(MANUAL_ACCESS_COOKIE, '', {
+    expires: new Date(0),
+    path: '/manual.html',
+  });
+
+  return response;
 }
