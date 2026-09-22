@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./FrontQuemSomos.module.css";
 
 export default function FrontQuemSomos() {
@@ -6,7 +5,7 @@ export default function FrontQuemSomos() {
     <section className={styles.content}>
       <div className={styles.textContent}>
         <h1>
-          Código que <span className={styles.highlight}>Transforma.</span>
+          Código que <span className={styles.highlight}>transforma.</span>
         </h1>
 
         <p>
@@ -16,16 +15,6 @@ export default function FrontQuemSomos() {
         </p>
       </div>
 
-      <div className={styles.imageContainer}>
-        <Image
-          src="/imagens/sapo-ide.png"
-          alt="Sapo IDE"
-          width={640}
-          height={520}
-          priority
-          className={styles.heroImage}
-        />
-      </div>
     </section>
   );
 }

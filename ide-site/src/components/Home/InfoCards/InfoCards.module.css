@@ -2,31 +2,74 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem 3rem;
 }
 
 .infoCardsBox {
   width: 100%;
   max-width: 1100px;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .infoCardsBox h2 {
-  font-size: 2rem;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  max-width: 16ch;
 }
 
+/* ===========================
+   TEXTO PRINCIPAL - GLASS
+=========================== */
+
 .infoCardsBox > p {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 1.8rem 1.6rem;
+
   font-size: 1.1rem;
   font-weight: 300;
-  max-width: 800px;
-
   line-height: 1.7;
 
   text-align: justify;
   text-align-last: left;
+
+  /* Vidro escuro e ofuscado */
+  background: rgba(15, 15, 20, 0.856);
+
+  border: 1px solid rgba(255, 255, 255, 0.329);
+  border-radius: 24px;
+
+  /* Blur forte */
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.507),
+    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+.infoCardsBox > p:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+/* ===========================
+   CARDS
+=========================== */
 
 .cardsWrapper {
   display: flex;
@@ -34,7 +77,9 @@
   gap: 1.5rem;
 }
 
-/* Primeira linha */
+/* ===========================
+   PRIMEIRA LINHA
+=========================== */
 
 .infoRow {
   display: grid;
@@ -43,8 +88,10 @@
 }
 
 .infoCard {
-  background: #7726bd;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-card);
   padding: 1.75rem;
   min-height: 150px;
 
@@ -55,17 +102,20 @@
 
 .infoCard h3 {
   margin-bottom: .75rem;
+  color: var(--color-primary-light);
 }
 
 .infoCard p {
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 
   text-align: justify;
   text-align-last: left;
 }
 
-/* Segunda linha */
+/* ===========================
+   SEGUNDA LINHA
+=========================== */
 
 .statRow {
   display: grid;
@@ -81,8 +131,14 @@
   overflow: hidden;
 }
 
+/* ===========================
+   STAT CARD
+=========================== */
+
 .statCard {
-  background: #7726bd;
+  background: linear-gradient(145deg, rgba(83, 39, 135, 0.9), rgba(43, 18, 74, 0.82));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
 
   display: flex;
   flex-direction: column;
@@ -93,92 +149,37 @@
 }
 
 .statCard strong {
-  color: #649fd6;
+  color: var(--color-accent);
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .statCard span {
-  margin-top: .75rem;
+  margin-top: 0.75rem;
   font-size: 1.05rem;
   text-align: center;
 }
 
+/* ===========================
+   FOTO
+=========================== */
+
 .fotoCard {
   position: relative;
-  background: #b399d4;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
 }
 
 .foto {
   object-fit: cover;
 }
 
-/* Terceira linha */
-
-.mvvRow {
-  margin-top: 6rem;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 1.5rem;
-}
-
-.mvvCard {
-  background: #7726bd;
-
-  border-radius: 20px;
-
-  padding: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-
-  gap: 1rem;
-}
-
-.mvvCard h3 {
-  letter-spacing: .05em;
-}
-
-.mvvIcon {
-  width: 42px;
-  height: 42px;
-}
-
-.mvvIcon svg {
-  width: 100%;
-  height: 100%;
-  stroke: white;
-}
-
-.mvvCard p {
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.mvvList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  text-align: left;
-  line-height: 1.8;
-}
-
-.mvvList li::before {
-  content: "• ";
-}
-
-/* Responsivo */
-
 /* ===========================
-   Tablets
+   TABLETS
 =========================== */
 
 @media (max-width: 900px) {
+
   .infoCardsSection {
     padding: 2.5rem 1.5rem;
   }
@@ -187,23 +188,33 @@
     font-size: 1.8rem;
   }
 
+  /* Texto principal */
+
   .infoCardsBox > p {
+    width: 100%;
+    max-width: none;
+
     font-size: 1rem;
     line-height: 1.7;
-    text-align: justify;
-    text-align-last: left;
+    text-align: left;
   }
+
+  /* Cards */
 
   .infoRow {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
+  /* Estatísticas */
+
   .statRow {
     grid-template-columns: repeat(2, 1fr);
+
     grid-template-areas:
       "foto foto"
       "left right";
+
     gap: 1rem;
   }
 
@@ -221,19 +232,14 @@
     grid-area: right;
     min-height: 180px;
   }
-
-  .mvvRow {
-    margin-top: 3rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 }
 
 /* ===========================
-   Celulares
+   CELULARES
 =========================== */
 
 @media (max-width: 600px) {
+
   .infoCardsSection {
     padding: 2rem 1rem;
   }
@@ -247,13 +253,31 @@
     text-align: center;
   }
 
+  /* Texto principal */
+
   .infoCardsBox > p {
-    text-align: left;
+    width: 100%;
+    max-width: none;
+
     font-size: 0.95rem;
+    line-height: 1.7;
+
+    padding: 1.4rem 1.2rem;
 
     text-align: justify;
     text-align-last: left;
+
+    border-radius: 20px;
+
+    /*
+      Blur um pouco menor no celular
+      para reduzir o custo de renderização.
+    */
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
   }
+
+  /* Cards */
 
   .cardsWrapper {
     gap: 1rem;
@@ -278,11 +302,15 @@
     font-size: 0.9rem;
   }
 
+  /* Estatísticas */
+
   .statRow {
     grid-template-columns: repeat(2, 1fr);
+
     grid-template-areas:
       "foto foto"
       "left right";
+
     gap: 0.9rem;
   }
 
@@ -312,30 +340,5 @@
 
   .statCard span {
     font-size: 0.9rem;
-  }
-
-  .mvvRow {
-    margin-top: 2rem;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .mvvCard {
-    padding: 1.5rem;
-    border-radius: 18px;
-  }
-
-  .mvvCard h3 {
-    font-size: 1.1rem;
-  }
-
-  .mvvCard p,
-  .mvvList {
-    font-size: 0.9rem;
-  }
-
-  .mvvIcon {
-    width: 34px;
-    height: 34px;
   }
 }

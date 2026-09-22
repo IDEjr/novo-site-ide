@@ -102,27 +102,56 @@ export default function NossaGente() {
       </div>
 
       <div className={styles.cardsWrapper}>
-        {activeCollection.integrantes.map((integrante) => (
-          <article
-            key={`${integrante.nome}-${integrante.cargo}`}
-            className={styles.card}
-          >
-            <div className={styles.imageWrap}>
-              <Image
-                src={integrante.image}
-                alt={integrante.nome}
-                fill
-                priority
-                sizes="(max-width: 768px) 80vw, 220px"
-              />
-            </div>
+        {activeCollection.integrantes.map((integrante) => {
+          const hasPhoto = !integrante.image.includes("sapo-ide.png");
+          const initials = integrante.nome
+            .split(" ")
+            .slice(0, 2)
+            .map((name) => name[0])
+            .join("");
 
-            <div className={styles.cardContent}>
-              <h3>{integrante.nome}</h3>
-              <p>{integrante.cargo}</p>
-            </div>
-          </article>
-        ))}
+          return (
+            <article
+              key={`${integrante.nome}-${integrante.cargo}`}
+              className={styles.card}
+            >
+              <div className={styles.imageWrap}>
+                {hasPhoto ? (
+                  <Image
+                    src={integrante.image}
+                    alt={integrante.nome}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 80vw, 220px"
+                    style={{ objectPosition: integrante.objectPosition ?? "center top" }}
+                  />
+                ) : (
+                  <span className={styles.avatarFallback} aria-label={`Foto de ${integrante.nome} indisponível`}>
+                    {initials}
+                  </span>
+                )}
+              </div>
+
+              <div className={styles.cardContent}>
+                <div className={styles.memberHeader}>
+                  <h3>{integrante.nome}</h3>
+                  <a
+                    href={integrante.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkedinLink}
+                    aria-label={`Abrir o LinkedIn de ${integrante.nome}`}
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6.2 8.3H2.7V21h3.5V8.3ZM4.5 3A2 2 0 1 0 4.5 7a2 2 0 0 0 0-4Zm17 10.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.7 2v-1.8H9.6V21h3.5v-6.3c0-1.7.3-3.3 2.4-3.3 2 0 2 1.9 2 3.4V21h3.5v-7.3Z" />
+                    </svg>
+                  </a>
+                </div>
+                <p>{integrante.cargo}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

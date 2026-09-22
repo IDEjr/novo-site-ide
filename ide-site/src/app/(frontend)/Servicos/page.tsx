@@ -1,6 +1,6 @@
 import FrontServicos from '@/components/Servicos/FrontServicos/FrontServicos';
 import GridServicos from '@/components/Servicos/GridServicos/GridServicos';
-import CTAServicos from '@/components/Servicos/CTAServicos/CTAServicos';
+import CTAHome from "@/components/Home/CTAHome/CTAHome";
 import styles from './page.module.css';
 
 export default function Servicos() {
@@ -8,7 +8,7 @@ export default function Servicos() {
     <main className={styles.hero}>
       <FrontServicos />
       <GridServicos />
-      <CTAServicos />
+      <CTAHome  />
     </main>
   );
 }

@@ -1,11 +1,18 @@
-import { getPayload, type Payload } from 'payload'
 import config from '@payload-config'
+import { getPayload, type Payload } from 'payload'
 
-let client: Promise<Payload> | null = null
+const globalForPayload = globalThis as typeof globalThis & {
+  payload?: Payload
+  payloadPromise?: Promise<Payload>
+}
 
-export function getPayloadClient() {
-  if (!client) {
-    client = getPayload({ config })
+export async function getPayloadClient(): Promise<Payload> {
+  if (globalForPayload.payload) {
+    return globalForPayload.payload
   }
-  return client
+
+  globalForPayload.payloadPromise ??= getPayload({ config })
+  globalForPayload.payload = await globalForPayload.payloadPromise
+
+  return globalForPayload.payload
 }

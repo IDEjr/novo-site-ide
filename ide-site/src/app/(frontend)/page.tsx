@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import FrontHome from "@/components/Home/FrontHome/FrontHome";
 import NossosParceiros from "@/components/Home/NossosParceiros/NossosParceiros";
 import InfoCards from "@/components/Home/InfoCards/InfoCards";
+import MVVCards from "@/components/Home/MVVCards/MVVCards";
 import CTAHome from "@/components/Home/CTAHome/CTAHome";
 
 export default function Home() {
@@ -12,8 +13,9 @@ export default function Home() {
 
       <main className={styles.hero}>
         <FrontHome />
-        <NossosParceiros />
         <InfoCards />
+        <NossosParceiros />
+        <MVVCards />
         <CTAHome />
       </main>
     </section>
