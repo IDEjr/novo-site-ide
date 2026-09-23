@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import styles from './politica.module.css';
+import EmailLink from '@/components/EmailLink/EmailLink';
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade | Empresa Júnior IDE',
@@ -43,7 +44,7 @@ export default function PoliticaDePrivacidade() {
 
         <h2>4. Contato</h2>
         <p>Se você tiver alguma dúvida sobre a nossa Política de Privacidade ou desejar exercer seus direitos em relação aos seus dados, entre em contato conosco:</p>
-        <p><strong>E-mail:</strong> <a href="mailto:contato@idejr.com.br">contato@idejr.com.br</a></p>
+        <p><strong>E-mail:</strong> <EmailLink href="mailto:contato@idejr.com.br" origin="politica">contato@idejr.com.br</EmailLink></p>
 
         <p><small><em>Última atualização: {new Date().toLocaleDateString('pt-BR')}</em></small></p>
       </div>

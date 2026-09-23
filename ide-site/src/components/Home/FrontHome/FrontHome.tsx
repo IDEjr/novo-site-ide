@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CtaLink from '@/components/CtaLink/CtaLink';
 import styles from './FrontHome.module.css';
 import Typewriter from '../../Typewriter/Typewriter';
 
@@ -28,9 +29,9 @@ export default function FrontHome() {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/Contato" className={`${styles.button} ${styles.buttonPrimary}`}>
+          <CtaLink href="/Contato" className={`${styles.button} ${styles.buttonPrimary}`} origin="home_front">
             Fale conosco
-          </Link>
+          </CtaLink>
           <Link href="/Portfolio" className={`${styles.button} ${styles.buttonSecondary}`}>
             Ver portfólio
           </Link>
