@@ -90,7 +90,7 @@ export default function Background() {
 
   const desktopConfig = {
     dpr: 0.6,
-    tint: "#7922d6",
+    tint: "#7726BD",
     scale: 2.7,
     timeScale: 1.2,
     scanlineIntensity: 0.2,

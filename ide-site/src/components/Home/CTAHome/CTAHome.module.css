@@ -9,9 +9,9 @@
   width: 100%;
   max-width: 1100px;
 
-  background: linear-gradient(135deg, rgba(101, 53, 165, 0.86), rgba(39, 17, 70, 0.9));
+  background: #7726BD;
   border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: none;
   border-radius: var(--radius-card);
 
   padding: 3rem;
@@ -60,9 +60,9 @@
   margin-top: 0.5rem;
 
   border-radius: var(--radius-control);
-  background: linear-gradient(135deg, #b690ff, #7754df);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 24px rgba(122, 84, 223, 0.32);
+  background: #0B68BE;
+  border: 1px solid #FFFFFF;
+  box-shadow: none;
 
   color: #fff;
 
@@ -73,15 +73,13 @@
 
   transition:
     transform .25s ease,
-    opacity .25s ease,
     box-shadow .25s ease;
 }
 
 .ctaHomeButton:hover {
-  opacity: .95;
   transform: translateY(-3px);
 
-  box-shadow: 0 14px 30px rgba(0,0,0,.25);
+  box-shadow: none;
 }
 
 /* ===========================

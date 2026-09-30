@@ -40,7 +40,7 @@
   transform: translateX(-50%);
   width: 3px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
+  background: #7726BD;
 }
 
 /* ITEM */
@@ -74,7 +74,6 @@
   border: 1px solid var(--color-border);
   border-radius: 24px;
 
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-card);
 
   transition: .25s;
@@ -82,7 +81,7 @@
 
 .content:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 60px rgba(0,0,0,.2);
+  box-shadow: none;
 }
 
 .year {
@@ -116,8 +115,8 @@
   height: 3rem;
 
   border-radius: 50%;
-  background: #f7f2ff;
-  box-shadow: 0 0 0 7px rgba(156, 108, 255, 0.14);
+  background: #FFFFFF;
+  box-shadow: none;
 
   display: grid;
   place-items: center;

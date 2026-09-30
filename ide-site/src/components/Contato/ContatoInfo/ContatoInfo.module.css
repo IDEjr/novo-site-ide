@@ -10,11 +10,7 @@
     text-align: center;
     font-size: clamp(2.5rem, 5.5vw, 4rem);
 
-    background: linear-gradient(135deg, #ffffff 0%, #c8b0ff 52%, #61c8ff 100%);
-    
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #BE73FF;
 }
 
 .cardsContainer{
@@ -31,7 +27,7 @@
     padding: 1rem;
     border-radius: var(--radius-control);
     border: 1px solid var(--color-border);
-    background: rgba(49, 23, 83, 0.52);
+    background: #7726BD;
 }
 
 .iconBox {
@@ -42,10 +38,9 @@
     width: 72px;
     height: 72px;
     border-radius: var(--radius-control);
-    background: rgba(156, 108, 255, 0.18);
-    backdrop-filter: blur(18px);
+    background: #0B68BE;
     overflow: hidden;
-    box-shadow: 0 18px 45px rgba(92, 44, 157, 0.16);
+    box-shadow: none;
 
     flex-shrink: 0;
 }
@@ -61,7 +56,7 @@
 }
 
 .cardInfos a:hover {
-    opacity: 0.7;
+    color: #BE73FF;
 }
 
 .mapLink {
@@ -82,21 +77,25 @@
     justify-content: center;
     width: 35px;
     height: 35px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .socialLinks a:hover {
-    opacity: 0.82;
+    color: #BE73FF;
     transform: translateY(-2px);
 }
 
 .whatsappLink {
-    color: #8be276;
+    color: #0B68BE;
 }
 
 .whatsappLink svg {
     width: 35px;
     height: 35px;
+    fill: currentColor;
+}
+
+.whatsappLink svg path {
     fill: currentColor;
 }
 

@@ -16,8 +16,8 @@
 
 .cardContainer:hover {
     transform: translateY(-5px);
-    border-color: rgba(200, 176, 255, 0.45);
-    box-shadow: 0 26px 50px rgba(6, 2, 15, 0.38);
+    border-color: #0B68BE;
+    box-shadow: none;
 }
 
 .cardContainer h3 {
@@ -41,8 +41,8 @@
 }
 
 .tag {
-    background-color: rgba(156, 108, 255, 0.14);
-    border: 1px solid rgba(200, 176, 255, 0.18);
+    background-color: #0B68BE;
+    border: 1px solid #BE73FF;
     border-radius: 999px;
 
     font-size: 14px;
@@ -62,7 +62,7 @@
     display: grid;
     place-items: center;
     border-radius: 16px;
-    background: rgba(97, 200, 255, 0.1);
+    background: #7726BD;
 }
 
 .icone {

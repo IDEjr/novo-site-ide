@@ -4,10 +4,10 @@
     align-items: center;
 
     padding: clamp(2rem, 5vw, 3.5rem);
-    background: linear-gradient(135deg, rgba(101, 53, 165, 0.9), rgba(39, 17, 70, 0.92));
+    background: #7726BD;
     border-radius: var(--radius-card);
     border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-card);
+    box-shadow: none;
 }
 
 .content h1 {
@@ -33,9 +33,9 @@
   font-size: 1.2rem;
   font-weight: 700;
 
-  background: linear-gradient(135deg, #b690ff, #7754df);
+    background: #0B68BE;
   color: white;
-  box-shadow: 0 10px 24px rgba(122, 84, 223, 0.32);
+    box-shadow: none;
 
   transition:
     transform .25s ease,
@@ -45,7 +45,7 @@
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 30px rgba(122, 84, 223, 0.42);
+    box-shadow: none;
 }
 
 @media (max-width: 768px) {

@@ -6,16 +6,16 @@
 
 :root {
   --navbar-height: 76px;
-  --color-bg: #10061f;
-  --color-surface: rgba(49, 23, 83, 0.72);
-  --color-surface-strong: #35145e;
-  --color-border: rgba(235, 223, 255, 0.18);
-  --color-text: #faf7ff;
-  --color-muted: rgba(250, 247, 255, 0.76);
-  --color-primary: #9c6cff;
-  --color-primary-light: #c8b0ff;
-  --color-accent: #61c8ff;
-  --shadow-card: 0 20px 50px rgba(6, 2, 15, 0.3);
+  --color-bg: #000000;
+  --color-surface: #7726BD;
+  --color-surface-strong: #0B68BE;
+  --color-border: #BE73FF;
+  --color-text: #FFFFFF;
+  --color-muted: #FFFFFF;
+  --color-primary: #0B68BE;
+  --color-primary-light: #BE73FF;
+  --color-accent: #0B68BE;
+  --shadow-card: none;
   --radius-card: 24px;
   --radius-control: 14px;
 }
@@ -52,7 +52,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(97, 200, 255, 0.8);
+  outline: 3px solid #0B68BE;
   outline-offset: 3px;
 }
 

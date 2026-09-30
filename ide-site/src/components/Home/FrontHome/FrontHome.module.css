@@ -41,7 +41,7 @@
 }
 
 .highlight {
-  color: #38a2ff;
+  color: #0B68BE;
 }
 
 /* ===========================
@@ -63,17 +63,12 @@
   text-align: justify;
   text-align-last: left;
 
-  background: rgba(15, 15, 20, 0.856);
+  background: #7726BD;
 
-  border: 1px solid rgba(255, 255, 255, 0.329);
+  border: 1px solid #BE73FF;
   border-radius: 24px;
 
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.507),
-    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+  box-shadow: none;
 
   color: #ffffff;
 
@@ -85,9 +80,7 @@
 .content p:hover {
   transform: translateY(-3px);
 
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+  box-shadow: none;
 }
 
 /* ===========================
@@ -136,20 +129,20 @@
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(6, 2, 15, 0.24);
+  box-shadow: none;
 }
 
 .buttonPrimary {
-  background: linear-gradient(135deg, #b690ff, #7754df);
+  background: #0B68BE;
   color: #fff;
-  box-shadow: 0 10px 24px rgba(122, 84, 223, 0.32);
+  box-shadow: none;
 }
 
 .buttonSecondary {
   background: transparent;
   color: white;
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.04);
+  background: #7726BD;
 }
 
 /* ===========================
@@ -237,8 +230,6 @@
 
     border-radius: 20px;
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
   }
 
   .actions {

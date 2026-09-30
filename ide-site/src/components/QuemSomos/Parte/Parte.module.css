@@ -10,8 +10,7 @@
   gap: 4rem;
   padding: 3rem;
   border-radius: var(--radius-card);
-  background: linear-gradient(135deg, rgba(101, 53, 165, 0.88), rgba(39, 17, 70, 0.92));
-  backdrop-filter: blur(18px);
+  background: #7726BD;
   border: 1px solid var(--color-border);
   overflow: hidden;
   box-shadow: var(--shadow-card);
@@ -40,7 +39,7 @@
 
 .text p {
   max-width: 620px;
-  color: rgba(255, 255, 255, 0.82);
+  color: #FFFFFF;
   font-size: 1.1rem;
   line-height: 1.7;
   text-align: justify;
@@ -69,25 +68,25 @@
 }
 
 .primary {
-  background: linear-gradient(135deg, #b690ff, #7754df);
+  background: #0B68BE;
   color: white;
-  box-shadow: 0 12px 24px rgba(122, 84, 223, 0.3);
+  box-shadow: none;
 }
 
 .primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 30px rgba(122, 84, 223, 0.42);
+  box-shadow: none;
 }
 
 .secondary {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #FFFFFF;
   color: white;
-  background: rgba(255, 255, 255, 0.08);
+  background: #000000;
   box-shadow: none;
 }
 
 .secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: #0B68BE;
   transform: translateY(-3px);
 }
 

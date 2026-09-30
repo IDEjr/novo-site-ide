@@ -10,10 +10,7 @@
 .title {
   font-size: clamp(2rem, 5vw, 3.25rem);
   text-align: center;
-  background: linear-gradient(to right, #ffffff, #A9C9EC);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #BE73FF;
 }
 
 .featured {
@@ -48,8 +45,8 @@
 }
 
 .tag {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #A9C9EC;
+  background-color: #0B68BE;
+  color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -66,7 +63,7 @@
 .excerpt {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.85);
+  color: #FFFFFF;
   line-height: 1.5;
 }
 
@@ -92,7 +89,7 @@
   height: 32px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: #649FD6;
+  background-color: #0B68BE;
   flex-shrink: 0;
 }
 

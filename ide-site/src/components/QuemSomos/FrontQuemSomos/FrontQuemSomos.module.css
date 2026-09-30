@@ -48,7 +48,7 @@
 }
 
 .highlight {
-  color: #38a2ff;
+  color: #0B68BE;
 }
 
 /* ===========================
@@ -70,17 +70,12 @@
   text-align: justify;
   text-align-last: left;
 
-  background: rgba(15, 15, 20, 0.856);
+  background: #7726BD;
 
-  border: 1px solid rgba(255, 255, 255, 0.329);
+  border: 1px solid #BE73FF;
   border-radius: 24px;
 
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.507),
-    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+  box-shadow: none;
 
   color: #ffffff;
 
@@ -92,9 +87,7 @@
 .content p:hover {
   transform: translateY(-3px);
 
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+  box-shadow: none;
 }
 
 
@@ -134,20 +127,19 @@
 }
 
 .button:hover {
-  opacity: 0.95;
   transform: translateY(-2px);
 }
 
 .buttonPrimary {
-  background: #38a2ff;
-  color: #000;
+  background: #0B68BE;
+  color: #FFFFFF;
 }
 
 .buttonSecondary {
   background: transparent;
   color: white;
 
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid #FFFFFF;
 }
 
 /* ===========================
@@ -223,8 +215,6 @@
     text-align: justify;
     text-align-last: left;
 
-    backdrop-filter: blur(26px);
-    -webkit-backdrop-filter: blur(26px);
   }
 
   .actions {
@@ -272,8 +262,6 @@
 
     border-radius: 20px;
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
   }
 
   .actions {

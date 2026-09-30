@@ -18,7 +18,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background-color: #3F0F6B;
+  background-color: #0B68BE;
 }
 
 .image {
@@ -29,7 +29,7 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: #000000;
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -55,7 +55,7 @@
 .excerpt {
   font-size: 0.85rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #FFFFFF;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;

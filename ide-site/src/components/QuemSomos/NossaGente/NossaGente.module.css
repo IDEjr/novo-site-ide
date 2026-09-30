@@ -6,9 +6,7 @@
   position: relative;
   overflow: hidden;
 
-  background: linear-gradient(135deg, rgba(71, 33, 118, 0.86), rgba(29, 12, 53, 0.92));
-
-  backdrop-filter: blur(16px);
+  background: #7726BD;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--color-border);
 }
@@ -18,27 +16,9 @@
   position: absolute;
   inset: -30%;
 
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.05) 24%,
-    transparent 54%
-  );
+  display: none;
 
-  animation: pulseGlow 8s ease-in-out infinite alternate;
   pointer-events: none;
-}
-
-@keyframes pulseGlow {
-  0% {
-    transform: translate(-6%, -4%) scale(0.95);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translate(6%, 4%) scale(1.08);
-    opacity: 1;
-  }
 }
 
 /* HEADER */
@@ -54,13 +34,12 @@
   color: var(--color-primary-light);
   font-weight: 800;
   letter-spacing: 0.02em;
-  text-shadow: 0 0 18px rgba(156, 108, 255, 0.25);
 }
 
 .header p {
   margin: 0;
   max-width: 760px;
-  color: rgba(255, 255, 255, 0.86);
+  color: #FFFFFF;
   line-height: 1.7;
   font-size: 1rem;
 }
@@ -79,7 +58,7 @@
 }
 
 .selectorLabel {
-  color: rgba(255, 255, 255, 0.72);
+  color: #FFFFFF;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -103,9 +82,7 @@
   border-radius: 14px;
 
   color: #ffffff;
-  background: rgba(20, 8, 39, 0.7);
-
-  backdrop-filter: blur(14px);
+  background: #000000;
 
   font: inherit;
   font-size: 0.95rem;
@@ -121,12 +98,9 @@
 
 .dropdownButton:hover,
 .dropdownButtonOpen {
-  background: rgba(55, 24, 91, 0.9);
-  border-color: rgba(200, 176, 255, 0.5);
-
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.18),
-    0 0 20px rgba(156, 108, 255, 0.12);
+  background: #0B68BE;
+  border-color: #BE73FF;
+  box-shadow: none;
 }
 
 .chevron {
@@ -159,18 +133,14 @@
   border: 1px solid var(--color-border);
   border-radius: 16px;
 
-  background: rgba(29, 12, 53, 0.98);
-  backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(156, 108, 255, 0.1);
+  background: #000000;
+  box-shadow: none;
 
   animation: dropdownOpen 160ms ease-out;
 
   /* Firefox */
   scrollbar-width: thin;
-  scrollbar-color: rgba(200, 176, 255, 0.45) transparent;
+  scrollbar-color: #BE73FF #000000;
 }
 
 /* Chrome, Edge, Safari */
@@ -184,22 +154,20 @@
 }
 
 .dropdownMenu::-webkit-scrollbar-thumb {
-  background: rgba(200, 176, 255, 0.4);
+  background: #BE73FF;
   border-radius: 999px;
 }
 
 .dropdownMenu::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 176, 255, 0.7);
+  background: #0B68BE;
 }
 
 @keyframes dropdownOpen {
   from {
-    opacity: 0;
     transform: translateY(-6px);
   }
 
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -216,8 +184,8 @@
   border: 0;
   border-radius: 10px;
 
-  color: rgba(255, 255, 255, 0.8);
-  background: transparent;
+  color: #FFFFFF;
+  background: #000000;
 
   font: inherit;
   font-size: 0.92rem;
@@ -233,12 +201,12 @@
 
 .dropdownOption:hover {
   color: #ffffff;
-  background: rgba(156, 108, 255, 0.13);
+  background: #0B68BE;
 }
 
 .dropdownOptionActive {
   color: var(--color-primary-light);
-  background: rgba(156, 108, 255, 0.16);
+  background: #7726BD;
 }
 
 /* CARDS */
@@ -255,24 +223,22 @@
   overflow: hidden;
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.95);
-  color: #281441;
-
-  box-shadow: 0 16px 36px rgba(14, 8, 28, 0.2);
+  background: #FFFFFF;
+  color: #000000;
+  box-shadow: none;
 
   transition:
     transform 180ms ease,
     box-shadow 180ms ease;
 
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid #BE73FF;
 }
 
 .card:hover {
   transform: translateY(-4px);
 
-  box-shadow: 0 20px 40px rgba(14, 8, 28, 0.24);
-
-  border-color: rgba(200, 176, 255, 0.85);
+  box-shadow: none;
+  border-color: #0B68BE;
 }
 
 .imageWrap {
@@ -280,7 +246,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
 
-  background: linear-gradient(135deg, #ecddff, #c6dfff 60%, #e7d7ff);
+  background: #0B68BE;
 }
 
 .imageWrap img {
@@ -294,7 +260,7 @@
   height: 100%;
   place-items: center;
   color: var(--color-primary-light);
-  background: linear-gradient(135deg, #35145e, #1d0c35);
+  background: #7726BD;
   font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -318,12 +284,12 @@
 .cardContent h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: #35145e;
+  color: #000000;
 }
 
 .cardContent p {
   margin: 0;
-  color: #70578e;
+  color: #000000;
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -335,15 +301,15 @@
   place-items: center;
   flex-shrink: 0;
   color: white;
-  background: #2867b2;
-  border: 1px solid rgba(255, 255, 255, 0.48);
+  background: #0B68BE;
+  border: 1px solid #FFFFFF;
   border-radius: 8px;
-  box-shadow: 0 5px 12px rgba(17, 42, 78, 0.25);
+  box-shadow: none;
   transition: transform 180ms ease, background 180ms ease;
 }
 
 .linkedinLink:hover {
-  background: #1e579e;
+  background: #7726BD;
   transform: translateY(-2px);
 }
 

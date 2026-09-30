@@ -12,7 +12,6 @@
   border-radius: var(--radius-card);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
-  backdrop-filter: blur(16px);
 }
 
 .eyebrow {
@@ -50,7 +49,7 @@
   padding: 0.85rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-control);
-  background: rgba(16, 6, 31, 0.65);
+  background: #000000;
   color: var(--color-text);
   font: inherit;
 }
@@ -61,14 +60,14 @@
   border: 0;
   border-radius: var(--radius-control);
   background: var(--color-primary);
-  color: #160a27;
+  color: #FFFFFF;
   cursor: pointer;
   font: inherit;
   font-weight: 700;
 }
 
 .error {
-  color: #ffb4b4;
+  color: #BE73FF;
 }
 
 @media (max-width: 600px) {

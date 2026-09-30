@@ -19,14 +19,14 @@
 .empty {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #FFFFFF;
 }
 
 .verMais {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: #0B68BE;
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -38,7 +38,7 @@
 }
 
 .verMais:hover {
-  background-color: rgba(255, 255, 255, 0.22);
+  background-color: #7726BD;
 }
 
 @media (max-width: 900px) {

@@ -37,17 +37,11 @@
 }
 
 .title span {
-  background: white;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
+  color: #BE73FF;
 }
 
 .highlight {
-  color: #38a2ff;
-  -webkit-text-fill-color: #38a2ff;
+  color: #0B68BE;
 }
 
 /* ===========================
@@ -65,26 +59,17 @@
   font-size: clamp(1.05rem, 2vw, 1.3rem);
   line-height: 1.6;
 
-  color: rgba(255, 255, 255, 0.94);
+  color: #FFFFFF;
 
   text-align: justify;
   text-align-last: left;
 
-  /* =========================
-     GLASS EFFECT
-  ========================= */
+    background: #7726BD;
 
-  background: rgba(15, 15, 20, 0.856);
-
-  border: 1px solid rgba(255, 255, 255, 0.329);
+    border: 1px solid #BE73FF;
   border-radius: 24px;
 
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.507),
-    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+  box-shadow: none;
 
   transition:
     transform 0.25s ease,
@@ -94,9 +79,7 @@
 .description:hover {
   transform: translateY(-3px);
 
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+  box-shadow: none;
 }
 
 /* ===========================
@@ -155,8 +138,6 @@
     text-align: justify;
     text-align-last: left;
 
-    backdrop-filter: blur(26px);
-    -webkit-backdrop-filter: blur(26px);
   }
 
   .heroImage {
@@ -191,8 +172,6 @@
 
     border-radius: 20px;
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
   }
 
   .heroImage {

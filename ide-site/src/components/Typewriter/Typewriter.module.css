@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: center;
 
-  color: #38a2ff;
+  color: #0B68BE;
   font-weight: 700;
 }
 
 
 @keyframes blink {
   50% {
-    opacity: 0;
+    visibility: hidden;
   }
 }

@@ -38,19 +38,12 @@
   text-align: justify;
   text-align-last: left;
 
-  /* Vidro escuro e ofuscado */
-  background: rgba(15, 15, 20, 0.856);
+  background: #7726BD;
 
-  border: 1px solid rgba(255, 255, 255, 0.329);
+  border: 1px solid #BE73FF;
   border-radius: 24px;
 
-  /* Blur forte */
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.507),
-    inset 0 1px 0 rgba(255, 255, 255, 0.199);
+  box-shadow: none;
 
   color: #ffffff;
 
@@ -62,9 +55,7 @@
 .infoCardsBox > p:hover {
   transform: translateY(-3px);
 
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+  box-shadow: none;
 }
 
 /* ===========================
@@ -136,7 +127,7 @@
 =========================== */
 
 .statCard {
-  background: linear-gradient(145deg, rgba(83, 39, 135, 0.9), rgba(43, 18, 74, 0.82));
+  background: #0B68BE;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
 
@@ -149,7 +140,7 @@
 }
 
 .statCard strong {
-  color: var(--color-accent);
+  color: #FFFFFF;
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -273,8 +264,6 @@
       Blur um pouco menor no celular
       para reduzir o custo de renderização.
     */
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
   }
 
   /* Cards */
