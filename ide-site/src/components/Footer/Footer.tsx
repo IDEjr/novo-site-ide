@@ -14,10 +14,10 @@ export default function Footer() {
             <div className={styles.logoContainer}>
                 <Link href="/" className={styles.logo} aria-label="Ir para a página inicial">
                     <Image
-                        src="/imagens/ide-branco-footer.png"
+                        src="/imagens/ideNovo.png"
                         alt="Logo IDE"
-                        width={132}
-                        height={98}
+                        width={158}
+                        height={118}
                         loading="eager"
                     />
                 </Link>

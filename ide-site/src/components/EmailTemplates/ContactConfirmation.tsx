@@ -39,7 +39,7 @@ export function ContactConfirmationEmail({
         <Body className="bg-white font-sans">
           <Container className="mx-auto py-12 px-4 max-w-xl">
             <Img
-              src={`${baseUrl}/imagens/logo-ide-roxo.png`}
+              src={`${baseUrl}/imagens/ideNovo.png`}
               width="120"
               height="auto"
               alt="IDE Logo"

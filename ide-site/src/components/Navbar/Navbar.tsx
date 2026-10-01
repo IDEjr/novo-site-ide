@@ -21,10 +21,10 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo} aria-label="Ir para a página inicial">
         <Image
-          src="/imagens/ide-branco.png"
+          src="/imagens/ideNovo.png"
           alt="IDE"
-          width={60}
-          height={45}
+          width={158}
+          height={118}
           priority
         />
       </Link>
