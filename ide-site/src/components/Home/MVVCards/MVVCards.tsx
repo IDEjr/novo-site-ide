@@ -12,7 +12,7 @@ export default function MVVCards() {
     <section className={styles.mvvSection}>
       <div className={styles.mvvBox}>
         <div className={styles.mvvRow}>
-          <div className={styles.mvvCard}>
+          <div className={`${styles.mvvCard} ${styles.mvvCardWithVector}`}>
             <h3>MISSÃO</h3>
 
             <div className={styles.mvvIcon}>
@@ -35,7 +35,7 @@ export default function MVVCards() {
             </p>
           </div>
 
-          <div className={styles.mvvCard}>
+          <div className={`${styles.mvvCard} ${styles.mvvCardWithVector}`}>
             <h3>VISÃO</h3>
 
             <div className={styles.mvvIcon}>
@@ -56,7 +56,7 @@ export default function MVVCards() {
             </p>
           </div>
 
-          <div className={styles.mvvCard}>
+          <div className={`${styles.mvvCard} ${styles.mvvCardWithVector}`}>
             <h3>VALORES</h3>
 
             <div className={styles.mvvIcon}>

@@ -18,6 +18,9 @@
 }
 
 .mvvCard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
@@ -32,6 +35,21 @@
   text-align: center;
 
   gap: 1rem;
+}
+
+.mvvCardWithVector::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("/imagens/IDEvetor.png") center 42% / 100% auto no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.mvvCard > * {
+  position: relative;
+  z-index: 1;
 }
 
 .mvvCard h3 {

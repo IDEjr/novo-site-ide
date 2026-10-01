@@ -5,6 +5,7 @@
   border-radius: 32px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 
   background: #7726BD;
   box-shadow: var(--shadow-card);
@@ -14,11 +15,16 @@
 .section::before {
   content: "";
   position: absolute;
-  inset: -30%;
-
-  display: none;
-
+  inset: -18% -10%;
+  z-index: 0;
+  background: url("/imagens/IDEvetor.png") center 1% / 100% auto repeat;
+  opacity: 0.1;
   pointer-events: none;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* HEADER */
