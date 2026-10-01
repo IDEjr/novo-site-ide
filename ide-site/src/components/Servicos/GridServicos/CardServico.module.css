@@ -23,7 +23,7 @@
 .cardContainer h3 {
     font-size: clamp(1.35rem, 2vw, 1.7rem);
     margin-bottom: 0.6rem;
-    color: var(--color-primary-light);
+    color: #FFFFFF;
 }
 
 .cardContainer p {

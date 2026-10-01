@@ -31,7 +31,7 @@
   margin: 0 0 0.7rem;
   font-size: clamp(1.7rem, 2.2vw, 2.35rem);
   line-height: 1.1;
-  color: var(--color-primary-light);
+  color: #FFFFFF;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
@@ -223,8 +223,8 @@
   overflow: hidden;
   border-radius: 24px;
 
-  background: #FFFFFF;
-  color: #000000;
+  background: #7726BD;
+  color: #FFFFFF;
   box-shadow: none;
 
   transition:
@@ -284,12 +284,12 @@
 .cardContent h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .cardContent p {
   margin: 0;
-  color: #000000;
+  color: #FFFFFF;
   font-size: 0.95rem;
   line-height: 1.55;
 }

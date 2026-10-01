@@ -31,6 +31,7 @@ export default function Footer() {
                         <li><Link href="/QuemSomos">Quem somos</Link></li>
                         <li><Link href="/Servicos">Serviços</Link></li>
                         <li><Link href="/Portfolio">Portfólio</Link></li>
+                        <li><Link href="/Blog">Blog</Link></li>
                         <li><Link href="/Contato">Contato</Link></li>
                     </ul>
                 </nav>

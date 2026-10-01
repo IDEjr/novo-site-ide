@@ -10,7 +10,7 @@
     text-align: center;
     font-size: clamp(2.5rem, 5.5vw, 4rem);
 
-    color: #BE73FF;
+    color: #FFFFFF;
 }
 
 .cardsContainer{
@@ -52,7 +52,7 @@
 }
 
 .cardInfos h3 {
-    color: var(--color-primary-light);
+    color: #FFFFFF;
 }
 
 .cardInfos a:hover {
