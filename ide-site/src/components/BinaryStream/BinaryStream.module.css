@@ -29,8 +29,8 @@
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
-  color: rgb(190 115 255 / var(--stream-opacity));
-  text-shadow: 0 0 12px rgba(46, 46, 46, 0.08);
+  color: rgba(255, 255, 255, 0.034);
+  text-shadow: 0 0 12px rgba(46, 46, 46, 0.027);
   will-change: transform;
 }
 
