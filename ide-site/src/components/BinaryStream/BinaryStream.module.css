@@ -25,12 +25,12 @@
   flex: none;
   white-space: nowrap;
   font-family: var(--font-principal), sans-serif;
-  font-size: var(--stream-font-size);
+  font-size: clamp(14px, min(var(--stream-font-size), 6vw, 11vh), var(--stream-font-size));
   font-weight: 400;
   line-height: 1;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.02em;
   color: rgb(190 115 255 / var(--stream-opacity));
-  text-shadow: 0 0 12px rgb(119 38 189 / 0.08);
+  text-shadow: 0 0 12px rgba(46, 46, 46, 0.08);
   will-change: transform;
 }
 
@@ -54,8 +54,8 @@
 
 @media (max-width: 700px) {
   .track {
-    font-size: min(var(--stream-font-size), 22px);
-    letter-spacing: 0.08em;
+    font-size: clamp(12px, min(var(--stream-font-size), 7vw, 6vh, 26px), min(var(--stream-font-size), 26px));
+    letter-spacing: 0.01em;
   }
 }
 
