@@ -3,6 +3,9 @@ import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import Background from '@/components/Background/Background';
 import { Dela_Gothic_One, Bai_Jamjuree, Open_Sans } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
+import ConsentMode from '@/components/ConsentMode/ConsentMode';
+import CookieBanner from '@/components/CookieBanner/CookieBanner';
 
 import type { Metadata } from 'next';
 
@@ -37,6 +40,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <ConsentMode />
+      </head>
+      {process.env.NEXT_PUBLIC_GTM_ID && (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      )}
       <body className={`${delta_gothic_one.variable} ${bai_jamjuree.variable} ${open_sans.variable}`}>
         <div className="page-wrapper">
           <Background />
@@ -48,6 +57,7 @@ export default function RootLayout({
           </main>
 
           <Footer />
+          <CookieBanner />
         </div>
       </body>
     </html>

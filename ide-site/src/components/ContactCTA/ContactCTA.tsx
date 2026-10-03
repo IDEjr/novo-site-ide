@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CtaLink from "@/components/CtaLink/CtaLink";
 import styles from "./ContactCTA.module.css";
 
 type ContactCTAProps = {
@@ -11,9 +11,9 @@ export default function ContactCTA({ className = "" }: ContactCTAProps) {
       <div className={styles.card}>
         <h2>Pronto para tirar sua ideia do papel?</h2>
         <p>Conte o que você precisa. Vamos pensar na melhor solução junto com você.</p>
-        <Link href="/Contato" className={styles.button}>
+        <CtaLink href="/Contato" className={styles.button} origin="contact_cta">
           Fale conosco
-        </Link>
+        </CtaLink>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import { ContatoSchema, ContatoFormData } from "@/schemas/contato";
 import { sendEmailAction } from '@/actions/enviar-email';
 import Image from "next/image";
 import styles from "./ContatoForm.module.css";
+import { sendGTMEvent } from '@next/third-parties/google';
 
 export default function ContatoForm() {
 
@@ -34,6 +35,7 @@ export default function ContatoForm() {
       const result = await sendEmailAction(data);
 
       if (result.success) {
+        sendGTMEvent({ event: 'lead_form_submit' });
         setStatus('success');
         reset({
           nome: "",
