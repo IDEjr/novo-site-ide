@@ -34,6 +34,7 @@ export default function Footer() {
                         <li><Link href="/Portfolio">Portfólio</Link></li>
                         <li><Link href="/Blog">Blog</Link></li>
                         <li><Link href="/Contato">Contato</Link></li>
+                        <li><Link href="/politica-de-privacidade">Política de Privacidade</Link></li>
                     </ul>
                 </nav>
 
