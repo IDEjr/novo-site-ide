@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
+  background: var(--color-surface);
   border-top: 1px solid #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
 }
