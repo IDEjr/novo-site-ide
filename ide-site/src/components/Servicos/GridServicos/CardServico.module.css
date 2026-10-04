@@ -17,6 +17,8 @@
 .cardContainer:hover {
     transform: translateY(-5px);
     border-color: #0B68BE;
+    outline: 1px solid var(--color-primary);
+    outline-offset: -1px;
     box-shadow: none;
 }
 

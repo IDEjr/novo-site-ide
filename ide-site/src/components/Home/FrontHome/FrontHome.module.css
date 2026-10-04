@@ -79,6 +79,9 @@
 
 .content p:hover {
   transform: translateY(-3px);
+  border-color: var(--color-primary);
+  outline: 1px solid var(--color-primary);
+  outline-offset: -1px;
 
   box-shadow: none;
 }
@@ -129,6 +132,9 @@
 
 .button:hover {
   transform: translateY(-2px);
+  border-color: var(--color-primary);
+  outline: 1px solid var(--color-primary);
+  outline-offset: -1px;
   box-shadow: none;
 }
 
