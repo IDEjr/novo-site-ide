@@ -27,6 +27,14 @@
 }
 
 .linkActive {
-  color: white;
-  border-bottom-color: #0B68BE;
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 0.25rem;
+  border-bottom-color: transparent;
 }
