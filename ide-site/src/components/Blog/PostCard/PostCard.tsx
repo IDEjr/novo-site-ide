@@ -8,7 +8,6 @@ import styles from './PostCard.module.css'
 export default function PostCard({ post }: { post: PopulatedPost }) {
   const cover = post.coverImage
   const imageUrl = cover.sizes?.card?.url || cover.url || ''
-  const category = post.categories?.[0]
 
   return (
     <Link href={`/Blog/${post.slug}`} className={styles.card}>
@@ -22,7 +21,6 @@ export default function PostCard({ post }: { post: PopulatedPost }) {
             className={styles.image}
           />
         )}
-        {category && <span className={styles.tag}>{category.title}</span>}
       </div>
 
       <div className={styles.body}>

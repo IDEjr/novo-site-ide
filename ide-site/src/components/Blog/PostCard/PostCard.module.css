@@ -21,25 +21,11 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  background-color: #0B68BE;
+  background-color: var(--color-surface);
 }
 
 .image {
   object-fit: cover;
-}
-
-.tag {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background-color: #000000;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
 }
 
 .body {
