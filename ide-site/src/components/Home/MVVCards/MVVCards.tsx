@@ -22,9 +22,9 @@ export default function MVVCards() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <circle cx="12" cy="12" r="9" />
-                <circle cx="12" cy="12" r="4.5" />
-                <circle cx="12" cy="12" r="0.8" fill="#ffffff" />
+                <circle cx="12" cy="12" r="9" fill="none" />
+                <circle cx="12" cy="12" r="4.5" fill="none" />
+                <circle cx="12" cy="12" r="0.8" fill="none" />
               </svg>
             </div>
 
@@ -45,8 +45,8 @@ export default function MVVCards() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" />
-                <circle cx="12" cy="12" r="3" />
+                <path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" fill="none" />
+                <circle cx="12" cy="12" r="3" fill="none" />
               </svg>
             </div>
 
@@ -66,7 +66,7 @@ export default function MVVCards() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path fill="black" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                <path fill="none" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </div>
 
