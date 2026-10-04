@@ -82,19 +82,6 @@
   font-weight: 700;
 }
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--color-surface);
-}
-
-.image {
-  object-fit: cover;
-}
-
 .content {
   color: #352d3b;
   font-size: 1.1rem;

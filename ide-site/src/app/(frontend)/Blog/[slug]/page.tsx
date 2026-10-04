@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
+import ImageLightbox from '@/components/Blog/ImageLightbox/ImageLightbox'
 import { getPayloadClient } from '@/lib/payload'
 import { blogConverters } from '@/lib/blog-richtext'
 import type { PopulatedPost } from '@/lib/blog-types'
@@ -89,16 +90,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
 
         {imageUrl && (
-          <div className={styles.imageWrapper}>
-            <Image
-              src={imageUrl}
-              alt={cover.alt}
-              fill
-              sizes="(max-width: 800px) 100vw, 800px"
-              className={styles.image}
-              priority
-            />
-          </div>
+          <ImageLightbox src={imageUrl} fullSizeSrc={cover.url || imageUrl} alt={cover.alt} />
         )}
 
         {/* Nao usar `disableTextAlign`: a forma de array e ignorada pelo converter do
