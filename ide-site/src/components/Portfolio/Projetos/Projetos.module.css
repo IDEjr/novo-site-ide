@@ -115,7 +115,7 @@
 }
 
 .card:hover .link {
-  color: var(--color-primary-light);
+  color: #FFFFFF;
 }
 
 .card:hover .link span {
