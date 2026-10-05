@@ -18,20 +18,64 @@ export default async function ProjetoDetalhes({ params }: Props) {
     notFound();
   }
 
-  // Tópicos mockados da nossa POC para visualizar como fica o layout longo
-  const mockTopics = [
-    { title: "Contexto", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { title: "Problema", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
-    { title: "Processo", text: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida." },
-    { title: "Sistema", text: "Praesent imperdiet diam ac urna. Vestibulum scelerisque mi in libero. Curabitur vel lectus. Nulla eget dui. Mauris id eros." },
-    { title: "Pessoas", text: "Donec neque velit, ultrices vestibulum, vehicula sed, sodales nec, purus. Mauris viverra dui sed nibh. Integer varius. Pellentesque in urna." },
-    { title: "Resultado", text: "Morbi pellentesque, leo sed rutrum pharetra, ante nulla varius velit, ac blandit magna lacus at massa. Curabitur nec risus eu neque pellentesque ultrices." },
-    { title: "Artefatos", text: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc hendrerit. Phasellus ut odio in lectus ullamcorper cursus." },
-  ];
+  const blocos = projeto.conteudo || [];
+
+  const renderBlock = (bloco: any, index: number) => {
+    switch (bloco.type) {
+      case "split":
+      case "split-reverse":
+        return (
+          <section key={index} className={`${styles.blockSplit} ${bloco.type === 'split-reverse' ? styles.reverse : ''}`}>
+            <div className={styles.splitText}>
+              <h2>{bloco.title}</h2>
+              <p>{bloco.text}</p>
+            </div>
+            <div className={styles.splitImagePlaceholder}>
+              <span>{bloco.imagePlaceholder}</span>
+            </div>
+          </section>
+        );
+      
+      case "metrics":
+        return (
+          <section key={index} className={styles.blockMetrics}>
+            {bloco.metrics.map((metric: any, i: number) => (
+              <div key={i} className={styles.metricCard}>
+                <span className={styles.metricValue}>{metric.value}</span>
+                <span className={styles.metricLabel}>{metric.label}</span>
+              </div>
+            ))}
+          </section>
+        );
+
+      case "gallery":
+        return (
+          <section key={index} className={styles.blockGallery}>
+            <h2>{bloco.title}</h2>
+            <div className={styles.galleryGrid}>
+              {bloco.images.map((img: string, i: number) => (
+                <div key={i} className={styles.galleryImagePlaceholder}>
+                  <span>{img}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+
+      default:
+        // Fallback for old simple text
+        return (
+          <section key={index} className={styles.blockText}>
+            <h2>{bloco.title}</h2>
+            <p>{bloco.text}</p>
+          </section>
+        );
+    }
+  };
 
   return (
     <main className={styles.container}>
-      <Link href="/Portfolio" style={{ color: '#aaa', textDecoration: 'none', marginBottom: '2rem', display: 'inline-block' }}>
+      <Link href="/Portfolio" className={styles.backLink}>
         &larr; Voltar para o Portfólio
       </Link>
 
@@ -57,12 +101,7 @@ export default async function ProjetoDetalhes({ params }: Props) {
       </div>
 
       <div className={styles.content}>
-        {mockTopics.map((topic, index) => (
-          <section key={index}>
-            <h2>{topic.title}</h2>
-            <p>{topic.text}</p>
-          </section>
-        ))}
+        {blocos.map(renderBlock)}
       </div>
     </main>
   );
