@@ -342,9 +342,9 @@
 
 @media (max-width: 600px) {
   .yearsList {
-    justify-content: flex-start;
+    justify-content: center;
     overflow-x: auto;
-    padding: 0.5rem 0;
+    padding: 1rem;
   }
   
   .yearLine {
