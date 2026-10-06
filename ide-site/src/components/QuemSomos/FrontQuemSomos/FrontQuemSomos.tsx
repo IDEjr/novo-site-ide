@@ -1,20 +1,32 @@
 import styles from "./FrontQuemSomos.module.css";
 
 export default function FrontQuemSomos() {
-  return (
-    <section className={styles.content}>
-      <div className={styles.textContent}>
-        <h1>
-          Código que <span className={styles.highlight}>transforma.</span>
-        </h1>
+  // Array temporário simulando as fotos. 
+  // O ideal depois é importar do Next/Image com as fotos reais do INF/Lab.
+  const carouselItems = [1, 2, 3, 4, 5, 6];
 
-        <p>
-          Nascemos no coração do Instituto de Informática da UFRGS. Somos
-          movidos pela lógica, desafiados pela inovação e unidos pela paixão em
-          construir o futuro digital.
-        </p>
+  return (
+    <section className={styles.heroSection}>
+      <div className={styles.content}>
+        <div className={styles.textContent}>
+          <h1>
+            Estudantes da UFRGS construindo <span className={styles.highlight}>software.</span>
+          </h1>
+        </div>
       </div>
 
+      <div className={styles.carouselContainer}>
+        <div className={styles.carouselTrack}>
+          {/* Duplicamos os itens para o efeito de rolagem infinita (marquee) */}
+          {[...carouselItems, ...carouselItems].map((item, index) => (
+            <div key={index} className={styles.carouselItem}>
+              <div className={styles.imagePlaceholder}>
+                [Foto {item}]
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,50 +1,49 @@
-.content {
-  width: min(1280px, calc(100% - 4rem));
+/* ===========================
+   HERO CONTAINER
+=========================== */
 
-  margin: 0 auto;
-
+.heroSection {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  padding-top: 4rem; /* Espaço para não grudar no topo/navbar */
   gap: 4rem;
-
-  /*
-    Centraliza o conjunto inteiro verticalmente
-    dentro da área disponível da tela.
-  */
-  min-height: calc(100vh - var(--navbar-height) - 3rem);
+  
+  /* Centraliza verticalmente considerando navbar */
+  min-height: calc(100vh - var(--navbar-height, 80px) - 3rem);
+  overflow: hidden; /* Necessário para o carrossel vazar a tela sem criar scroll horizontal */
 }
 
 /* ===========================
-   TEXTO
+   CONTEÚDO TEXTUAL (WRAPPER CENTRAL)
 =========================== */
 
-.textContent {
-  flex: 1;
-
-  max-width: 600px;
-
+.content {
+  width: min(1280px, calc(100% - 4rem));
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
-
   text-align: center;
+}
+
+.textContent {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .textContent h1 {
   margin: 0;
-
   font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 1.05;
   font-weight: 800;
   letter-spacing: -0.04em;
-
   color: white;
-
-  text-align: center;
 }
 
 .highlight {
@@ -52,237 +51,120 @@
 }
 
 /* ===========================
-   DESCRIÇÃO - GLASS
+   TAGS MONOESPAÇADAS
 =========================== */
 
-.content p {
-  width: 100%;
-  max-width: 720px;
-  box-sizing: border-box;
-
-  margin-top: 1.75rem;
-  padding: 1.8rem 1.6rem;
-
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  font-weight: 300;
-  line-height: 1.6;
-
-  text-align: justify;
-  text-align-last: left;
-
-  background: #7726BD;
-
-  border: 1px solid #BE73FF;
-  border-radius: 24px;
-
-  box-shadow: none;
-
-  color: #ffffff;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+.tags {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
 }
 
-.content p:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-primary);
-  outline: 1px solid var(--color-primary);
-  outline-offset: -1px;
-
-  box-shadow: none;
+.tags span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #BE73FF;
+  letter-spacing: 0.05em;
 }
-
 
 /* ===========================
-   BOTÕES
+   CARROSSEL INFINITO
 =========================== */
 
-.actions {
+.carouselContainer {
+  width: 100%;
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 1rem;
-  margin-top: 2.5rem;
+  position: relative;
+  /* Máscaras laterais para o carrossel "sumir" aos poucos nas bordas da tela */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.button {
-  display: inline-flex;
+.carouselTrack {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
 
+/* Pausa a animação se o usuário passar o mouse */
+.carouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* 
+      Movemos exatamente metade do track (já que duplicamos os itens).
+      Usamos calc para garantir que o gap também seja compensado.
+    */
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+.carouselItem {
+  width: 350px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Estilo temporário para as fotos */
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  min-width: 180px;
-  height: 58px;
-
-  padding: 0 2rem;
-
-  border-radius: 14px;
-
-  text-decoration: none;
-  font-weight: 700;
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: monospace;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+  border: 1px dashed rgba(255,255,255,0.2);
 }
 
-.button:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-  outline: 1px solid var(--color-primary);
-  outline-offset: -1px;
-}
-
-.buttonPrimary {
-  background: #0B68BE;
-  color: #FFFFFF;
-}
-
-.buttonSecondary {
-  background: transparent;
-  color: white;
-
-  border: 2px solid #FFFFFF;
-}
 
 /* ===========================
-   IMAGEM
-=========================== */
-
-.heroImage {
-  flex: 0 1 auto;
-
-  width: clamp(260px, 30vw, 520px);
-
-  height: auto;
-
-  object-fit: contain;
-}
-
-/* ===========================
-   TABLETS / TELAS MÉDIAS
-=========================== */
-
-@media (max-width: 1100px) {
-
-  .content {
-    gap: 2.5rem;
-  }
-
-  .textContent {
-    max-width: 550px;
-  }
-
-  .textContent h1 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
-  }
-
-  .content p {
-    max-width: 600px;
-  }
-}
-
-/* ===========================
-   TABLETS
+   MOBILE / TABLETS
 =========================== */
 
 @media (max-width: 900px) {
-
-  .content {
-    flex-direction: column;
-
-    justify-content: center;
-
+  .heroSection {
+    padding-top: 3rem;
     gap: 3rem;
-
-    padding: 4rem 0;
-  }
-
-  .textContent {
-    width: 100%;
-    max-width: 700px;
-
-    align-items: center;
-
-    text-align: center;
   }
 
   .textContent h1 {
-    text-align: center;
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
-  .content p {
-    width: 100%;
-    max-width: 700px;
-
-    text-align: justify;
-    text-align-last: left;
-
+  .tags span {
+    font-size: 0.85rem;
   }
 
-  .actions {
-    justify-content: center;
-  }
-
-  .heroImage {
-    width: min(380px, 80vw);
+  .carouselItem {
+    width: 260px;
+    height: 180px;
   }
 }
 
-/* ===========================
-   CELULARES
-=========================== */
-
 @media (max-width: 600px) {
-
-  .content {
-    width: min(100%, calc(100% - 2rem));
-
-    padding: 4rem 0;
-
-    gap: 2.5rem;
+  .heroSection {
+    min-height: auto;
+    padding: 3rem 0;
   }
-
-  .textContent {
-    width: 100%;
-    max-width: none;
-  }
-
-  .textContent h1 {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
-
-    text-align: center;
-  }
-
-  .content p {
-    width: 100%;
-    max-width: none;
-
-    padding: 1.4rem 1.2rem;
-
-    font-size: clamp(1.05rem, 2vw, 1.3rem);
-    line-height: 1.6;
-
-    border-radius: 20px;
-
-  }
-
-  .actions {
-    width: 100%;
-
-    flex-direction: column;
-
-    align-items: center;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .heroImage {
-    width: min(90vw, 380px);
+  
+  .carouselItem {
+    width: 220px;
+    height: 150px;
   }
 }
