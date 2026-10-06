@@ -1,8 +1,6 @@
 import styles from "./FrontQuemSomos.module.css";
 
 export default function FrontQuemSomos() {
-  // Array temporário simulando as fotos. 
-  // O ideal depois é importar do Next/Image com as fotos reais do INF/Lab.
   const carouselItems = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -17,7 +15,6 @@ export default function FrontQuemSomos() {
 
       <div className={styles.carouselContainer}>
         <div className={styles.carouselTrack}>
-          {/* Duplicamos os itens para o efeito de rolagem infinita (marquee) */}
           {[...carouselItems, ...carouselItems].map((item, index) => (
             <div key={index} className={styles.carouselItem}>
               <div className={styles.imagePlaceholder}>

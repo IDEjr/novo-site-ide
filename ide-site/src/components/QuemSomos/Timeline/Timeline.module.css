@@ -1,194 +1,353 @@
 .timelineSection {
   width: 100%;
-  max-width: 1100px;
-  margin: 3rem auto 0;
-  padding: 0 1rem 4rem;
+  padding: 4rem 1rem;
 }
 
-/* HEADER */
-
 .sectionHeader {
+  width: min(1200px, 100%);
+  margin: 0 auto 3rem auto;
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 3rem;
 }
 
 .overline {
-  font-size: clamp(1.7rem, 2.2vw, 2.35rem);
+  font-size: clamp(1.7rem, 2.2vw, 2.5rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #FFFFFF;
 }
 
-/* TIMELINE */
+.container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
 
-.timeline {
-  position: relative;
+.leftColumn {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.yearsList {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  align-items: center;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  border-radius: 999px;
-  background: #7726BD;
+.yearItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ITEM */
-
-.item {
-  position: relative;
+.yearNode {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid #333;
   display: flex;
   align-items: center;
-  width: 100%;
-}
-
-.left {
-  justify-content: flex-start;
-  padding-right: 60px;
-}
-
-.right {
-  justify-content: flex-end;
-  padding-left: 60px;
-}
-
-/* CARD */
-
-.content {
-  width: 100%;
-  max-width: 420px;
-
-  padding: 1.8rem 1.6rem;
-
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 24px;
-
-  box-shadow: var(--shadow-card);
-
-  transition: transform .25s ease;
-}
-
-.content:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: none;
-}
-
-.year {
-  margin-bottom: .6rem;
-  color: #000000;
-  font-weight: 700;
-  letter-spacing: .06em;
-}
-
-.content h3 {
-  margin: 0 0 .8rem;
-  color: white;
-}
-
-.content p {
-  margin: 0;
-  color: var(--color-muted);
-  line-height: 1.7;
-}
-
-/* MARCADOR */
-
-.marker {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  width: 3rem;
-  height: 3rem;
-
-  border-radius: 50%;
-  background: #FFFFFF;
-  box-shadow: none;
-
-  display: grid;
-  place-items: center;
-
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
   z-index: 2;
+  font-family: inherit;
 }
 
-.marker::after {
-  content: "";
-  width: 1rem;
-  height: 1rem;
+.yearNode:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.yearNode.active {
+  background: #7726BD;
+  color: #fff;
+  border-color: #BE73FF;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(119, 38, 189, 0.4);
+}
+
+.yearLine {
+  width: 2px;
+  height: 60px;
+  background: #333;
+  margin: 5px 0;
+  z-index: 1;
+}
+
+.rightColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 700px;
+  position: relative;
+}
+
+.eraBlockFade {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@keyframes textSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.eraHeader h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin: 0 0 1rem;
+  color: #ffffff;
+  line-height: 1.2;
+  opacity: 0;
+  animation: textSlideUp 0.5s ease-out forwards;
+}
+
+.eraHeader p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0;
+  opacity: 0;
+  animation: textSlideUp 0.5s ease-out forwards 0.1s;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.photoSmallStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.photoPlaceholder {
+  background: linear-gradient(135deg, #161616 0%, #222222 100%);
+  border-radius: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  opacity: 0;
+}
+
+.photoPlaceholder:hover {
+  transform: scale(1.02) !important;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.photoLarge {
+  height: 100%;
+  min-height: 400px;
+  animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
+}
+
+.photoSmallStack > div:nth-child(1) {
+  animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
+}
+
+.photoSmallStack > div:nth-child(2) {
+  animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s;
+}
+
+.photoSmall {
+  height: 100%;
+  min-height: 190px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #BE73FF;
+  backdrop-filter: blur(4px);
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.invisible {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.navTop {
+  position: absolute;
+  top: -4.5rem;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.navBottom {
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navButton {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-/* ========================= */
-/* TABLETS */
-/* ========================= */
+.navButtonUp:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-4px);
+}
 
-@media (max-width: 950px) {
+.navButtonDown:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(4px);
+}
 
-  .timeline {
-    gap: 5rem;          /* maior espaço entre os eventos */
+.navText {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.navTextFinal {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .sectionHeader {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
 
-  .timeline::before {
-    left: 1.5rem;
-    transform: none;
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
   }
 
-  .item {
-    justify-content: flex-start !important;
-    padding: 0 !important;
+  .leftColumn {
+    width: 100%;
   }
 
-  .left,
-  .right {
-    padding: 0;
+  .yearsList {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  .marker {
-    left: 1.5rem;
-    transform: translateY(-50%);
+  .yearItemContainer {
+    flex-direction: row;
+    align-items: center;
   }
 
-  .content {
-    margin-left: 5rem;   /* afasta o card da linha */
-    max-width: 600px;
+  .yearNode {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 0.9rem;
+  }
+
+  .yearLine {
+    width: 25px;
+    height: 2px;
+    margin: 0 5px;
+  }
+
+  .rightColumn {
+    min-height: auto;
+    margin-top: 1rem; 
+  }
+
+  .navTop {
+    position: relative;
+    top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .photoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .photoLarge {
+    min-height: 250px;
+  }
+
+  .photoSmall {
+    min-height: 180px;
+  }
+  
+  .navContainer {
+    flex-direction: row;
+    gap: 1rem;
   }
 }
 
-/* ========================= */
-/* CELULARES */
-/* ========================= */
-
-@media (max-width: 768px) {
-
-  .timeline {
-    gap: 3.5rem;
+@media (max-width: 600px) {
+  .yearsList {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.5rem 0;
   }
-
-  .timeline::before {
-    left: 1.2rem;
-  }
-
-  .marker {
-    left: 1.2rem;
-  }
-
-  .content {
-    margin-left: 3rem;
-    max-width: 100%;
+  
+  .yearLine {
+    width: 15px;
   }
 }
