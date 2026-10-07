@@ -59,7 +59,7 @@ export default function InfoCards() {
             </div>
 
             <div className={styles.statCard}>
-              <strong>3</strong>
+              <strong>27</strong>
               <span>premiações</span>
             </div>
           </div>
