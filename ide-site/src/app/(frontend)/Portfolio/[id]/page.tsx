@@ -62,6 +62,30 @@ export default async function ProjetoDetalhes({ params }: Props) {
           </section>
         );
 
+      case "team":
+        return (
+          <section key={index} className={styles.blockTeam}>
+            <h2>{bloco.title}</h2>
+            <div className={styles.teamGrid}>
+              {bloco.members.map((member: any, i: number) => (
+                <div key={i} className={styles.memberCard}>
+                  <div className={styles.memberPhotoWrapper}>
+                    <img src={member.photo} alt={member.name} className={styles.memberPhoto} />
+                  </div>
+                  <div className={styles.memberInfo}>
+                    <span className={styles.memberName}>{member.name}</span>
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className={styles.memberLinkedin}>
+                        LinkedIn ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+
       default:
         // Fallback for old simple text
         return (

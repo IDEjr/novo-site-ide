@@ -31,6 +31,15 @@ export const projetos = [
         type: "gallery", 
         title: "Interface & Telas Finais", 
         images: ["Tela de Busca", "Dashboard do Aluno", "Visão do Professor"] 
+      },
+      {
+        type: "team",
+        title: "Equipe do Projeto",
+        members: [
+          { name: "João Silva", linkedin: "https://linkedin.com", photo: "https://ui-avatars.com/api/?name=João+Silva&background=0B68BE&color=fff" },
+          { name: "Maria Souza", linkedin: "https://linkedin.com", photo: "https://ui-avatars.com/api/?name=Maria+Souza&background=BE73FF&color=fff" },
+          { name: "Carlos Gomes", linkedin: "https://linkedin.com", photo: "https://ui-avatars.com/api/?name=Carlos+Gomes&background=7726BD&color=fff" }
+        ]
       }
     ]
   },

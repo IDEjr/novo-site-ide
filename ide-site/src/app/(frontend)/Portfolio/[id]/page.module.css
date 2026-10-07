@@ -258,3 +258,77 @@
     font-size: 2.5rem;
   }
 }
+
+/* Team Block */
+.blockTeam {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.blockTeam h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  border: none;
+}
+
+.blockTeam h2::before {
+  content: none;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.memberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.memberPhotoWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-primary-light, #BE73FF);
+  background-color: var(--color-surface, #7726BD);
+}
+
+.memberPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.memberName {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+}
+
+.memberLinkedin {
+  font-size: 0.9rem;
+  color: var(--color-primary-light, #BE73FF);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.memberLinkedin:hover {
+  text-decoration: underline;
+}
