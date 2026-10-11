@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 1.5rem 1rem;
+  background: var(--color-surface);
   border-top: 1px solid #FFFFFF;
   border-bottom: 1px solid #FFFFFF;
 }
@@ -26,6 +27,14 @@
 }
 
 .linkActive {
-  color: white;
-  border-bottom-color: #0B68BE;
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 0.25rem;
+  border-bottom-color: transparent;
 }

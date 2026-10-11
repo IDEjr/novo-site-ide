@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import type { Where } from 'payload'
 
-import BlogHero from '@/components/Blog/BlogHero/BlogHero'
 import CategoryFilter from '@/components/Blog/CategoryFilter/CategoryFilter'
 import PostCard from '@/components/Blog/PostCard/PostCard'
 import { getPayloadClient } from '@/lib/payload'
@@ -32,24 +31,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     sort: 'title',
   })
 
-  let featuredPost: PopulatedPost | null = null
-  if (currentPage === 1 && !categoria) {
-    const featuredResult = await payload.find({
-      collection: 'posts',
-      where: { status: { equals: 'published' } },
-      sort: '-publishedAt',
-      limit: 1,
-      depth: 2,
-    })
-    featuredPost = (featuredResult.docs[0] as PopulatedPost) ?? null
-  }
-
   const where: Where = { status: { equals: 'published' } }
   if (categoria) {
     where['categories.slug'] = { equals: categoria }
-  }
-  if (featuredPost) {
-    where.id = { not_equals: featuredPost.id }
   }
 
   const postsResult = await payload.find({
@@ -66,8 +50,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <div className={styles.page}>
-      {featuredPost && <BlogHero post={featuredPost} />}
-
       <CategoryFilter categories={categoriesResult.docs} activeSlug={categoria} />
 
       {posts.length > 0 ? (
@@ -77,7 +59,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           ))}
         </div>
       ) : (
-        !featuredPost && <p className={styles.empty}>Nenhum post publicado ainda.</p>
+        <p className={styles.empty}>Nenhum post publicado ainda.</p>
       )}
 
       {postsResult.hasNextPage && (
