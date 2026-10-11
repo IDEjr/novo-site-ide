@@ -55,9 +55,9 @@
 .inputField textarea {
   width: 100%;
 
-  background-color: #000000;
+  background-color: #ffffff;
 
-  color: #ffffff;
+  color: #171717;
 
   border: 1px solid #BE73FF;
   border-radius: var(--radius-control);
@@ -74,7 +74,7 @@
 
 .inputField input::placeholder,
 .inputField textarea::placeholder {
-  color: #ffffff;
+  color: #666666;
 }
 
 .inputField input:focus,
