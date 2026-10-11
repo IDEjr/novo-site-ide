@@ -141,6 +141,7 @@
 .buttonPrimary {
   background: #0B68BE;
   color: #fff;
+  border: 1px solid #fff;
   box-shadow: none;
 }
 
