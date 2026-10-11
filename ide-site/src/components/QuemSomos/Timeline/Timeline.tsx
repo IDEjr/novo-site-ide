@@ -101,25 +101,17 @@ export default function Timeline() {
             </div>
           </div>
 
-          <div className={`${styles.navContainer} ${styles.navBottom}`}>
-            {activeIndex < eras.length - 1 ? (
-              <>
-                <span className={styles.navText}>
-                  Próxima era: {eras[activeIndex + 1].year}
-                </span>
-                <button
-                  className={`${styles.navButton} ${styles.navButtonDown}`}
-                  onClick={() => setActiveIndex(activeIndex + 1)}
-                  title={`Avançar para ${eras[activeIndex + 1].year}`}
-                >
-                  ↓
-                </button>
-              </>
-            ) : (
-              <span className={styles.navTextFinal}>
-                
-              </span>
-            )}
+          <div className={`${styles.navContainer} ${styles.navBottom} ${activeIndex === eras.length - 1 ? styles.invisible : ""}`}>
+            <span className={styles.navText}>
+              Próxima era: {activeIndex < eras.length - 1 ? eras[activeIndex + 1].year : "---"}
+            </span>
+            <button
+              className={`${styles.navButton} ${styles.navButtonDown}`}
+              onClick={() => activeIndex < eras.length - 1 && setActiveIndex(activeIndex + 1)}
+              title={activeIndex < eras.length - 1 ? `Avançar para ${eras[activeIndex + 1].year}` : ""}
+            >
+              ↓
+            </button>
           </div>
         </div>
       </div>
