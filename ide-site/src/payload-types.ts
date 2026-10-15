@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     categories: Category;
     posts: Post;
+    'agora-updates': AgoraUpdate;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,6 +83,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    'agora-updates': AgoraUpdatesSelect<false> | AgoraUpdatesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -233,6 +235,33 @@ export interface Post {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agora-updates".
+ */
+export interface AgoraUpdate {
+  id: number;
+  /**
+   * Ex: Deploy da v2 do Mural de Bolsas com nova interface para alunos.
+   */
+  mensagem: string;
+  tag: 'DEPLOY' | 'PROCESSO SELETIVO' | 'TECNOLOGIA' | 'PROJETO' | 'EVENTO';
+  /**
+   * Ex: out 2026 ou 14 out
+   */
+  dataTexto: string;
+  /**
+   * Opcional. Ex: 7c89f1a (se deixar vazio, um hash será gerado automaticamente)
+   */
+  commitHash?: string | null;
+  /**
+   * Ex: /Portfolio/1 ou /Blog
+   */
+  link?: string | null;
+  status?: ('published' | 'draft') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -270,6 +299,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'agora-updates';
+        value: number | AgoraUpdate;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -403,6 +436,20 @@ export interface PostsSelect<T extends boolean = true> {
   categories?: T;
   status?: T;
   publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agora-updates_select".
+ */
+export interface AgoraUpdatesSelect<T extends boolean = true> {
+  mensagem?: T;
+  tag?: T;
+  dataTexto?: T;
+  commitHash?: T;
+  link?: T;
+  status?: T;
   updatedAt?: T;
   createdAt?: T;
 }

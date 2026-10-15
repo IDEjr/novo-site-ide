@@ -1,0 +1,383 @@
+.section {
+  width: 100%;
+  padding: 1.5rem 0 4.5rem;
+}
+
+.container {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+/* =======================================
+   FAIXA TERMINAL HORIZONTAL
+======================================= */
+
+.terminalStrip {
+  background: rgba(20, 6, 36, 0.88);
+  border: 1px solid rgba(190, 115, 255, 0.35);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(119, 38, 189, 0.15);
+}
+
+/* Barra Superior */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.75rem;
+  background: rgba(35, 10, 60, 0.75);
+  border-bottom: 1px solid rgba(190, 115, 255, 0.2);
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(74, 222, 128, 0.14);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.05em;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.stripTitle {
+  margin: 0;
+  font-family: var(--font-titulo), "Bai Jamjuree", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.telemetryTag {
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.gitStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.gitDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #BE73FF;
+}
+
+.gitDivider {
+  opacity: 0.4;
+}
+
+.blogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #BE73FF;
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(190, 115, 255, 0.3);
+  background: rgba(119, 38, 189, 0.2);
+  transition: all 0.2s ease;
+}
+
+.blogLink:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(119, 38, 189, 0.4);
+}
+
+/* =======================================
+   LINHAS HORIZONTAIS DE ATUALIZAÇÃO
+======================================= */
+
+.feedRows {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedRow {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(190, 115, 255, 0.14);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.feedRow:last-child {
+  border-bottom: none;
+}
+
+.feedRowClickable {
+  cursor: pointer;
+}
+
+.feedRow:hover {
+  background: rgba(119, 38, 189, 0.16);
+}
+
+.rowContent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 1.75rem;
+}
+
+/* Metadados: Tag + Data */
+.rowMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  min-width: 250px;
+}
+
+.tagBadge {
+  font-family: monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Cores das tags */
+.tagDeploy {
+  color: #4ade80;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.35);
+}
+
+.tagPs {
+  color: #BE73FF;
+  text-shadow: 0 0 10px rgba(190, 115, 255, 0.35);
+}
+
+.tagTech {
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+.tagProjeto {
+  color: #fbbf24;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.35);
+}
+
+.tagDefault {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dateStamp {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+/* Mensagem principal */
+.messageText {
+  margin: 0;
+  flex: 1;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+/* Direita: Commit + Ação */
+.rowRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.commitBadge {
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.commitBadge code {
+  color: #BE73FF;
+  font-weight: 600;
+  background: rgba(190, 115, 255, 0.1);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+.rowAction {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 85px;
+}
+
+.linkPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #BE73FF;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(190, 115, 255, 0.1);
+  border: 1px solid rgba(190, 115, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.feedRow:hover .linkPill {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(119, 38, 189, 0.4);
+}
+
+.arrowIcon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.feedRow:hover .arrowIcon {
+  transform: translate(2px, -2px);
+}
+
+.statusDotActive {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(190, 115, 255, 0.4);
+}
+
+/* ===========================
+   MOVIMENTO REDUZIDO
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .liveDot {
+    animation: none;
+  }
+
+  .arrowIcon {
+    transition: none;
+  }
+
+  .feedRow:hover .arrowIcon {
+    transform: none;
+  }
+}
+
+/* ===========================
+   TABLETS / TELAS MÉDIAS
+=========================== */
+
+@media (max-width: 960px) {
+  .rowContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.15rem 1.4rem;
+  }
+
+  .rowMeta {
+    min-width: auto;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .rowRight {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .rowAction {
+    min-width: auto;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.4rem;
+  }
+
+  .topBarRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 1rem 0 3rem;
+  }
+
+  .container {
+    width: min(100%, calc(100% - 2rem));
+  }
+
+  .telemetryTag {
+    display: none;
+  }
+
+  .gitStatus {
+    font-size: 0.7rem;
+  }
+
+  .messageText {
+    font-size: 0.92rem;
+  }
+}

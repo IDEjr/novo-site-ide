@@ -10,6 +10,7 @@ import { Users } from './src/collections/Users'
 import { Media } from './src/collections/Media'
 import { Categories } from './src/collections/Categories'
 import { Posts } from './src/collections/Posts'
+import { AgoraUpdates } from './src/collections/AgoraUpdates'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -19,7 +20,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Categories, Posts],
+  collections: [Users, Media, Categories, Posts, AgoraUpdates],
   editor: lexicalEditor(),
   db: postgresAdapter({
     pool: {
