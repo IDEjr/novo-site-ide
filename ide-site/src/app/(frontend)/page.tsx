@@ -1,7 +1,8 @@
 import styles from "./page.module.css";
 import FrontHome from "@/components/Home/FrontHome/FrontHome";
-import NossosParceiros from "@/components/Home/NossosParceiros/NossosParceiros";
+import ProjetosDestaque from "@/components/Home/ProjetosDestaque/ProjetosDestaque";
 import InfoCards from "@/components/Home/InfoCards/InfoCards";
+import NossosParceiros from "@/components/Home/NossosParceiros/NossosParceiros";
 import MVVCards from "@/components/Home/MVVCards/MVVCards";
 import CTAHome from "@/components/Home/CTAHome/CTAHome";
 
@@ -13,6 +14,7 @@ export default function Home() {
 
       <main className={styles.hero}>
         <FrontHome />
+        <ProjetosDestaque />
         <InfoCards />
         <NossosParceiros />
         <MVVCards />
