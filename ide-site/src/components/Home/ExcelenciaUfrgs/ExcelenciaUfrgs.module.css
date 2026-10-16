@@ -58,11 +58,11 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   padding: 1.5rem 2rem;
-  background: rgba(30, 8, 52, 0.65);
-  border: 1px solid rgba(190, 115, 255, 0.3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
   margin-bottom: 2.25rem;
 }
 
@@ -71,7 +71,7 @@
   flex-direction: column;
   gap: 0.2rem;
   padding: 0 0.5rem;
-  border-right: 1px solid rgba(190, 115, 255, 0.18);
+  border-right: 1px solid rgba(190, 115, 255, 0.3);
 }
 
 .metricItem:last-child {
@@ -119,24 +119,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: rgba(24, 7, 42, 0.78);
-  border: 1px solid rgba(190, 115, 255, 0.32);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-card);
   transition:
     border-color 0.28s ease,
-    transform 0.28s ease,
-    box-shadow 0.28s ease;
+    outline 0.28s ease,
+    transform 0.28s ease;
 }
 
 .photoCard:hover {
-  border-color: rgba(190, 115, 255, 0.65);
+  border-color: #0B68BE;
+  outline: 1px solid var(--color-primary);
+  outline-offset: -1px;
   transform: translateY(-3px);
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.55),
-    0 0 35px rgba(119, 38, 189, 0.25);
 }
 
 /* Imagem no aspecto natural (960 x 855) */
@@ -159,14 +158,15 @@
 }
 
 /* Banner Institucional de Chancela */
+/* Banner Institucional de Chancela */
 .institutionBanner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 1.15rem 1.35rem;
-  background: rgba(15, 5, 25, 0.85);
-  border-top: 1px solid rgba(190, 115, 255, 0.22);
+  background: rgba(64, 16, 106, 0.75);
+  border-top: 1px solid var(--color-border);
 }
 
 .institutionText {
@@ -213,8 +213,8 @@
   position: relative;
   width: 68px;
   height: 42px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -236,25 +236,24 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
-  background: rgba(24, 7, 42, 0.75);
-  border: 1px solid rgba(190, 115, 255, 0.28);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 2rem;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.38);
+  box-shadow: var(--shadow-card);
 
   transition:
     border-color 0.28s ease,
-    transform 0.28s ease,
-    box-shadow 0.28s ease;
+    outline 0.28s ease,
+    transform 0.28s ease;
 }
 
 .infoCard:hover {
-  border-color: rgba(190, 115, 255, 0.6);
+  border-color: #0B68BE;
+  outline: 1px solid var(--color-primary);
+  outline-offset: -1px;
   transform: translateY(-3px);
-  box-shadow:
-    0 22px 52px rgba(0, 0, 0, 0.52),
-    0 0 30px rgba(119, 38, 189, 0.22);
 }
 
 .cardTop {
@@ -278,9 +277,10 @@
 .cardBadge {
   font-family: monospace;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-weight: 700;
+  color: #ffffff;
+  background: #0B68BE;
+  border: 1px solid #BE73FF;
   border-radius: 999px;
   padding: 0.22rem 0.65rem;
   white-space: nowrap;
@@ -324,8 +324,8 @@
   font-size: 0.83rem;
   color: rgba(255, 255, 255, 0.9);
   padding: 0.42rem 0.75rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(64, 16, 106, 0.35);
+  border: 1px solid rgba(190, 115, 255, 0.25);
   border-radius: 9px;
 }
 
