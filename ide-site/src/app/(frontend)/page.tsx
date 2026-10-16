@@ -3,9 +3,7 @@ import FrontHome from "@/components/Home/FrontHome/FrontHome";
 import ProjetosDestaque from "@/components/Home/ProjetosDestaque/ProjetosDestaque";
 import ComoTrabalhamos from "@/components/Home/ComoTrabalhamos/ComoTrabalhamos";
 import AgoraNaIde from "@/components/Home/AgoraNaIde/AgoraNaIde";
-import InfoCards from "@/components/Home/InfoCards/InfoCards";
-import NossosParceiros from "@/components/Home/NossosParceiros/NossosParceiros";
-import MVVCards from "@/components/Home/MVVCards/MVVCards";
+import ExcelenciaUfrgs from "@/components/Home/ExcelenciaUfrgs/ExcelenciaUfrgs";
 import CTAHome from "@/components/Home/CTAHome/CTAHome";
 
 export default function Home() {
@@ -19,9 +17,7 @@ export default function Home() {
         <ProjetosDestaque />
         <ComoTrabalhamos />
         <AgoraNaIde />
-        <InfoCards />
-        <NossosParceiros />
-        <MVVCards />
+        <ExcelenciaUfrgs />
         <CTAHome />
       </main>
     </section>
