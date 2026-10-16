@@ -42,6 +42,7 @@ export default function ProjetosDestaque() {
       <div className={styles.container}>
         {/* Cabeçalho da Seção (Centralizado) */}
         <header className={styles.header}>
+          <span className={styles.kicker}>{"// PROJETOS EM DESTAQUE"}</span>
           <h2 id="projetos-titulo" className={styles.title}>
             Software colocado em produção.
           </h2>

@@ -19,6 +19,17 @@
   margin: 0 auto 3.5rem;
 }
 
+.kicker {
+  display: inline-block;
+  font-family: monospace, var(--font-principal);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #BE73FF;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
 .title {
   margin: 0;
   font-family: var(--font-titulo), "Bai Jamjuree", sans-serif;
