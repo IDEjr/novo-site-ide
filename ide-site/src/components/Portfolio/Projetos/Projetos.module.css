@@ -48,6 +48,16 @@
   overflow: hidden;
 }
 
+.imageContainer::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 2px;
+  background: var(--color-surface);
+  pointer-events: none;
+}
+
 .image {
   object-fit: cover;
 
