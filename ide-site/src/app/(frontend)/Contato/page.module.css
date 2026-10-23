@@ -18,7 +18,7 @@
 }
 
 .highlight {
-  color: #0B68BE;
+  color: var(--color-section-title);
 }
 
 .contactContent {

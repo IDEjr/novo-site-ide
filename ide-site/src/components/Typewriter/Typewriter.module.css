@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #0B68BE;
+  color: var(--color-section-title);
   font-weight: 700;
 }
 
