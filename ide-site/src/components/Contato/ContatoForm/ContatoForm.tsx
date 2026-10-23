@@ -23,8 +23,8 @@ export default function ContatoForm() {
     defaultValues: {
       nome: "",
       email: "",
-      assunto: "", // Opcional: assunto padrão legível para sua triagem
-      mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto.",
+      assunto: "",
+      mensagem: "",
     },
   });
 
@@ -41,7 +41,7 @@ export default function ContatoForm() {
           nome: "",
           email: "",
           assunto: "",
-          mensagem: "Olá! Gostaria de saber mais detalhes sobre como vocês podem me ajudar no meu projeto."
+          mensagem: ""
         });
       } else {
         setStatus('error');
