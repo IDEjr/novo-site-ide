@@ -21,7 +21,8 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--color-surface);
+  background: var(--color-surface-light);
+  color: #000000;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
   border-radius: var(--radius-card);
@@ -54,18 +55,19 @@
 
 .mvvCard h3 {
   letter-spacing: .05em;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .mvvIcon {
   width: 48px;
   height: 48px;
+  color: var(--color-surface);
 }
 
 .mvvIcon svg {
   width: 100%;
   height: 100%;
-  stroke: #000000;
+  stroke: currentColor;
 }
 
 .mvvCard p,
@@ -88,7 +90,7 @@
 
 .mvvList li::before {
   content: "•  ";
-  color: #000000;
+  color: var(--color-surface);
 }
 
 @media (max-width: 900px) {

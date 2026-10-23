@@ -1,8 +1,8 @@
 .cardContainer {
     border-radius: var(--radius-card);
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border-light);
+    background: var(--color-surface-light);
+    box-shadow: 0 12px 32px rgb(26 7 43 / 10%);
 
     display: flex;
     flex-direction: column;
@@ -25,14 +25,14 @@
 .cardContainer h3 {
     font-size: clamp(1.35rem, 2vw, 1.7rem);
     margin-bottom: 0.6rem;
-    color: #FFFFFF;
+    color: var(--color-text-strong);
 }
 
 .cardContainer p {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.65;
-    color: var(--color-muted);
+    color: var(--color-text-secondary);
 }
 
 .cardTecnologias {

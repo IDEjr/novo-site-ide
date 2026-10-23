@@ -38,14 +38,15 @@
   text-align: justify;
   text-align-last: left;
 
-  background: #7726BD;
+  background: var(--color-surface-light);
 
-  border: 1px solid #BE73FF;
+  border: 1px solid var(--color-border-light);
   border-radius: 24px;
 
   box-shadow: none;
 
-  color: #ffffff;
+  color: var(--color-text-secondary);
+  box-shadow: 0 12px 32px rgb(26 7 43 / 10%);
 
   transition:
     transform 0.25s ease,
@@ -82,9 +83,9 @@
 }
 
 .infoCard {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 12px 32px rgb(26 7 43 / 10%);
   border-radius: var(--radius-card);
   padding: 1.75rem;
   min-height: 150px;
@@ -96,12 +97,13 @@
 
 .infoCard h3 {
   margin-bottom: .75rem;
-  color: #FFFFFF;
+  color: var(--color-text-strong);
 }
 
 .infoCard p {
   font-size: 0.95rem;
   line-height: 1.6;
+  color: var(--color-text-secondary);
 
   text-align: justify;
   text-align-last: left;
