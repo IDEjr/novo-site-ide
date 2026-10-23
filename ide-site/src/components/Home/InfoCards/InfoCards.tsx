@@ -43,7 +43,7 @@ export default function InfoCards() {
 
           <div className={styles.statRow}>
             <div className={styles.statCard}>
-              <strong>+10</strong>
+              <strong>10</strong>
               <span>anos de história</span>
             </div>
 
@@ -59,7 +59,7 @@ export default function InfoCards() {
             </div>
 
             <div className={styles.statCard}>
-              <strong>3</strong>
+              <strong>27</strong>
               <span>premiações</span>
             </div>
           </div>
