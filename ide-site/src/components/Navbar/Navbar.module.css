@@ -9,8 +9,9 @@
 
   min-height: var(--navbar-height);
   padding: 0.9rem clamp(1.25rem, 5vw, 4rem);
-  background: #000000;
-  border-bottom: 1px solid #7726BD;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E7DCEF;
+  box-shadow: 0 2px 12px rgb(64 16 106 / 8%);
   z-index: 1000;
 }
 
@@ -41,7 +42,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: white;
+  background-color: #40106A;
 }
 
 .menu {
@@ -53,7 +54,7 @@
 }
 
 .menu a {
-  color: #FFFFFF;
+  color: #40106A;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
@@ -61,7 +62,7 @@
 }
 
 .menu a:hover {
-  color: var(--color-primary-light);
+  color: #7726BD;
 }
 
 @media (max-width: 700px) {
@@ -80,7 +81,7 @@
     flex-direction: column;
     gap: 0.75rem;
     padding-top: 1rem;
-    border-top: 1px solid #7726BD;
+    border-top: 1px solid #E7DCEF;
   }
 
   .menuOpen {
