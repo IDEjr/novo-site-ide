@@ -1,14 +1,45 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import styles from "./Timeline.module.css";
 
-const eras = [
+type EraPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+type Era = {
+  year: string;
+  title: string;
+  description: string;
+  photos?: [EraPhoto, EraPhoto, EraPhoto];
+};
+
+const eras: Era[] = [
   {
     year: "2016",
     title: "Fundação e primeiros passos no INF",
     description:
       "Um grupo de estudantes visionários do INF-UFRGS decide que a teoria precisava de prática. Nasce a IDE.",
+    photos: [
+      {
+        src: "/imagens/trajetoria/2016/C%C3%B3pia%20de%20fundacao01.jpg",
+        alt: "Registro da fundação da IDE em 2016",
+        caption: "Fundação da IDE",
+      },
+      {
+        src: "/imagens/trajetoria/2016/imersão.jpg",
+        alt: "Registro da imersão da IDE em 2016",
+        caption: "Imersão",
+      },
+      {
+        src: "/imagens/trajetoria/2016/0001.png",
+        alt: "Foto histórica da IDE em 2016",
+        caption: "Registro de 2016",
+      },
+    ],
   },
   {
     year: "2018",
@@ -29,6 +60,37 @@ const eras = [
       "Eleita uma das empresas juniores mais inovadoras. Foco total em engenharia de software de ponta e resultados reais.",
   },
 ];
+
+function PhotoCard({
+  photo,
+  className,
+  placeholder,
+  showCaption = false,
+}: {
+  photo?: EraPhoto;
+  className: string;
+  placeholder: string;
+  showCaption?: boolean;
+}) {
+  return (
+    <div className={`${styles.photoPlaceholder} ${className}`}>
+      {photo ? (
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          sizes="(max-width: 900px) 100vw, 700px"
+          className={styles.photoImage}
+        />
+      ) : (
+        placeholder
+      )}
+      {showCaption && (
+        <span className={styles.caption}>{photo?.caption ?? "Legenda"}</span>
+      )}
+    </div>
+  );
+}
 
 export default function Timeline() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -83,20 +145,24 @@ export default function Timeline() {
             </div>
 
             <div className={styles.photoGrid}>
-              <div className={`${styles.photoPlaceholder} ${styles.photoLarge}`}>
-                [Foto Grande {activeEra.year}]
-                <span className={styles.caption}>Legenda</span>
-              </div>
-              
+              <PhotoCard
+                photo={activeEra.photos?.[0]}
+                className={styles.photoLarge}
+                placeholder={`[Foto Grande ${activeEra.year}]`}
+                showCaption
+              />
+
               <div className={styles.photoSmallStack}>
-                <div className={`${styles.photoPlaceholder} ${styles.photoSmall}`}>
-                  [Foto Menor {activeEra.year} - A]
-                  <span className={styles.caption}>Legenda</span>
-                </div>
-                <div className={`${styles.photoPlaceholder} ${styles.photoSmall}`}>
-                  [Foto Menor {activeEra.year} - B]
-                  <span className={styles.caption}>Legenda</span>
-                </div>
+                <PhotoCard
+                  photo={activeEra.photos?.[1]}
+                  className={styles.photoSmall}
+                  placeholder={`[Foto Menor ${activeEra.year} - A]`}
+                />
+                <PhotoCard
+                  photo={activeEra.photos?.[2]}
+                  className={styles.photoSmall}
+                  placeholder={`[Foto Menor ${activeEra.year} - B]`}
+                />
               </div>
             </div>
           </div>
