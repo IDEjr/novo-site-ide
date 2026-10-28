@@ -46,6 +46,23 @@ const eras: Era[] = [
     title: "Expansão e consolidação",
     description:
       "Primeiros grandes projetos comerciais. A IDE começa a ser reconhecida no ecossistema de inovação do RS.",
+    photos: [
+      {
+        src: "/imagens/trajetoria/2018/egej2018.jpg",
+        alt: "Equipe da IDE no EGEJ de 2018",
+        caption: "EGEJ 2018",
+      },
+      {
+        src: "/imagens/trajetoria/2018/29543108_1924001044597015_1693264989132287545_n.jpg",
+        alt: "Registro da IDE em 2018",
+        caption: "Registro de 2018",
+      },
+      {
+        src: "/imagens/trajetoria/2018/27654771_1899797170350736_2797026366714940346_n.jpg",
+        alt: "Registro da IDE em 2018",
+        caption: "Registro de 2018",
+      },
+    ],
   },
   {
     year: "2025",
