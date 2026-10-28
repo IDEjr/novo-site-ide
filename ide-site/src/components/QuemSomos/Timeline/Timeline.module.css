@@ -131,7 +131,10 @@
 .eraHeader p {
   font-size: 1.15rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: #24202b;
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
   max-width: 800px;
   margin: 0;
   opacity: 0;
