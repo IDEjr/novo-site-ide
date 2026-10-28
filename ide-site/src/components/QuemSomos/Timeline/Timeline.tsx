@@ -8,6 +8,7 @@ type EraPhoto = {
   src: string;
   alt: string;
   caption: string;
+  objectPosition?: string;
 };
 
 type Era = {
@@ -84,6 +85,7 @@ const eras: Era[] = [
         src: "/imagens/trajetoria/2025/premio%201.png",
         alt: "Prêmio recebido pela IDE em 2025",
         caption: "Prêmio de 2025",
+        objectPosition: "center top",
       },
     ],
   },
@@ -92,6 +94,23 @@ const eras: Era[] = [
     title: "Software de verdade",
     description:
       "Eleita uma das empresas juniores mais inovadoras. Foco total em engenharia de software de ponta e resultados reais.",
+    photos: [
+      {
+        src: "/imagens/trajetoria/2026/EGEJ2026.jpg",
+        alt: "Equipe da IDE no EGEJ de 2026",
+        caption: "EGEJ 2026",
+      },
+      {
+        src: "/imagens/trajetoria/2026/WhatsApp%20Image%202026-10-15%20at%2019.07.02.jpeg",
+        alt: "Registro da IDE em 2026",
+        caption: "Registro de 2026",
+      },
+      {
+        src: "/imagens/trajetoria/2026/WhatsApp%20Image%202026-06-28%20at%2012.20.55.jpeg",
+        alt: "Registro da IDE em 2026",
+        caption: "Registro de 2026",
+      },
+    ],
   },
 ];
 
@@ -115,6 +134,7 @@ function PhotoCard({
           fill
           sizes="(max-width: 900px) 100vw, 700px"
           className={styles.photoImage}
+          style={{ objectPosition: photo.objectPosition ?? "center" }}
         />
       ) : (
         placeholder
