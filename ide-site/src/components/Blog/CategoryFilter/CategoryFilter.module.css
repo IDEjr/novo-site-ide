@@ -27,7 +27,7 @@
 }
 
 .linkActive {
-  color: #000000;
+  color: var(--color-primary-light);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.35rem;
