@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './Conquistas.module.css';
 
 const Conquistas = () => {
@@ -11,13 +12,31 @@ const Conquistas = () => {
       <div className={styles.container}>
         <div className={styles.photosGrid}>
           <div className={`${styles.photoCard} ${styles.photoMain}`}>
-            <div className={styles.placeholderImage}>[Foto ENEJ]</div>
+            <Image
+              src="/imagens/premios/egej26.png"
+              alt="Equipe da IDE reunida em evento do EGEJ em 2026"
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
+              className={styles.photoImage}
+            />
           </div>
           <div className={styles.photoCard}>
-            <div className={styles.placeholderImage}>[Foto ECEJ]</div>
+            <Image
+              src="/imagens/premios/fejers18.jpeg"
+              alt="Representantes da IDE recebendo um reconhecimento em 2018"
+              fill
+              sizes="(max-width: 900px) 50vw, 25vw"
+              className={styles.photoImage}
+            />
           </div>
           <div className={styles.photoCard}>
-            <div className={styles.placeholderImage}>[Foto Prêmio]</div>
+            <Image
+              src="/imagens/premios/egej18.jpg"
+              alt="Equipe da IDE reunida em evento do EGEJ em 2018"
+              fill
+              sizes="(max-width: 900px) 50vw, 25vw"
+              className={styles.photoImage}
+            />
           </div>
         </div>
 
@@ -32,22 +51,30 @@ const Conquistas = () => {
             <li className={styles.awardItem}>
               <span className={styles.awardIcon}>🏆</span>
               <div className={styles.awardInfo}>
-                <span className={styles.awardName}>Prêmio Destaque Estadual</span>
-                <span className={styles.awardManagement}>Gestão 2023/1</span>
+                <span className={styles.awardName}>Troféu “Ondas de Excelência”</span>
+                <span className={styles.awardManagement}>EGEJ · 2026/1</span>
+                <span className={styles.awardDescription}>
+                  EJ com maior faturamento de seu cluster
+                </span>
               </div>
             </li>
             <li className={styles.awardItem}>
               <span className={styles.awardIcon}>🥇</span>
               <div className={styles.awardInfo}>
-                <span className={styles.awardName}>Prêmio Impacto MEJ</span>
-                <span className={styles.awardManagement}>Gestão 2022/2</span>
+                <span className={styles.awardName}>Prêmio “Respeitamos Nossa História”</span>
+                <span className={styles.awardManagement}>FEJERS · 2018/2</span>
+                <span className={styles.awardDescription}>TRI Alto Crescimento</span>
               </div>
             </li>
             <li className={styles.awardItem}>
               <span className={styles.awardIcon}>⭐</span>
               <div className={styles.awardInfo}>
-                <span className={styles.awardName}>Prêmio Empresa Júnior Revelação</span>
-                <span className={styles.awardManagement}>Gestão 2021</span>
+                <span className={styles.awardName}>Certificado “Selo EJ”</span>
+                <span className={styles.awardManagement}>Lidera · 2026/2</span>
+                <span className={styles.awardDescription}>
+                  Avançar com base em princípios de excelência e desenvolvimento, atingindo
+                  60% do Selo Anual
+                </span>
               </div>
             </li>
           </ul>
@@ -58,4 +85,3 @@ const Conquistas = () => {
 };
 
 export default Conquistas;
-

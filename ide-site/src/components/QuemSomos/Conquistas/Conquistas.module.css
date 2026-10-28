@@ -33,24 +33,20 @@
 }
 
 .photoCard {
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   aspect-ratio: 16 / 9;
+}
+
+.photoImage {
+  object-fit: cover;
 }
 
 .photoMain {
   grid-column: span 2;
-}
-
-.placeholderImage {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: monospace;
 }
 
 .contentColumn {
@@ -63,11 +59,15 @@
 .description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #9CA3AF;
+  color: #374151;
+  background: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
 }
 
 .description strong {
-  color: #FFFFFF;
+  color: #111827;
   font-weight: 600;
 }
 
@@ -89,33 +89,41 @@
 
 .awardItem {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
+  align-items: flex-start;
+  gap: 1rem;
+  background: #FFFFFF;
   padding: 1.25rem 1.5rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #E5E7EB;
 }
 
 .awardIcon {
   font-size: 2rem;
+  flex-shrink: 0;
 }
 
 .awardInfo {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .awardName {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #111827;
 }
 
 .awardManagement {
   font-size: 0.9rem;
-  color: #9CA3AF;
+  color: #4B5563;
+}
+
+.awardDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #374151;
 }
 
 @media (max-width: 900px) {
@@ -137,4 +145,3 @@
     grid-column: 1; /* Reset span for single column */
   }
 }
-
