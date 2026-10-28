@@ -69,6 +69,23 @@ const eras: Era[] = [
     title: "Nova Identidade e Reestruturação",
     description:
       "Apresentamos uma nova marca moderna, destacando nosso posicionamento criativo e foco em qualidade técnica.",
+    photos: [
+      {
+        src: "/imagens/trajetoria/2025/Empodera2025.jpg",
+        alt: "IDE no Empodera 2025",
+        caption: "Empodera 2025",
+      },
+      {
+        src: "/imagens/trajetoria/2025/Salchip%C3%A3o_17_09.jpg",
+        alt: "Registro da IDE em 2025",
+        caption: "Registro de 2025",
+      },
+      {
+        src: "/imagens/trajetoria/2025/premio%201.png",
+        alt: "Prêmio recebido pela IDE em 2025",
+        caption: "Prêmio de 2025",
+      },
+    ],
   },
   {
     year: "2026",
