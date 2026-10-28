@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ImagemAmpliada from "../../QuemSomos/ImagemAmpliada/ImagemAmpliada";
 import styles from "./InfoCards.module.css";
 
 const infoCards = [
@@ -47,16 +48,20 @@ export default function InfoCards() {
               <span>anos de história</span>
             </div>
 
-            <div className={styles.fotoCard}>
+            <ImagemAmpliada
+              src="/imagens/membros-ide.jpg"
+              alt="Membros da IDE"
+              previewClassName={styles.fotoCard}
+            >
               <Image
                 src="/imagens/membros-ide.jpg"
-                alt="Membros da IDE"
+                alt=""
                 fill
                 priority
                 sizes="(max-width: 900px) 100vw, 55vw"
                 className={styles.foto}
               />
-            </div>
+            </ImagemAmpliada>
 
             <div className={styles.statCard}>
               <strong>27</strong>

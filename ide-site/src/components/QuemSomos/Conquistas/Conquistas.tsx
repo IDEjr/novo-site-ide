@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import ImagemAmpliada from '../ImagemAmpliada/ImagemAmpliada';
 import styles from './Conquistas.module.css';
 
 const Conquistas = () => {
@@ -9,9 +10,17 @@ const Conquistas = () => {
         <h2 className={styles.title}>Nossas conquistas</h2>
       </header>
 
+      <p className={styles.description}>
+        A vivência empresarial e a presença nos maiores eventos do MEJ sempre foram pilares da nossa trajetória. Ao longo dos anos, nosso impacto foi reconhecido através de <strong>27 prêmios</strong> conquistados nas mais diversas esferas do Movimento Empresa Júnior.
+      </p>
+
       <div className={styles.container}>
         <div className={styles.photosGrid}>
-          <div className={`${styles.photoCard} ${styles.photoMain}`}>
+          <ImagemAmpliada
+            src="/imagens/premios/egej26.png"
+            alt="Equipe da IDE reunida em evento do EGEJ em 2026"
+            previewClassName={`${styles.photoCard} ${styles.photoMain}`}
+          >
             <Image
               src="/imagens/premios/egej26.png"
               alt="Equipe da IDE reunida em evento do EGEJ em 2026"
@@ -19,8 +28,12 @@ const Conquistas = () => {
               sizes="(max-width: 900px) 100vw, 50vw"
               className={styles.photoImage}
             />
-          </div>
-          <div className={styles.photoCard}>
+          </ImagemAmpliada>
+          <ImagemAmpliada
+            src="/imagens/premios/fejers18.jpeg"
+            alt="Representantes da IDE recebendo um reconhecimento em 2018"
+            previewClassName={styles.photoCard}
+          >
             <Image
               src="/imagens/premios/fejers18.jpeg"
               alt="Representantes da IDE recebendo um reconhecimento em 2018"
@@ -28,8 +41,12 @@ const Conquistas = () => {
               sizes="(max-width: 900px) 50vw, 25vw"
               className={styles.photoImage}
             />
-          </div>
-          <div className={styles.photoCard}>
+          </ImagemAmpliada>
+          <ImagemAmpliada
+            src="/imagens/premios/egej18.jpg"
+            alt="Equipe da IDE reunida em evento do EGEJ em 2018"
+            previewClassName={styles.photoCard}
+          >
             <Image
               src="/imagens/premios/egej18.jpg"
               alt="Equipe da IDE reunida em evento do EGEJ em 2018"
@@ -37,14 +54,10 @@ const Conquistas = () => {
               sizes="(max-width: 900px) 50vw, 25vw"
               className={styles.photoImage}
             />
-          </div>
+          </ImagemAmpliada>
         </div>
 
         <div className={styles.contentColumn}>
-          <p className={styles.description}>
-            A vivência empresarial e a presença nos maiores eventos do MEJ sempre foram pilares da nossa trajetória. Ao longo dos anos, nosso impacto foi reconhecido através de <strong>27 prêmios</strong> conquistados nas mais diversas esferas do Movimento Empresa Júnior.
-          </p>
-          
           <h3 className={styles.subtitle}>Principais Prêmios</h3>
           
           <ul className={styles.awardsList}>

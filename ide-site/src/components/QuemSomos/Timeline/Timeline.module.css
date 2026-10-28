@@ -182,11 +182,11 @@
   animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
 }
 
-.photoSmallStack > div:nth-child(1) {
+.photoSmallStack > button.photoSmall:nth-of-type(1) {
   animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s;
 }
 
-.photoSmallStack > div:nth-child(2) {
+.photoSmallStack > button.photoSmall:nth-of-type(2) {
   animation: photoReveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s;
 }
 

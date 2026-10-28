@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import ImagemAmpliada from "../ImagemAmpliada/ImagemAmpliada";
 import styles from "./Timeline.module.css";
 
 type EraPhoto = {
@@ -126,23 +127,30 @@ function PhotoCard({
   showCaption?: boolean;
 }) {
   return (
-    <div className={`${styles.photoPlaceholder} ${className}`}>
-      {photo ? (
+    photo ? (
+      <ImagemAmpliada
+        src={photo.src}
+        alt={photo.alt}
+        previewClassName={`${styles.photoPlaceholder} ${className}`}
+      >
         <Image
           src={photo.src}
-          alt={photo.alt}
+          alt=""
           fill
           sizes="(max-width: 900px) 100vw, 700px"
           className={styles.photoImage}
           style={{ objectPosition: photo.objectPosition ?? "center" }}
         />
-      ) : (
-        placeholder
-      )}
-      {showCaption && (
-        <span className={styles.caption}>{photo?.caption ?? "Legenda"}</span>
-      )}
-    </div>
+        {showCaption && (
+          <span className={styles.caption}>{photo.caption}</span>
+        )}
+      </ImagemAmpliada>
+    ) : (
+      <div className={`${styles.photoPlaceholder} ${className}`}>
+        {placeholder}
+        {showCaption && <span className={styles.caption}>Legenda</span>}
+      </div>
+    )
   );
 }
 

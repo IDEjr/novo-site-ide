@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ImagemAmpliada from "../ImagemAmpliada/ImagemAmpliada";
 import styles from "./FrontQuemSomos.module.css";
 
 const carouselPhotos = [
@@ -24,15 +25,20 @@ export default function FrontQuemSomos() {
       <div className={styles.carouselContainer}>
         <div className={styles.carouselTrack}>
           {[...carouselPhotos, ...carouselPhotos].map((photo, index) => (
-            <div key={`${photo}-${index}`} className={styles.carouselItem}>
+            <ImagemAmpliada
+              key={`${photo}-${index}`}
+              src={photo}
+              alt={`Registro ${index % carouselPhotos.length + 1} da IDE`}
+              previewClassName={styles.carouselItem}
+            >
               <Image
                 src={photo}
-                alt={index < carouselPhotos.length ? `Registro ${index + 1} da IDE` : ""}
+                alt=""
                 fill
                 sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 350px"
                 className={styles.carouselImage}
               />
-            </div>
+            </ImagemAmpliada>
           ))}
         </div>
       </div>

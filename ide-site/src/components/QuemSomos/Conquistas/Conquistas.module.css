@@ -5,7 +5,7 @@
 
 .sectionHeader {
   width: min(1200px, 100%);
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 1rem auto;
   display: flex;
 }
 
@@ -57,6 +57,8 @@
 }
 
 .description {
+  width: min(1200px, 100%);
+  margin: 0 auto 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #374151;
