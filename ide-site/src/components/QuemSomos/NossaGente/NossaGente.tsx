@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import ImagemAmpliada from "../ImagemAmpliada/ImagemAmpliada";
 import styles from "./NossaGente.module.css";
 import { yearCollections } from "@/data/members";
 
@@ -116,28 +115,22 @@ export default function NossaGente() {
               key={`${integrante.nome}-${integrante.cargo}`}
               className={styles.card}
             >
-              {hasPhoto ? (
-                <ImagemAmpliada
-                  src={integrante.image}
-                  alt={integrante.nome}
-                  previewClassName={styles.imageWrap}
-                >
+              <div className={styles.imageWrap}>
+                {hasPhoto ? (
                   <Image
                     src={integrante.image}
-                    alt=""
+                    alt={integrante.nome}
                     fill
                     priority
                     sizes="(max-width: 768px) 80vw, 220px"
                     style={{ objectPosition: integrante.objectPosition ?? "center top" }}
                   />
-                </ImagemAmpliada>
-              ) : (
-                <div className={styles.imageWrap}>
+                ) : (
                   <span className={styles.avatarFallback} aria-label={`Foto de ${integrante.nome} indisponível`}>
                     {initials}
                   </span>
-                </div>
-              )}
+                )}
+              </div>
 
               <div className={styles.cardContent}>
                 <div className={styles.memberHeader}>
